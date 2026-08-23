@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://github.com/ullbergm/nc-pesticide-trainer/compare/v2.0.1...v2.1.0) (2026-08-23)
+
+
+### Features
+
+* drive a tractor along the progress bar ([c09992e](https://github.com/ullbergm/nc-pesticide-trainer/commit/c09992ea5bf37af7245bb0017b814adea3e26c95))
+* **engine:** add track-marker tokens for themed progress bars ([3cfd24c](https://github.com/ullbergm/nc-pesticide-trainer/commit/3cfd24cdf9c4b700d119500bdd6e6e94efec8733))
+
+
+### Bug Fixes
+
+* sync trainer-engine v2.1.0 ([3cfd24c](https://github.com/ullbergm/nc-pesticide-trainer/commit/3cfd24cdf9c4b700d119500bdd6e6e94efec8733))
+
 ## [2.0.1](https://github.com/ullbergm/nc-pesticide-trainer/compare/v2.0.0...v2.0.1) (2026-08-22)
 
 
