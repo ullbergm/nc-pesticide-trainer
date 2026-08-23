@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.2](https://github.com/ullbergm/nc-pesticide-trainer/compare/v2.1.1...v2.1.2) (2026-08-23)
+
+
+### Bug Fixes
+
+* **engine:** name the platform emoji fonts for emoji track markers ([1a37553](https://github.com/ullbergm/nc-pesticide-trainer/commit/1a37553626b6e5e167b06db32915182495d47c71))
+* sync trainer-engine v2.1.1 ([1a37553](https://github.com/ullbergm/nc-pesticide-trainer/commit/1a37553626b6e5e167b06db32915182495d47c71))
+
 ## [2.1.1](https://github.com/ullbergm/nc-pesticide-trainer/compare/v2.1.0...v2.1.1) (2026-08-23)
 
 
