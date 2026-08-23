@@ -27,8 +27,16 @@
   --surface-dark: #38302a;
   --shadow: 0 1px 2px rgba(32, 24, 15, 0.07), 0 4px 16px rgba(32, 24, 15, 0.05);
   /* The CDL trainer draws a dashed lane line across the progress track; this
-     site keeps a plain track so the two apps stay visually distinct. */
+     site keeps a plain track so the two apps stay visually distinct, and a
+     tractor rather than a rig at the leading edge of the progress fill. An
+     emoji needs no palette-specific copies, so it is defined once here; it is
+     mirrored so it faces the finish (the emoji artwork faces left) and lifted
+     off the glyph baseline to sit centered on the track. */
   --track-texture: none;
+  --track-marker: "🚜";
+  --track-marker-adjust: scaleX(-1) translateY(-2px);
+  /* Keeps the 15px marker and its 3px gap inside the layout at 100%. */
+  --track-marker-clearance: 18px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
