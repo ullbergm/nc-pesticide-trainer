@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.2.0](https://github.com/ullbergm/nc-pesticide-trainer/compare/v2.1.2...v2.2.0) (2026-08-24)
+
+
+### Features
+
+* **engine:** catch near-duplicate question stems in bank validation ([9c365bf](https://github.com/ullbergm/nc-pesticide-trainer/commit/9c365bf315408db6e08e76668ee6c849827e3791))
+* **engine:** double the progress track height to 20px ([9c365bf](https://github.com/ullbergm/nc-pesticide-trainer/commit/9c365bf315408db6e08e76668ee6c849827e3791))
+* **engine:** show an optional illustration with a question ([9c365bf](https://github.com/ullbergm/nc-pesticide-trainer/commit/9c365bf315408db6e08e76668ee6c849827e3791))
+* **engine:** support true/false questions ([9c365bf](https://github.com/ullbergm/nc-pesticide-trainer/commit/9c365bf315408db6e08e76668ee6c849827e3791))
+* upsize the tractor marker to 18px ([67b8214](https://github.com/ullbergm/nc-pesticide-trainer/commit/67b8214eaeb6a70a9f1831da03f150ec2982ee3f))
+
+
+### Bug Fixes
+
+* **engine:** tolerate leaving About before the changelog fetch settles ([9c365bf](https://github.com/ullbergm/nc-pesticide-trainer/commit/9c365bf315408db6e08e76668ee6c849827e3791))
+* sync trainer-engine v2.2.0 ([9c365bf](https://github.com/ullbergm/nc-pesticide-trainer/commit/9c365bf315408db6e08e76668ee6c849827e3791))
+
 ## [2.1.2](https://github.com/ullbergm/nc-pesticide-trainer/compare/v2.1.1...v2.1.2) (2026-08-23)
 
 
