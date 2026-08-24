@@ -280,7 +280,7 @@ tests/problems-test.js   calculation drills, swept over thousands of seeds (node
 tests/fsrs-test.js       FSRS scheduler property tests (node)
 tests/readiness-test.js  readiness projection tests, incl. a Monte Carlo check (node)
 tests/test.html          end-to-end tests driven through the real UI
-tests/run-browser.sh     headless-Chrome runner for test.html (local + CI)
+tests/run-browser.sh     Playwright runner for the browser suite (local + CI)
 docs/question-authoring.md  the recipe the question bank is written with
 docs/math-drills.md      design for the calculation drills, and what is left to build
 docs/screenshots/        README images and the script that regenerates them
@@ -356,7 +356,7 @@ npm install          # one time, dev tooling only (the app itself has no depende
 npm run lint
 npm test             # question bank validation, FSRS scheduler, readiness projection,
                      # recertification credit solver and the saved-license cache
-npm run test:browser # end-to-end suite in headless Chrome or Chromium
+npm run test:browser # end-to-end suite via Playwright (chromium+firefox locally; CI adds webkit)
 ```
 
 Every line should say `PASS`. Opening `tests/test.html` in a normal browser also
