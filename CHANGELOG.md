@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/ullbergm/nc-pesticide-trainer/compare/v2.2.0...v2.3.0) (2026-08-28)
+
+
+### Features
+
+* **engine:** let a config name the tests a fresh install starts on ([2068df3](https://github.com/ullbergm/nc-pesticide-trainer/commit/2068df39e4364a08e689efc05152ccac066854e0))
+
+
+### Bug Fixes
+
+* sync trainer-engine v2.3.0 ([2068df3](https://github.com/ullbergm/nc-pesticide-trainer/commit/2068df39e4364a08e689efc05152ccac066854e0))
+
 ## [2.2.0](https://github.com/ullbergm/nc-pesticide-trainer/compare/v2.1.2...v2.2.0) (2026-08-24)
 
 
