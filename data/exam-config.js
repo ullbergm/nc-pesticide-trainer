@@ -92,8 +92,9 @@ const DEALER_EXAM_SECTIONS = [...LAW_SECTIONS, ...RULES_DEALER, ...NCSU_DEALER];
 // passes Core and then one of these per category they want to work in, and an
 // aerial applicator adds Aerial Methods on top. Each is written from its own
 // North Carolina category manual, which is sold in print and has no public PDF
-// to cite. The first one is authored: cat-ksa, from "Ectoparasites of Pets";
-// the rest have no questions yet.
+// to cite. Two are authored: cat-ksa, from "Ectoparasites of Pets", and
+// cat-a, from the "Aquatic Weed Management Training Manual"; the rest have
+// no questions yet.
 //
 // They are all listed anyway, with the manual key their questions carry, so
 // the app can show what the bank does not cover yet and the gap is visible
@@ -225,6 +226,20 @@ const EXAM_CONFIG = {
       cite: 'Ectoparasites of Pets', // citations read "Ectoparasites of Pets p. 6"
       short: 'K(SA)',                // section labels: "K(SA) sec. 3 Ticks"
     },
+    // The Aquatic Pest Control category manual: "Aquatic Weed Management
+    // Training Manual - For North Carolina Applicators", the Southeastern
+    // aquatic herbicide applicator training manual (K. A. Langeland ed.,
+    // UF/IFAS Center for Aquatic Plants, July 1991) slightly revised for NC
+    // by S. H. Kay and J. H. Wilson. Sold in print like every NC category
+    // manual, so no `url` and its citations render as plain text. Its
+    // chapters are unnumbered, so headings are numbered in printed order;
+    // section 12 gathers the back matter (conversion factors and the
+    // glossary) under the "app." label.
+    'cat-a': {
+      title: 'Aquatic Weed Management Training Manual (NC, 1991)',
+      cite: 'Aquatic Weed Manual', // citations read "Aquatic Weed Manual p. 35"
+      short: 'Aquatic',            // section labels: "Aquatic sec. 8 Applying the Right Amount"
+    },
   },
 
   // Mock exams: how many questions the real test asks, drawn from which
@@ -341,7 +356,7 @@ const EXAM_CONFIG = {
   },
 
   // Prose that names the exam, injected as HTML into the matching views.
-  homeSubtitle: `${BANK_SIZE} from the national applicator manuals, North Carolina pesticide law, NC State Extension, and the K(SA) category manual`,
+  homeSubtitle: `${BANK_SIZE} from the national applicator manuals, North Carolina pesticide law, NC State Extension, and the K(SA) and Aquatic category manuals`,
   disclaimerHTML: `Questions were extracted from the national
     <a href="https://www.epa.gov/system/files/documents/2022-09/national-pesticide-applicator-cert-core-manual-2014.pdf"
        target="_blank" rel="noopener">core</a> and
@@ -353,8 +368,9 @@ const EXAM_CONFIG = {
        target="_blank" rel="noopener">rules</a>, and from NC State Extension's
     <a href="https://content.ces.ncsu.edu/pesticide-applicator-certification-and-licensing"
        target="_blank" rel="noopener">AG-714</a> on certification and licensing, and from
-    the printed North Carolina category manual <em>Ectoparasites of Pets</em> (1994) for the
-    K(SA) exam; accuracy is not guaranteed. Each question links to where it came from, so verify
+    two printed North Carolina category manuals: <em>Ectoparasites of Pets</em> (1994) for the
+    K(SA) exam and the <em>Aquatic Weed Management Training Manual</em> (1991) for the
+    Aquatic exam; accuracy is not guaranteed. Each question links to where it came from, so verify
     anything important against the source, and check the law questions against the current
     section: statutes and rules are amended, and fees and deadlines move first.
     North Carolina's exams are written from the NC manuals, which cover the same material,
@@ -377,15 +393,19 @@ const EXAM_CONFIG = {
     <a href="https://content.ces.ncsu.edu/pesticide-applicator-certification-and-licensing"
        target="_blank" rel="noopener">Pesticide Applicator Certification and Licensing</a>
     (AG-714), on exam formats, recertification credits, noncertified applicator training,
-    and reciprocity. A sixth source is the first North Carolina category manual in the
-    bank: <em>Ectoparasites of Pets</em> (J. J. Arends, NC Agricultural Extension Service,
-    1994), the study manual for the Agricultural Pest Animal &ndash; Small Animal category,
-    K(SA) &mdash; applicators applying pesticides to pets and the places pets are confined,
-    pet groomers included.
+    and reciprocity. On top of those come the first two North Carolina category manuals
+    in the bank: <em>Ectoparasites of Pets</em> (J. J. Arends, NC Agricultural Extension
+    Service, 1994), the study manual for the Agricultural Pest Animal &ndash; Small Animal
+    category, K(SA) &mdash; applicators applying pesticides to pets and the places pets are
+    confined, pet groomers included &mdash; and the <em>Aquatic Weed Management Training
+    Manual</em> (K. A. Langeland ed., 1991, revised for North Carolina), the study manual
+    for the Aquatic Pest Control category (A), covering herbicide technology, safety,
+    adjuvants, application equipment, dosage calculation, biological and mechanical
+    control, environmental effects, and aquatic plant identification.
     Every question cites where it came from, by page for the manuals, by section for
     the law, and by heading for AG-714. Wherever the source is free to read online, the
     citation is a link, so it opens the source in the right place and you can check
-    anything important against it; the NC category manual is sold in print, so its
+    anything important against it; the NC category manuals are sold in print, so their
     questions name the printed page instead.</p>
     <p>${DRILL_COUNT} of the cards are calculation drills rather than written questions. A
     drill is one of the methods the manuals teach — the dosage formulas in the core
@@ -407,11 +427,12 @@ const EXAM_CONFIG = {
     print by the
     <a href="https://go.ncsu.edu/psep" target="_blank" rel="noopener">NC State Pesticide Safety
     Education Program</a>. They are adapted from these national manuals and add material,
-    particularly for the categories, that nothing free covers. The first of them is now in
-    the bank: <em>Ectoparasites of Pets</em>, the K(SA) category manual, whose questions
-    cite the printed page without a link since there is no public PDF to open. Questions
-    from the remaining category manuals are planned, and each will cite its own manual
-    the same way.</p>
+    particularly for the categories, that nothing free covers. The first two of them are
+    now in the bank: <em>Ectoparasites of Pets</em>, the K(SA) category manual, and the
+    <em>Aquatic Weed Management Training Manual</em>, the Aquatic (A) category manual,
+    whose questions cite the printed page without a link since there is no public PDF to
+    open. Questions from the remaining category manuals are planned, and each will cite
+    its own manual the same way.</p>
     <p>Questions were extracted from the sources by a language model and reviewed for
     accuracy, but mistakes are possible and accuracy is not guaranteed. Law changes:
     the statute and rules were current when the questions were written, and a citation
