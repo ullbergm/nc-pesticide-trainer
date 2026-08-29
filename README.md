@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/github/license/ullbergm/nc-pesticide-trainer)](LICENSE)
 [![Live site](https://img.shields.io/website?url=https%3A%2F%2Fnc-pesticide.ullberg.io&label=nc-pesticide.ullberg.io)](https://nc-pesticide.ullberg.io)
 
-[![Questions](https://img.shields.io/badge/questions-1365-blue)](data/questions.js)
+[![Questions](https://img.shields.io/badge/questions-1392-blue)](data/questions.js)
 [![Dependencies](https://img.shields.io/badge/dependencies-none-blue)](package.json)
 [![PWA](https://img.shields.io/badge/PWA-offline%20ready-blue)](manifest.webmanifest)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-blue)](CONTRIBUTING.md)
@@ -15,10 +15,10 @@ Practice questions with spaced repetition for the North Carolina pesticide
 applicator certification exams: the 100-question commercial Core exam, the
 50-question Private Applicator exam, the Aerial Methods exam every aerial
 applicator adds on top, and the Pesticide Dealer exam, all passed at 70%. The
-bank has 1365 questions and 36 calculation drills, written
+bank has 1392 questions and 36 calculation drills, written
 with the recipe in
-[docs/question-authoring.md](docs/question-authoring.md) and covering seven
-sources end to end: all eleven chapters of the
+[docs/question-authoring.md](docs/question-authoring.md) and covering eight
+sources: all eleven chapters of the
 [National Pesticide Applicator Certification Core Manual](https://www.epa.gov/system/files/documents/2022-09/national-pesticide-applicator-cert-core-manual-2014.pdf)
 (second edition, 2014) and all six of the
 [National Aerial Applicator's Manual](https://www.epa.gov/system/files/documents/2023-11/national-aerial-applicator-manual-2014.pdf)
@@ -50,14 +50,22 @@ the history of aquatic plant management, management decision making,
 regulations, herbicide technology and safety, adjuvants, application
 equipment, dosage calculation and calibration, biological and mechanical
 control, environmental and public health considerations, aquatic plant
-identification, and its conversion-factor and glossary appendices. Every
-question cites where it came from:
+identification, and its conversion-factor and glossary appendices. Eighth is
+the printed *Pesticide Training Manual for Restricted Use Pesticide Dealers*
+(NCDA and NC Cooperative Extension Service, revised May 1995), the study
+manual NCDA&CS still issues for the Pesticide Dealer exam, today with a 2024
+insert replacing its recordkeeping pages. Only its still-current chapters are
+asked from it — store practice, the other laws a dealer meets, and dealer
+recertification; everything it restates from the law and rules, and everything
+the law has since moved past (its 1995 fees, its employee purchase age, the
+superseded recordkeeping pages), is asked from the current statute and rules
+instead. Every question cites where it came from:
 manual questions cite a page, law and rule questions cite their section number,
 and questions from AG-714 cite the heading they were written from. Wherever
 the source is free to read online the citation is a link that opens it at the
-right place; the category manuals are sold in print by the NC State Pesticide
-Safety Education Program with no public PDF, so their questions name the
-printed page instead.
+right place; the dealer and category manuals are sold in print by the NC State
+Pesticide Safety Education Program with no public PDF, so their questions name
+the printed page instead.
 
 The 36 **calculation drills** are counted apart from the questions because they
 are not questions in the same sense. A drill is a method — the dosage formulas
@@ -282,7 +290,7 @@ js/readiness.js          projected score and pass odds per exam
 js/storage.js            localStorage persistence, export/import
 js/license.js            NC license lookup (public NCDA&CS search), caching the licenses you keep
 js/app.js                UI and session logic
-data/questions.js        question bank (1365 questions, tagged by section and source page)
+data/questions.js        question bank (1392 questions, tagged by section and source page)
 data/problems.js         36 calculation drills, as methods with the numbers left open
 data/manual-pages.js     printed page numbers to PDF page numbers, for the citation links
 data/aerial-pages.js     the same map for the aerial manual

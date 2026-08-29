@@ -42,28 +42,34 @@ const RULE_SECTIONS = sectionsOf('rules');
 // data/questions.js), and which exam each one belongs to depends on the
 // licence it describes, so they are split the same way the rules are.
 const NCSU_SECTIONS = sectionsOf('ncsu');
-// Most of the rules bind every applicator, but three Sections are written for
+// Most of the rules bind every applicator, but some Sections are written for
 // one license and belong only to the exam that leads to it: .0500 licenses
 // commercial applicators, dealers and consultants, .1100 certifies private
-// applicators, and .1000 governs aerial application. Splitting them here is
+// applicators, .1000 governs aerial application, and .0300 registration,
+// .0400 sampling tolerances and .0800 bulk containment govern the selling
+// side of the trade rather than the applying side. Splitting them here is
 // what keeps a Private Applicator mock exam from asking about the dealer
-// license examination, or a Core one about aerial swath offsets.
+// license examination, or a Core one about registration fees for a blend.
 const RULES_CORE_ONLY = ['rules:5'];      // .0500 Pesticide Licenses
 const RULES_PRIVATE_ONLY = ['rules:11'];  // .1100 Private Pesticide Applicator Certification
 const RULES_AERIAL_ONLY = ['rules:10'];   // .1000 Aerial Application of Pesticides
-const RULES_EXAM_SPECIFIC = [...RULES_CORE_ONLY, ...RULES_PRIVATE_ONLY, ...RULES_AERIAL_ONLY];
+const RULES_DEALER_ONLY = ['rules:3', 'rules:4', 'rules:8']; // .0300 Registration, .0400 Samples, .0800 Bulk Distribution
+const RULES_EXAM_SPECIFIC = [...RULES_CORE_ONLY, ...RULES_PRIVATE_ONLY,
+  ...RULES_AERIAL_ONLY, ...RULES_DEALER_ONLY];
 const RULES_SHARED = RULE_SECTIONS.filter(s => !RULES_EXAM_SPECIFIC.includes(s));
-// The rule Sections a pesticide dealer is examined on. A dealer is licensed
-// under .0500 like every other licensee, sells only what .1300 allows and
-// records it the way .1300 requires, hands over arsenic trioxide under .1200,
-// keeps a commercial storage under .1900, and disposes of stock and containers
-// under .0600. The Sections written for applying pesticides rather than
-// selling them - declared pests, ground application, chemigation - are left
-// out, which is what keeps a dealer mock exam off swath widths and spray
-// records. Add .0300 registration, .0800 bulk distribution, and .1500
-// exempted pesticides here once they are authored; they are dealer material
-// too, and the bank has no questions for them yet.
-const RULES_DEALER = ['rules:5', 'rules:6', 'rules:12', 'rules:13', 'rules:19']
+// The rule Sections a pesticide dealer is examined on, following the contents
+// of the printed dealer training manual (see `manuals.dealer`), the closest
+// thing NCDA&CS has to a published dealer syllabus: licensing under .0500,
+// registration under .0300, sampling tolerances under .0400 (a dealer's stock
+// is what gets sampled), disposal under .0600, declared pests under .0700
+// (what animal-control products a dealer may lawfully sell for), bulk
+// containment under .0800, arsenic trioxide under .1200, sales and records
+// under .1300, worker protection under .1800, and commercial storage under
+// .1900. The Sections written for applying pesticides - ground application,
+// chemigation, aerial - stay out, which is what keeps a dealer mock exam off
+// swath widths and spray records.
+const RULES_DEALER = ['rules:3', 'rules:4', 'rules:5', 'rules:6', 'rules:7',
+  'rules:8', 'rules:12', 'rules:13', 'rules:18', 'rules:19']
   .filter(s => RULE_SECTIONS.includes(s));
 // AG-714 by license. Everyone sits an exam and earns credits (sec. 1, 7, 8);
 // the rest follow the license each was written for. A dealer is examined on
@@ -85,8 +91,10 @@ const AERIAL_EXAM_SECTIONS = [...AERIAL_SECTIONS, ...RULES_AERIAL_ONLY, ...NCSU_
 // The dealer exam is the one certification exam that is not built on Core: a
 // dealer sells restricted use pesticides rather than applying them, so the
 // national manuals do not come into it and the exam is NC law, the rules a
-// dealer works under, and the licensing system AG-714 describes.
-const DEALER_EXAM_SECTIONS = [...LAW_SECTIONS, ...RULES_DEALER, ...NCSU_DEALER];
+// dealer works under, the licensing system AG-714 describes, and the printed
+// dealer training manual's own chapters (see `manuals.dealer`).
+const DEALER_EXAM_SECTIONS = [...LAW_SECTIONS, ...RULES_DEALER, ...NCSU_DEALER,
+  ...sectionsOf('dealer')];
 
 // The category exams. Core licenses nobody on its own: a commercial applicator
 // passes Core and then one of these per category they want to work in, and an
@@ -212,6 +220,23 @@ const EXAM_CONFIG = {
       pages: NCSU_ANCHORS,
       web: true,
     },
+    // The dealer training manual: "Pesticide Training Manual for Restricted
+    // Use Pesticide Dealers" (NCDA and NC Cooperative Extension Service,
+    // revised May 1995), the study manual NCDA&CS still issues for the dealer
+    // licensing exam, today with a Rev. 11/2024 insert replacing its
+    // recordkeeping pages. Sold in print with no public PDF, so no `url` and
+    // citations render as plain text naming the printed page; its parts are
+    // unnumbered, so its major headings are numbered in printed order. Only
+    // its still-current teaching is authored: its 1995 fees, its employee
+    // purchase age, the recordkeeping pages the insert replaces, and its
+    // reprint of the 1995 rule text are all superseded, so those facts are
+    // asked from the law and rules sections above, which cite the current
+    // documents, and never from this manual.
+    dealer: {
+      title: 'Pesticide Training Manual for Restricted Use Pesticide Dealers (NC, 1995)',
+      cite: 'Dealer Manual', // citations read "Dealer Manual p. 20"
+      short: 'Dealer',       // section labels: "Dealer sec. 4 Dealer's Suggestions"
+    },
     // The first North Carolina category manual in the bank: "Ectoparasites of
     // Pets" (J. J. Arends, NC Agricultural Extension Service, January 1994),
     // the study manual for the Agricultural Pest Animal - Small Animal
@@ -250,11 +275,11 @@ const EXAM_CONFIG = {
     { key: 'core', name: 'Commercial Core', sections: CORE_EXAM_SECTIONS, count: 100 },
     { key: 'private', name: 'Private Applicator', sections: PRIVATE_EXAM_SECTIONS, count: 50 },
     { key: 'aerial', name: 'Aerial Methods', sections: AERIAL_EXAM_SECTIONS, count: 50 },
-    // NCDA&CS publishes neither the length of the dealer exam nor its
-    // syllabus, only that the dealer exam is the one exam a dealer sits. The
-    // mock is 50 questions because that is the length of every NC pesticide
-    // exam except Core; treat the number as this app's assumption rather than
-    // as something the Department has stated.
+    // NCDA&CS publishes no dealer exam length; 50 matches every NC pesticide
+    // exam except Core and stays this app's assumption. The syllabus follows
+    // the printed dealer training manual (see `manuals.dealer`), whose
+    // contents are NC law, the rules a dealer works under, and its own
+    // dealer chapters.
     { key: 'dealer', name: 'Pesticide Dealer', sections: DEALER_EXAM_SECTIONS, count: 50 },
     ...CATEGORY_EXAMS,
   ],
@@ -265,7 +290,7 @@ const EXAM_CONFIG = {
     { key: 'core', group: 'cert', name: 'Commercial Core', note: 'the 100-question first exam for every commercial applicator license', sections: CORE_EXAM_SECTIONS },
     { key: 'private', group: 'cert', name: 'Private Applicator', note: 'the 50-question exam for producing an agricultural commodity on your own land', sections: PRIVATE_EXAM_SECTIONS },
     { key: 'aerial', group: 'methods', name: 'Aerial Methods', note: 'the extra exam every aerial applicator takes on top of Core and a category', sections: AERIAL_EXAM_SECTIONS },
-    { key: 'dealer', group: 'cert', name: 'Pesticide Dealer', note: 'the only exam a pesticide dealer sits: NC law and rules, and no Core', sections: DEALER_EXAM_SECTIONS },
+    { key: 'dealer', group: 'cert', name: 'Pesticide Dealer', note: 'the only exam a pesticide dealer sits: NC law and rules and the dealer manual, no Core', sections: DEALER_EXAM_SECTIONS },
     ...CATEGORY_EXAMS.map(e => ({
       key: e.key,
       group: 'category',
@@ -356,7 +381,7 @@ const EXAM_CONFIG = {
   },
 
   // Prose that names the exam, injected as HTML into the matching views.
-  homeSubtitle: `${BANK_SIZE} from the national applicator manuals, North Carolina pesticide law, NC State Extension, and the K(SA) and Aquatic category manuals`,
+  homeSubtitle: `${BANK_SIZE} from the national applicator manuals, North Carolina pesticide law, NC State Extension, the dealer training manual, and the K(SA) and Aquatic category manuals`,
   disclaimerHTML: `Questions were extracted from the national
     <a href="https://www.epa.gov/system/files/documents/2022-09/national-pesticide-applicator-cert-core-manual-2014.pdf"
        target="_blank" rel="noopener">core</a> and
@@ -368,9 +393,10 @@ const EXAM_CONFIG = {
        target="_blank" rel="noopener">rules</a>, and from NC State Extension's
     <a href="https://content.ces.ncsu.edu/pesticide-applicator-certification-and-licensing"
        target="_blank" rel="noopener">AG-714</a> on certification and licensing, and from
-    two printed North Carolina category manuals: <em>Ectoparasites of Pets</em> (1994) for the
-    K(SA) exam and the <em>Aquatic Weed Management Training Manual</em> (1991) for the
-    Aquatic exam; accuracy is not guaranteed. Each question links to where it came from, so verify
+    three printed North Carolina manuals: <em>Ectoparasites of Pets</em> (1994) for the
+    K(SA) exam, the <em>Aquatic Weed Management Training Manual</em> (1991) for the
+    Aquatic exam, and the still-current chapters of the <em>Pesticide Training Manual for
+    Restricted Use Pesticide Dealers</em> (1995) for the Dealer exam; accuracy is not guaranteed. Each question links to where it came from, so verify
     anything important against the source, and check the law questions against the current
     section: statutes and rules are amended, and fees and deadlines move first.
     North Carolina's exams are written from the NC manuals, which cover the same material,
@@ -401,12 +427,18 @@ const EXAM_CONFIG = {
     Manual</em> (K. A. Langeland ed., 1991, revised for North Carolina), the study manual
     for the Aquatic Pest Control category (A), covering herbicide technology, safety,
     adjuvants, application equipment, dosage calculation, biological and mechanical
-    control, environmental effects, and aquatic plant identification.
+    control, environmental effects, and aquatic plant identification. An eighth source
+    covers the dealer's own trade: the printed <em>Pesticide Training Manual for Restricted
+    Use Pesticide Dealers</em> (NCDA and NC Cooperative Extension Service, 1995), the study
+    manual for the Pesticide Dealer exam. Only its still-current chapters are asked from it
+    &mdash; store practice, the other laws a dealer meets, and dealer recertification &mdash;
+    while everything it restates from the law and rules is asked from the current statute and
+    rules instead, since its 1995 fees and superseded recordkeeping pages no longer bind anyone.
     Every question cites where it came from, by page for the manuals, by section for
     the law, and by heading for AG-714. Wherever the source is free to read online, the
     citation is a link, so it opens the source in the right place and you can check
-    anything important against it; the NC category manuals are sold in print, so their
-    questions name the printed page instead.</p>
+    anything important against it; the NC dealer and category manuals are sold in print, so
+    their questions name the printed page instead.</p>
     <p>${DRILL_COUNT} of the cards are calculation drills rather than written questions. A
     drill is one of the methods the manuals teach — the dosage formulas in the core
     manual's appendix C, the area and calibration-test arithmetic in its chapter 11,
@@ -429,11 +461,15 @@ const EXAM_CONFIG = {
     print by the
     <a href="https://go.ncsu.edu/psep" target="_blank" rel="noopener">NC State Pesticide Safety
     Education Program</a>. They are adapted from these national manuals and add material,
-    particularly for the categories, that nothing free covers. The first two of them are
-    now in the bank: <em>Ectoparasites of Pets</em>, the K(SA) category manual, and the
+    particularly for the categories, that nothing free covers. Three of them are
+    now in the bank: <em>Ectoparasites of Pets</em>, the K(SA) category manual, the
     <em>Aquatic Weed Management Training Manual</em>, the Aquatic (A) category manual,
-    whose questions cite the printed page without a link since there is no public PDF to
-    open. Questions from the remaining category manuals are planned, and each will cite
+    and the <em>Pesticide Training Manual for Restricted Use Pesticide Dealers</em>, the
+    dealer manual, whose questions cite the printed page without a link since there is no
+    public PDF to open. The dealer manual dates from 1995, so only its still-current
+    chapters are asked from it; where it restates the law and rules, or where the law has
+    since moved past it, the questions come from the current statute and rules instead.
+    Questions from the remaining category manuals are planned, and each will cite
     its own manual the same way.</p>
     <p>Questions were extracted from the sources by a language model and reviewed for
     accuracy, but mistakes are possible and accuracy is not guaranteed. Law changes:
