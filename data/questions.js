@@ -21,7 +21,16 @@
    questions carry `manual: "cat-a"`. The NC study manuals are sold in print
    with no public PDF, so those questions cite the printed page without a
    link; the remaining category manuals are planned as further `manual`
-   values.
+   values. The dealer training manual ("Pesticide Training Manual for
+   Restricted Use Pesticide Dealers", NCDA and NC Cooperative Extension
+   Service, revised May 1995, still issued for the dealer exam with a 2024
+   recordkeeping insert) is covered the way AG-714 is, by subtraction: its
+   reprint of the law and rules is asked from the law and rules sections
+   instead, and only its own dealer chapters are authored, as
+   `manual: "dealer"`. Where the 1995 text and the current statute or rules
+   disagree - fees, the employee purchase age, the recordkeeping pages the
+   insert replaces - the current law wins and the manual's version is not
+   asked.
 
    Each source numbers its own sections from 1, so `section` is a section
    number within the source named by `manual` ("default" when absent), and the
@@ -34,10 +43,11 @@
    they are printed in ("sec. 3"). Ids follow the same split: s<section>-NNN
    for the core manual, a<section> for the aerial one, l<section> for the law,
    r<section> for the rules, n<section> for AG-714, ksa<section> for the
-   K(SA) manual, and aq<section> for the Aquatic manual; the two category
-   manuals number nothing, so their major headings are numbered in the order
-   they are printed in, and the Aquatic manual's back matter (conversion
-   factors and glossary) is section 12, labeled "app.".
+   K(SA) manual, aq<section> for the Aquatic manual, and d<section> for the
+   dealer manual; the category and dealer manuals number nothing, so their
+   major headings are numbered in the order they are printed in, and the
+   Aquatic manual's back matter (conversion factors and glossary) is section
+   12, labeled "app.".
 
    A manual question cites the page printed in its manual. A law or rule
    question is cited the way lawyers and inspectors cite it, by section number
@@ -22277,5 +22287,459 @@ const QUESTION_BANK = [
   "answer": 2,
   "explanation": "A cubic foot holds 7.48 gallons and weighs 62.4 pounds, and a gallon of water weighs 8.34 pounds. These two constants, with 43,560 square feet to the acre, underlie the tank volume and dosage arithmetic in the calibration chapter.",
   "page": "84"
+ },
+ {
+  "id": "r3-001",
+  "section": 3,
+  "sectionName": "Registration",
+  "sectionLabel": "sec. .0300",
+  "manual": "rules",
+  "question": "A dealer prepares a custom pesticide-fertilizer blend to a customer's order. Must the blend itself be registered as a pesticide?",
+  "choices": [
+   "No, if it is mixed to the user's order, not held in inventory, and delivered with the registered end-use labeling",
+   "Yes, every blend must be registered annually like any other pesticide product sold in the State",
+   "No, custom blends are exempt from every requirement of the Pesticide Law, registration included",
+   "Yes, unless the customer holds a private applicator certification covering the crop being treated"
+  ],
+  "answer": 0,
+  "explanation": "Custom-blended pesticide-fertilizer mixtures are exempt from registration when the blend is prepared to the order of the user and is not held in inventory, the pesticide's end-use labeling provides for mixing with fertilizer or an appropriate federal or state agency recommends the mixture in writing, and the blend is delivered together with a copy of the registered end-use labeling and a statement of the mixture's composition and proper application rate.",
+  "page": "2",
+  "ref": ".0301"
+ },
+ {
+  "id": "r3-002",
+  "section": 3,
+  "sectionName": "Registration",
+  "sectionLabel": "sec. .0300",
+  "manual": "rules",
+  "question": "What must accompany a custom-blended pesticide-fertilizer mixture when it is delivered to the user?",
+  "choices": [
+   "A Safety Data Sheet for each ingredient and the blender's state registration certificate",
+   "A copy of the registered end-use labeling and a statement of the mixture's composition and application rate",
+   "An invoice showing the EPA registration number of each ingredient and the date of blending",
+   "A signed copy of the customer's order, which the dealer keeps on file for three years"
+  ],
+  "answer": 1,
+  "explanation": "One condition of the custom-blend registration exemption is delivery to the user together with a copy of the pesticide's registered end-use labeling and a statement specifying the composition of the mixture and the proper application rate. End-use labeling means labeling with directions for use in pest control; labeling that limits a product to manufacturing or formulating does not qualify.",
+  "page": "2",
+  "ref": ".0301"
+ },
+ {
+  "id": "r3-003",
+  "section": 3,
+  "sectionName": "Registration",
+  "sectionLabel": "sec. .0300",
+  "manual": "rules",
+  "question": "Which additional information may be requested to support an application to register a pesticide?",
+  "choices": [
+   "The registrant's sales volumes in other states and its production capacity",
+   "Financial statements showing the registrant can cover damage claims in North Carolina",
+   "Efficacy data verifying control of the pests claimed, the complete formula, and fuller directions for use",
+   "Letters from growers who used the product under North Carolina field conditions"
+  ],
+  "answer": 2,
+  "explanation": "To support a registration application, the requested information may include additional details on the directions for use, a list of the specific pests for which control is claimed with efficacy data verifying that control, and a complete formula including active and inert ingredients and the product's physical properties, submitted in the form of a data sheet.",
+  "page": "3",
+  "ref": ".0306"
+ },
+ {
+  "id": "r3-004",
+  "section": 3,
+  "sectionName": "Registration",
+  "sectionLabel": "sec. .0300",
+  "manual": "rules",
+  "question": "When is the registration of a pesticide registered the previous year renewed?",
+  "choices": [
+   "Automatically, whenever the registrant pays the annual fee before the deadline",
+   "Only after the product passes a new round of state efficacy testing",
+   "Whenever no complaints about the product were filed during the previous year",
+   "When its EPA registration status is unchanged at review and its continued use serves the public interest"
+  ],
+  "answer": 3,
+  "explanation": "A pesticide registered the previous year is renewed provided its registration status with the Environmental Protection Agency remains unchanged at the time of review and its continued use in North Carolina is in the best interest of the public.",
+  "page": "3",
+  "ref": ".0308"
+ },
+ {
+  "id": "r3-005",
+  "section": 3,
+  "sectionName": "Registration",
+  "sectionLabel": "sec. .0300",
+  "manual": "rules",
+  "question": "A registrant revises a product's labeling and applies to reregister it. What must be true of the revision?",
+  "choices": [
+   "It is accepted by EPA or approved for special local needs, and causes no unreasonable adverse effects as FIFRA defines them",
+   "It was submitted to the Board at least 90 days before the new registration year begins",
+   "It is limited to changes in the product's brand name, net contents, or packaging",
+   "It has been reviewed in a public hearing before the North Carolina Pesticide Board"
+  ],
+  "answer": 0,
+  "explanation": "Reregistration of a pesticide whose label or labeling was revised is accepted when the revision has been accepted by the Environmental Protection Agency or approved for special local needs, and the revision causes no unreasonable adverse effects as defined in FIFRA Section 2(bb).",
+  "page": "3",
+  "ref": ".0310"
+ },
+ {
+  "id": "r3-006",
+  "section": 3,
+  "sectionName": "Registration",
+  "sectionLabel": "sec. .0300",
+  "manual": "rules",
+  "question": "What happens to the registration fee when North Carolina denies a pesticide registration?",
+  "choices": [
+   "It is kept to cover the cost of reviewing the application",
+   "It is credited toward the registrant's next application",
+   "It is refunded to the applicant along with the reasons for denial",
+   "Half is refunded and half is kept as a processing charge"
+  ],
+  "answer": 2,
+  "explanation": "In the event registration is denied, the registration fee is refunded to the applicant along with the reasons for the denial.",
+  "page": "4",
+  "ref": ".0313"
+ },
+ {
+  "id": "r3-007",
+  "section": 3,
+  "sectionName": "Registration",
+  "sectionLabel": "sec. .0300",
+  "manual": "rules",
+  "question": "Certain pesticides may be used by agencies in emergencies without normal registration. How does North Carolina regulate those uses?",
+  "choices": [
+   "The Board holds an expedited public hearing before each emergency use",
+   "By adopting the federal rules on emergency exemptions for federal and state agencies by reference",
+   "The Commissioner issues a state emergency label that is valid for thirty days",
+   "Each emergency use requires a permit from the county cooperative extension office"
+  ],
+  "answer": 1,
+  "explanation": "North Carolina incorporates the federal \"Exemption of Federal and State Agencies for Use of Pesticides in Emergencies\", 40 CFR 166, by reference, including subsequent amendments. A pesticide approved under it counts as a restricted use pesticide under the rules, which is why emergency-exempted products matter to a dealer.",
+  "page": "4",
+  "ref": ".0318"
+ },
+ {
+  "id": "r4-001",
+  "section": 4,
+  "sectionName": "Samples and Submissions",
+  "sectionLabel": "sec. .0400",
+  "manual": "rules",
+  "question": "An official sample of a pesticide guaranteed at 80 percent active ingredient is analyzed. How far below the guarantee may the result fall and still pass?",
+  "choices": [
+   "1.0 plus 2 percent of the guarantee",
+   "0.5 plus 3 percent of the guarantee",
+   "0.1 plus 5 percent of the guarantee",
+   "15 percent of the guarantee"
+  ],
+  "answer": 0,
+  "explanation": "The tolerance table sets the allowable deviation below guarantee by the guaranteed percentage: 15 percent of the guarantee below 1 percent, 0.1 plus 5 percent of the guarantee from 1 to 19.99, 0.5 plus 3 percent from 20 to 49.99, and 1.0 plus 2 percent of the guarantee from 50 to 100 percent. An 80 percent guarantee falls in the last band.",
+  "page": "5",
+  "ref": ".0402"
+ },
+ {
+  "id": "r4-002",
+  "section": 4,
+  "sectionName": "Samples and Submissions",
+  "sectionLabel": "sec. .0400",
+  "manual": "rules",
+  "question": "An official sample analyzes below the allowable deviation from its guarantee. When is it still not judged deficient?",
+  "choices": [
+   "When the registrant certifies that the batch met its guarantee at the time it was shipped",
+   "When the product has been in the channels of trade for less than a full year",
+   "When special sampling problems or the analytical method's accuracy could have contributed to the result",
+   "When the shortfall is smaller than an overage found in another sample of the same lot"
+  ],
+  "answer": 2,
+  "explanation": "A result outside the allowable deviations is not deficient if special sampling problems, such as fertilizer-pesticide mixtures and certain granular products, or the accuracy, specificity, and reproducibility of the analytical methods as applied to that formulation, could have contributed to the off-limits analysis.",
+  "page": "5",
+  "ref": ".0402"
+ },
+ {
+  "id": "r4-003",
+  "section": 4,
+  "sectionName": "Samples and Submissions",
+  "sectionLabel": "sec. .0400",
+  "manual": "rules",
+  "question": "How is an official sample judged when the active ingredient exceeds the guarantee?",
+  "choices": [
+   "An overage passes automatically, since the buyer receives more than was paid for",
+   "The same allowable-deviation table applies above the guarantee as below it",
+   "Any overage fails the sample and triggers a stop-sale order for the lot",
+   "Individually, weighing residues, hazards to users and the environment, ingredient stability, and the method's accuracy"
+  ],
+  "answer": 3,
+  "explanation": "The allowable deviations apply only to shortfalls; they do not extend to overages. Each overage is judged individually against whether use as directed leaves no illegal residues, causes no unreasonable adverse effects to the applicator, user, non-target organisms, or the environment, and considering ingredient stability, the need for over-formulating, and the accuracy of the analytical methods.",
+  "page": "5",
+  "ref": ".0402"
+ },
+ {
+  "id": "r8-001",
+  "section": 8,
+  "sectionName": "Bulk Distribution of Pesticides",
+  "sectionLabel": "sec. .0800",
+  "manual": "rules",
+  "question": "What construction standards apply to bulk pesticide containment structures in North Carolina?",
+  "choices": [
+   "The federal standards for pesticide containment structures, adopted by reference with their amendments",
+   "State tank specifications setting minimum shell gauges for steel, aluminum, and fiberglass tanks",
+   "The building code of the county where the containment structure is put up",
+   "Standards the Pesticide Board writes case by case when a facility files its contingency plan"
+  ],
+  "answer": 0,
+  "explanation": "North Carolina incorporates the federal \"Standards for Pesticide Containment Structures\", 40 CFR Part 165 Subpart E, by reference, including subsequent amendments and editions. The State's own bulk distribution rules, with their tank gauges and delivery notifications, were repealed in 2009, so the federal containment standards are what governs.",
+  "page": "21",
+  "ref": ".0810"
+ },
+ {
+  "id": "d1-001",
+  "section": 1,
+  "sectionName": "North Carolina Pesticide Law of 1971 Capsule",
+  "manual": "dealer",
+  "question": "A licensed pesticide dealer also farms and wants restricted use pesticides for that farm. Does the dealer license cover the purchase?",
+  "choices": [
+   "Yes, a dealer license carries every purchase privilege a private applicator certification does",
+   "No, the dealer must also be certified as a private applicator to buy and use them on the farm",
+   "Yes, but only for products the dealer stocks at the licensed outlet itself",
+   "No, a licensee may never buy restricted use pesticides from their own store"
+  ],
+  "answer": 1,
+  "explanation": "A dealer license authorizes selling restricted use pesticides, not applying them, and licensed dealers are not automatically certified to use restricted use pesticides on their own farms. A dealer who also produces an agricultural commodity must obtain private applicator certification to buy and apply restricted use pesticides for that production.",
+  "page": "7"
+ },
+ {
+  "id": "d2-001",
+  "section": 2,
+  "sectionName": "Recertification Requirements for Dealers",
+  "manual": "dealer",
+  "question": "A pesticide dealer also holds a commercial applicator license. How do the two recertification requirements interact?",
+  "choices": [
+   "Applicator recertification is the higher standard, so completing it covers the dealer requirement too",
+   "The dealer requirement is waived for as long as a commercial applicator license stays current",
+   "The credits are pooled, so five hours of any approved training renew both at once",
+   "They are separate: completing one does not fulfill the other, though a program can carry credit for both"
+  ],
+  "answer": 3,
+  "explanation": "Dealer recertification and commercial applicator recertification are separate requirements: completing the applicator's does not fulfill the dealer's, and completing the dealer's does not fulfill the applicator's. Some training programs are approved to carry credit toward both, but each requirement must be completed on its own.",
+  "page": "17"
+ },
+ {
+  "id": "d3-001",
+  "section": 3,
+  "sectionName": "Other Laws Regulating Pesticides",
+  "manual": "dealer",
+  "question": "Under FIFRA, what may happen for owners of a pesticide bought before its registration was suspended and later canceled?",
+  "choices": [
+   "They may keep using existing stock until it runs out, whatever the cancellation order says",
+   "They must return the remaining stock to the registrant at the original purchase price",
+   "They may sell the remaining stock to certified applicators for one more season",
+   "They may be paid an indemnity under certain conditions"
+  ],
+  "answer": 3,
+  "explanation": "Among its other provisions, FIFRA authorizes the payment of indemnities, under certain conditions, to persons who possessed a pesticide before a suspension notice was issued when the registration is finally canceled. It also authorizes standards for packaging and disposal and lets states register pesticides for special local needs.",
+  "page": "18"
+ },
+ {
+  "id": "d3-002",
+  "section": 3,
+  "sectionName": "Other Laws Regulating Pesticides",
+  "manual": "dealer",
+  "question": "A North Carolina exterminator is licensed under the Structural Pest Control Act. May that license stand in for a Pesticide Law license?",
+  "choices": [
+   "Yes, either license authorizes both structural work and pesticide sales",
+   "No, the two laws are separate, and a license under one does not authorize operating under the other",
+   "Yes, but only if the structural license carries the fumigation phase",
+   "No, structural operators are barred from ever holding a Pesticide Law license"
+  ],
+  "answer": 1,
+  "explanation": "The Structural Pest Control Act of 1955 and the Pesticide Law of 1971 are separate laws with separate licenses and certifications. A structural operator needs a pesticide dealer license to sell restricted use pesticides to end users, and a commercial applicator license to apply pesticides anywhere the Structural Act does not cover.",
+  "page": "18"
+ },
+ {
+  "id": "d3-003",
+  "section": 3,
+  "sectionName": "Other Laws Regulating Pesticides",
+  "manual": "dealer",
+  "question": "Structural pest control licensing in North Carolina is divided into which three phases?",
+  "choices": [
+   "Residential, commercial, and industrial structures",
+   "Inspection, treatment, and prevention",
+   "Household pests, fumigation, and wood-destroying organisms",
+   "Insects, rodents, and birds found in structures"
+  ],
+  "answer": 2,
+  "explanation": "Licensing and certification under the Structural Pest Control Act are divided into three phases: P phase for household pests, F phase for fumigation, and W phase for wood-destroying organisms. Anyone using restricted use pesticides in structures must be licensed or certified in the applicable phase.",
+  "page": "18"
+ },
+ {
+  "id": "d3-004",
+  "section": 3,
+  "sectionName": "Other Laws Regulating Pesticides",
+  "manual": "dealer",
+  "question": "A customer wants a pesticide to poison foxes raiding a chicken house. What do North Carolina's game and fish laws say?",
+  "choices": [
+   "Poisons may be used against any animal caught damaging livestock or poultry",
+   "Poisoning wildlife is allowed once the county wildlife officer has been notified",
+   "They prohibit poisoning most wild animals and birds; only animals declared pests may be controlled with pesticides",
+   "Foxes may be poisoned in winter, when no game seasons are open"
+  ],
+  "answer": 2,
+  "explanation": "The game and fish laws protect nongame species and regulate the harvest of game species, and they prohibit using poisons against most wild birds and animals, with fines for violations. Pesticides may be used only against animals that have been declared pests, a declaration the Wildlife Resources Commission must agree with before any pesticide may be used.",
+  "page": "19"
+ },
+ {
+  "id": "d3-005",
+  "section": 3,
+  "sectionName": "Other Laws Regulating Pesticides",
+  "manual": "dealer",
+  "question": "Pesticides pollute a stream and kill fish. Beyond any other penalty, what can the State recover?",
+  "choices": [
+   "Only the cost of restocking, and only when the kill was willful",
+   "The cost of the fish and wildlife killed, and the cost of investigating the kill",
+   "Treble damages measured by the commercial value of the fish",
+   "Nothing itself; recovery belongs to the downstream landowners"
+  ],
+  "answer": 1,
+  "explanation": "State and federal laws prohibit using or disposing of any pesticide or pesticide container in a way that would pollute water. State law lets the State recover by fine the costs of any fish or wildlife killed by water pollution, along with the costs of investigating the matter.",
+  "page": "19"
+ },
+ {
+  "id": "d3-006",
+  "section": 3,
+  "sectionName": "Other Laws Regulating Pesticides",
+  "manual": "dealer",
+  "question": "The Worker Protection Standard requires covered agricultural employers to do what for their workers and pesticide handlers?",
+  "choices": [
+   "Pay for annual medical checkups, respirator fit tests, and cholinesterase monitoring",
+   "Carry liability insurance, post a bond, and report every application to EPA",
+   "Supply meals, housing, and transportation during every restricted-entry interval",
+   "Provide information about pesticide exposure, protection against it, and ways to mitigate it"
+  ],
+  "answer": 3,
+  "explanation": "The WPS covers pesticides used in producing agricultural plants on farms and in forests, nurseries, and greenhouses. Employers must inform workers and handlers about exposure through safety training, a safety poster, and access to labeling and application information; protect them by keeping workers out of treated areas and areas under a restricted-entry interval; and mitigate exposure with decontamination supplies and emergency assistance.",
+  "page": "19"
+ },
+ {
+  "id": "d4-001",
+  "section": 4,
+  "sectionName": "Dealer's Suggestions",
+  "manual": "dealer",
+  "question": "What three kinds of customers does a restricted use pesticide dealer serve?",
+  "choices": [
+   "Farmers, homeowners, and government agencies, each with its own purchase register",
+   "Wholesalers, retailers, and end users, in that order of sales volume",
+   "Certified private applicators, licensed commercial applicators and public operators, and noncertified buyers of general use products",
+   "In-state applicators, out-of-state applicators, and exporters holding federal permits"
+  ],
+  "answer": 2,
+  "explanation": "A dealer in restricted use pesticides serves three types of customers: certified private applicators using restricted use pesticides on their own or rented land, licensed applicators applying pesticides for hire along with public operators who apply them for government units, and noncertified customers, who must buy and use general use pesticides only.",
+  "page": "19"
+ },
+ {
+  "id": "d4-002",
+  "section": 4,
+  "sectionName": "Dealer's Suggestions",
+  "manual": "dealer",
+  "question": "A noncommercial customer can choose between two products that both control the pest. What should the dealer encourage?",
+  "choices": [
+   "The safest product that will do the job, which is often one labeled CAUTION",
+   "The one with the higher percentage of active ingredient, to cut the number of applications",
+   "The DANGER-labeled product, since a stronger signal word promises stronger pest control",
+   "Whichever product the customer already has experience handling on the farm"
+  ],
+  "answer": 0,
+  "explanation": "Signal words rate the hazard to people, not how well a product controls pests: DANGER marks a highly toxic product, WARNING a moderately toxic one, and CAUTION a slightly toxic one, and some CAUTION products control a pest better than DANGER products do. Products with high percentages of hazardous ingredients are generally meant for commercial and certified private applicators, so noncommercial users should be steered toward the safest effective product.",
+  "page": "20"
+ },
+ {
+  "id": "d4-003",
+  "section": 4,
+  "sectionName": "Dealer's Suggestions",
+  "manual": "dealer",
+  "question": "How much pesticide should a dealer encourage a customer to buy?",
+  "choices": [
+   "A full season's supply, so every application draws on a single lot",
+   "Enough to qualify for the case discount, kept in the original containers",
+   "Twice the calculated need, as a margin for reapplication after rain",
+   "Only the amount needed, since most pesticides should be used within six months of opening"
+  ],
+  "answer": 3,
+  "explanation": "Customers should buy only the amount of pesticide they need, because most pesticides should be used within six months after the container is opened. Unlabeled pesticide containers are dangerous and illegal, so leftover product that outlives its container's label is a hazard as well as a waste.",
+  "page": "20"
+ },
+ {
+  "id": "d4-004",
+  "section": 4,
+  "sectionName": "Dealer's Suggestions",
+  "manual": "dealer",
+  "question": "Which practice belongs in a safely run pesticide sales area?",
+  "choices": [
+   "A drink machine beside the register, so customers stay while orders are filled",
+   "Storing pesticides apart from food, feed, drugs, clothing, and cosmetics",
+   "Displaying opened sample containers so customers can judge each formulation",
+   "Shelving fast-moving restricted use products beside the home and garden lines"
+  ],
+  "answer": 1,
+  "explanation": "A safe place of business stores pesticides away from human and animal food, drugs, clothing, and cosmetics, and keeps farm-oriented restricted use pesticides separated from home-oriented general use products. Employees should not eat, drink, or smoke while handling pesticides, food and drink machines stay out of pesticide sales and storage areas, and everyone washes their hands after handling pesticides.",
+  "page": "20"
+ },
+ {
+  "id": "d4-005",
+  "section": 4,
+  "sectionName": "Dealer's Suggestions",
+  "manual": "dealer",
+  "question": "How often should a dealer inspect the pesticide storage and sales area?",
+  "choices": [
+   "Weekly, with a written log kept for Board inspection",
+   "Monthly, when the inventory is reconciled",
+   "At least daily, cleaning up spills and correcting leaking containers immediately",
+   "Each time a shipment of restricted use pesticides arrives"
+  ],
+  "answer": 2,
+  "explanation": "The pesticide storage and sales area should be inspected regularly, at least daily. Spills are cleaned up immediately, containers are examined and any leak corrected at once, and gloves and other necessary protective clothing are worn whenever pesticides are handled or a spill is cleaned up.",
+  "page": "22"
+ },
+ {
+  "id": "d4-006",
+  "section": 4,
+  "sectionName": "Dealer's Suggestions",
+  "manual": "dealer",
+  "question": "An employee soaks their clothing with pesticide concentrate while stocking shelves. What should be done with the clothing?",
+  "choices": [
+   "Launder it separately from other laundry, in hot water with a heavy-duty detergent",
+   "It should be removed at once and destroyed, and the employee should shower immediately",
+   "Air it outdoors for several days before it is worn again",
+   "Rinse it on site and hang it in the storage room until it dries"
+  ],
+  "answer": 1,
+  "explanation": "Pesticide spilled on skin is washed off immediately with detergent and water; soaked or contaminated clothing is removed and the person showers at once, and clothing soaked with pesticide concentrate is destroyed. If any sign of poisoning appears, call a doctor immediately and take the pesticide label along, because it carries information the doctor needs for proper treatment.",
+  "page": "22"
+ },
+ {
+  "id": "d4-007",
+  "section": 4,
+  "sectionName": "Dealer's Suggestions",
+  "manual": "dealer",
+  "question": "Besides pesticides, what should a restricted use pesticide dealer consider stocking?",
+  "choices": [
+   "A rental fleet of sprayers, to discourage customers from buying equipment they rarely use",
+   "Veterinary antidotes for the products carried, for resale to livestock owners",
+   "Bulk repackaging supplies, so customers can buy partial containers of concentrate",
+   "Application equipment and the protective clothing labels call for, such as goggles, respirators, and unlined neoprene gloves"
+  ],
+  "answer": 3,
+  "explanation": "Dealers are encouraged to sell common application equipment such as nozzles and hoses, and to stock the protective clothing that labels may require: wide-brimmed waterproof hats, goggles or face shields, chemical cartridge or canister respirators, long-sleeved shirts, long-legged trousers or coveralls, and unlined neoprene boots and gloves. That helps customers apply what they buy safely and properly.",
+  "page": "22"
+ },
+ {
+  "id": "d4-008",
+  "section": 4,
+  "sectionName": "Dealer's Suggestions",
+  "manual": "dealer",
+  "question": "What should a dealer advise a noncertified homeowner who needs a pesticide?",
+  "choices": [
+   "Choose a product labeled CAUTION; DANGER and WARNING products and restricted use pesticides are not for uncertified users",
+   "Buy the WARNING-labeled product, the strongest an uncertified buyer may take home",
+   "Any general use product is fine, whatever its signal word, so long as the directions are followed",
+   "Hire a certified applicator, since homeowners may not apply pesticides themselves"
+  ],
+  "answer": 0,
+  "explanation": "Homeowners should not use the highly or moderately hazardous pesticides labeled DANGER or WARNING; when a pesticide is needed they should use one labeled CAUTION, and they cannot use restricted use pesticides at all unless they are certified. A dealer should never sell restricted use pesticides to a person who is not certified or licensed.",
+  "page": "22"
  }
 ];
