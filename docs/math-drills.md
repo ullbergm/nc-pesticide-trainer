@@ -4,9 +4,11 @@ The design for the one kind of exam question a fixed bank cannot teach: the
 ones with numbers in them.
 
 All of it is built: `js/problems.js`, `data/problems.js`,
-`tests/problems-test.js`, 28 templates covering every calculation the two
-manuals teach, the 29 static calculations they replace retired, the named-slip
-feedback, and the on-screen calculator the exam site allows. See
+`tests/problems-test.js`, 36 templates — 28 covering every calculation the two
+national manuals teach, plus 8 from the Aquatic category manual's dosage and
+calibration chapter — the 29 static calculations the first 28 replaced
+retired, the named-slip feedback, and the on-screen calculator the exam site
+allows. See
 [Phasing](#phasing) at the end for what happened in which order and what
 changed along the way.
 

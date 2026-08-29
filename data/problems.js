@@ -1147,4 +1147,333 @@ const PROBLEM_TEMPLATES = [
       pass and the granules land evenly.`,
     fallback: { ad: 60, bc: 30 },
   },
+  // The Aquatic category manual's chapter 8, "Applying the Right Amount of
+  // Herbicide" (pp. 30-49), which is the whole dosage-and-calibration
+  // sequence the Aquatic (A) exam asks: sizing the water, the acre-foot and
+  // its 2.7 constant, formulation conversion, percent solutions, and boat
+  // calibration from a timed run to gallons per acre. These join the cat-a
+  // exam the way the chapter's written questions do; the area family appears
+  // here a third time for the same reason it appears in the aerial manual —
+  // the Aquatic exam draws on none of the core manual's chapters, so an
+  // aquatic applicator would otherwise never be asked to size a pond. The
+  // manual is sold in print (see data/exam-config.js), so the page these cite
+  // renders as text rather than a link.
+  {
+    id: 'm8-001',
+    manual: 'cat-a',
+    section: 8,
+    sectionName: 'Applying the Right Amount',
+    page: '31',
+    name: 'Surface acres of a rectangular pond',
+    // Length x width / 43,560, the manual's first area example.
+    vary: { len: [400, 1200, 50], wid: [200, 800, 40] },
+    valid: v => v.wid <= v.len,
+    ask: (v, n) => `A rectangular pond measures ${n(v.len, 'feet')} by
+      ${n(v.wid, 'feet')}. How many surface acres will a treatment cover?`,
+    solve: v => v.len * v.wid / 43560,
+    unit: 'acres',
+    places: 1,
+    band: [1.9, 25],
+    spread: 150,
+    slips: [
+      { why: 'used 4,356 as the square feet in an acre',
+        value: v => v.len * v.wid / 4356 },
+      { why: 'halved the product as if the pond were a triangle',
+        value: v => v.len * v.wid / 87120 },
+      { why: 'converted the sides to yards but still divided by 43,560',
+        value: v => v.len / 3 * (v.wid / 3) / 43560 },
+      { why: 'moved the decimal one place to the left',
+        value: v => v.len * v.wid / 435600 },
+      { why: 'moved the decimal one place to the right',
+        value: v => v.len * v.wid / 4356 * 10 },
+      { why: 'divided by 4,840, the square yards in an acre, without converting the feet',
+        value: v => v.len * v.wid / 4840 },
+    ],
+    teach: (v, ans, n) => `Square feet first, then acres: ${n(v.len)} x
+      ${n(v.wid)} = ${n(v.len * v.wid)} square feet, and an acre is 43,560 of
+      them, so ${n(v.len * v.wid)} / 43,560 = ${n(ans, 'acres')}. A triangle
+      would take half the base times the height, and a circle 3.14 times the
+      radius squared, over the same 43,560.`,
+    fallback: { len: 800, wid: 440 },
+  },
+  {
+    id: 'm8-002',
+    manual: 'cat-a',
+    section: 8,
+    sectionName: 'Applying the Right Amount',
+    page: '35',
+    name: 'Active ingredient for a target concentration',
+    // ppm x acre-feet x 2.7, with the acre-feet built from surface acres and
+    // average depth. One acre-foot of water weighs 2,700,000 lb, so 2.7 lb
+    // in it is 1 ppm.
+    vary: { ppm: [0.25, 2, 0.25], acres: [1, 15, 1], depth: [3, 10, 0.5] },
+    ask: (v, n) => `A pond of ${n(v.acres, 'surface acres')} averages
+      ${n(v.depth, 'feet')} deep, and the label calls for a concentration of
+      ${n(v.ppm, 'ppm')} of active ingredient. How much active ingredient does
+      the treatment take?`,
+    solve: v => v.ppm * v.acres * v.depth * 2.7,
+    unit: 'pounds',
+    places: 1,
+    band: [1.5, 500],
+    slips: [
+      { why: 'left the 2.7 constant out',
+        value: v => v.ppm * v.acres * v.depth },
+      { why: 'divided by 2.7 instead of multiplying by it',
+        value: v => v.ppm * v.acres * v.depth / 2.7 },
+      { why: 'used the surface acres alone, never multiplying by the depth',
+        value: v => v.ppm * v.acres * 2.7 },
+      { why: "used 8.34, a gallon's weight in pounds, in place of 2.7",
+        value: v => v.ppm * v.acres * v.depth * 8.34 },
+      { why: 'used 27 for the constant',
+        value: v => v.ppm * v.acres * v.depth * 27 },
+      { why: 'multiplied by the depth twice',
+        value: v => v.ppm * v.acres * v.depth * v.depth * 2.7 },
+    ],
+    teach: (v, ans, n) => `Volume first: ${n(v.acres)} x ${n(v.depth)} =
+      ${n(v.acres * v.depth)} acre-feet. An acre-foot of water weighs
+      2,700,000 pounds, so 2.7 pounds of substance in one acre-foot is 1 ppm:
+      ${n(v.ppm)} x ${n(v.acres * v.depth)} x 2.7 = ${n(ans, 'pounds')} of
+      active ingredient. Average the depth from soundings taken across the
+      pond in at least two directions.`,
+    fallback: { ppm: 0.5, acres: 5, depth: 4.5 },
+  },
+  {
+    id: 'm8-003',
+    manual: 'cat-a',
+    section: 8,
+    sectionName: 'Applying the Right Amount',
+    page: '36',
+    name: 'Formulation from the active ingredient requirement',
+    // Pounds of a.i. / percent a.i. as a decimal, the dry-formulation
+    // conversion the copper sulfate example works.
+    vary: { ai: [5, 60, 1], pct: [20, 80, 5] },
+    ask: (v, n) => `The treatment calls for ${n(v.ai, 'pounds')} of active
+      ingredient, and the granular formulation on hand is ${n(v.pct)} percent
+      active ingredient. How much formulation should be applied?`,
+    solve: v => v.ai / (v.pct / 100),
+    unit: 'pounds',
+    places: 1,
+    band: [8, 300],
+    spread: 150,
+    slips: [
+      { why: 'multiplied by the percent instead of dividing by it',
+        value: v => v.ai * v.pct / 100 },
+      { why: 'left the percentage out and weighed up the active ingredient figure itself',
+        value: v => v.ai },
+      { why: 'divided by the percent without converting it to a decimal',
+        value: v => v.ai / v.pct },
+      { why: 'divided by the decimal twice',
+        value: v => v.ai / (v.pct / 100) / (v.pct / 100) },
+      { why: 'moved the decimal one place to the right',
+        value: v => v.ai / (v.pct / 100) * 10 },
+      { why: 'divided by the inert percentage instead of the active one',
+        value: v => v.ai / ((100 - v.pct) / 100) },
+    ],
+    teach: (v, ans, n) => `The formulation is only ${n(v.pct)} percent active
+      ingredient, so more formulation than a.i. is always needed: ${n(v.ai)} /
+      ${n(v.pct / 100)} = ${n(ans, 'pounds')} of formulation. For a liquid the
+      divisor is the pounds of a.i. per gallon instead; either way the answer
+      must come out larger than the a.i. figure, which is the quick check on
+      the arithmetic.`,
+    fallback: { ai: 10, pct: 25 },
+  },
+  {
+    id: 'm8-004',
+    manual: 'cat-a',
+    section: 8,
+    sectionName: 'Applying the Right Amount',
+    page: '38',
+    name: 'Percent solution in a small spray tank',
+    // Tank volume x percent / 100, converted to fluid ounces at 128 to the
+    // gallon — the manual's 4-gallon, 1.5 percent example.
+    vary: { tank: [3, 25, 1], pct: [0.5, 5, 0.25] },
+    ask: (v, n) => `A foliar job calls for a ${n(v.pct)} percent solution, and
+      the spray tank holds ${n(v.tank, 'gallons')}. How much herbicide goes
+      into the tank?`,
+    solve: v => v.tank * v.pct / 100 * 128,
+    unit: 'fluid ounces',
+    places: 1,
+    band: [1.5, 300],
+    spread: 150,
+    slips: [
+      { why: 'skipped the divide by 100, reading the percent as whole gallons',
+        value: v => v.tank * v.pct * 128 },
+      { why: 'left the 128 out, reading the gallons figure as ounces',
+        value: v => v.tank * v.pct / 100 },
+      { why: 'used 64 ounces to the gallon',
+        value: v => v.tank * v.pct / 100 * 64 },
+      { why: 'used 16 ounces to the gallon, which is the dry measure',
+        value: v => v.tank * v.pct / 100 * 16 },
+      { why: 'moved the decimal one place to the right',
+        value: v => v.tank * v.pct / 100 * 1280 },
+      { why: 'worked the ounces for twice the tank volume',
+        value: v => v.tank * v.pct / 100 * 256 },
+    ],
+    teach: (v, ans, n) => `Percent is parts per hundred by volume:
+      ${n(v.tank)} x ${n(v.pct)} / 100 = ${n(v.tank * v.pct / 100)} gallons of
+      herbicide, and at 128 fluid ounces to the gallon that is
+      ${n(v.tank * v.pct / 100)} x 128 = ${n(ans, 'fluid ounces')}. Percent
+      solutions are measured in the formulation, so the same percent of two
+      formulations can hold different amounts of active ingredient.`,
+    fallback: { tank: 4, pct: 1.5 },
+  },
+  {
+    id: 'm8-005',
+    manual: 'cat-a',
+    section: 8,
+    sectionName: 'Applying the Right Amount',
+    page: '43',
+    name: 'Boat speed from timed runs in both directions',
+    // Distance x 3600 / (5280 x average seconds): the marked course, run both
+    // ways so wind and current average out.
+    vary: { dist: [100, 400, 50], t1: [30, 120, 2], t2: [30, 120, 2] },
+    valid: v => Math.abs(v.t1 - v.t2) <= Math.min(v.t1, v.t2) * 0.3,
+    ask: (v, n) => `A spray boat runs a measured ${n(v.dist, 'feet')} in
+      ${n(v.t1, 'seconds')} one way and ${n(v.t2, 'seconds')} back. What speed
+      should the calibration use?`,
+    solve: v => v.dist * 3600 / (5280 * (v.t1 + v.t2) / 2),
+    unit: 'miles per hour',
+    places: 1,
+    band: [1, 8],
+    spread: 150,
+    slips: [
+      { why: 'left the 88 feet per minute out, so the figure is feet per minute',
+        value: v => v.dist * 60 / ((v.t1 + v.t2) / 2) },
+      { why: 'reported feet per second as miles per hour',
+        value: v => v.dist / ((v.t1 + v.t2) / 2) },
+      { why: 'multiplied by 1.47 instead of dividing the seconds by it',
+        value: v => v.dist * 1.47 / ((v.t1 + v.t2) / 2) },
+      { why: 'summed the two times instead of averaging them',
+        value: v => v.dist * 3600 / (5280 * (v.t1 + v.t2)) },
+      { why: 'timed against the first run alone instead of the average',
+        value: v => v.dist * 3600 / (5280 * v.t1) },
+      { why: 'moved the decimal one place to the left',
+        value: v => v.dist * 360 / (5280 * (v.t1 + v.t2) / 2) },
+    ],
+    teach: (v, ans, n) => `Average the two runs first — wind and current help
+      one way and hinder the other: (${n(v.t1)} + ${n(v.t2)}) / 2 =
+      ${n((v.t1 + v.t2) / 2)} seconds. Then ${n(v.dist)} x 3,600 / (5,280 x
+      ${n((v.t1 + v.t2) / 2)}) = ${n(ans)} miles per hour. Time the runs with
+      the tank half full and the actual crew and gear aboard; a normal
+      treating speed is 3 to 4 mph at idle.`,
+    fallback: { dist: 200, t1: 54, t2: 56 },
+  },
+  {
+    id: 'm8-006',
+    manual: 'cat-a',
+    section: 8,
+    sectionName: 'Applying the Right Amount',
+    page: '42',
+    name: 'Acres per minute from swath and speed',
+    // Swath x mph x 88 / 43,560, the coverage half of every boat calibration.
+    vary: { swath: [8, 40, 2], mph: [2, 5, 0.5] },
+    ask: (v, n) => `A boat treats a ${n(v.swath)}-foot swath at
+      ${n(v.mph)} miles per hour. How much area is it covering each minute?`,
+    solve: v => v.swath * v.mph * 88 / 43560,
+    unit: 'acres per minute',
+    places: 3,
+    band: [0.03, 0.45],
+    spread: 150,
+    slips: [
+      { why: 'left the 88 out, using the miles per hour as feet per minute',
+        value: v => v.swath * v.mph / 43560 },
+      { why: 'used 60 feet per minute to the mile per hour',
+        value: v => v.swath * v.mph * 60 / 43560 },
+      { why: 'used 5,280, as if the boat covered a mile a minute',
+        value: v => v.swath * v.mph * 5280 / 43560 },
+      { why: 'halved the coverage for alternate swaths that were not being run',
+        value: v => v.swath * v.mph * 44 / 43560 },
+      { why: 'doubled the swath as if alternate strips were being treated',
+        value: v => v.swath * v.mph * 176 / 43560 },
+      { why: 'moved the decimal one place to the right',
+        value: v => v.swath * v.mph * 880 / 43560 },
+    ],
+    teach: (v, ans, n) => `A mile per hour is 88 feet per minute, so the boat
+      sweeps ${n(v.swath)} x ${n(v.mph)} x 88 = ${n(v.swath * v.mph * 88)}
+      square feet a minute, and over 43,560 that is ${n(ans)} acres per
+      minute. The shortcut 2 x swath x mph / 1,000 gives the same figure
+      within a percent. Treating alternate swaths doubles the effective swath
+      and with it this rate.`,
+    fallback: { swath: 16, mph: 2.5 },
+  },
+  {
+    id: 'm8-007',
+    manual: 'cat-a',
+    section: 8,
+    sectionName: 'Applying the Right Amount',
+    page: '45',
+    name: 'Gallons per acre from output and coverage',
+    // GPM / acres per minute, the last step of the boat calibration.
+    vary: { gpm: [2, 8, 0.5], apm: [0.02, 0.12, 0.01] },
+    ask: (v, n) => `Calibration finds the handgun putting out ${n(v.gpm)}
+      gallons per minute while the boat covers ${n(v.apm)} acres per minute.
+      What application rate is that?`,
+    solve: v => v.gpm / v.apm,
+    unit: 'gallons per acre',
+    places: 0,
+    band: [20, 300],
+    spread: 150,
+    slips: [
+      { why: 'read the acres per minute a decimal place high',
+        value: v => v.gpm / (v.apm * 10) },
+      { why: 'read the acres per minute a decimal place low',
+        value: v => v.gpm * 10 / v.apm },
+      { why: 'divided by acres per hour instead of acres per minute',
+        value: v => v.gpm / (v.apm * 60) },
+      { why: 'converted the gallons to an hourly figure but not the acres',
+        value: v => v.gpm * 60 / v.apm },
+      { why: 'halved the rate as if alternate swaths were being run',
+        value: v => v.gpm / v.apm / 2 },
+      { why: 'doubled the rate for alternate swaths already in the coverage',
+        value: v => v.gpm * 2 / v.apm },
+    ],
+    teach: (v, ans, n) => `Each minute puts ${n(v.gpm)} gallons onto
+      ${n(v.apm)} acres, so the rate is ${n(v.gpm)} / ${n(v.apm)} =
+      ${n(ans)} gallons per acre. Calibration is a first approximation:
+      environmental conditions change while applying, so watch the tank
+      against the acres — a quarter of the area treated should have used a
+      quarter of the tank.`,
+    fallback: { gpm: 3.6, apm: 0.04 },
+  },
+  {
+    id: 'm8-008',
+    manual: 'cat-a',
+    section: 8,
+    sectionName: 'Applying the Right Amount',
+    page: '47',
+    name: 'Spreader output for a granular rate',
+    // Pounds per acre x acres per minute = the pounds per minute the spreader
+    // must deliver, the granular calibration example.
+    vary: { ppa: [20, 120, 10], swath: [20, 40, 5], mph: [2, 5, 0.5] },
+    ask: (v, n) => `Granules are to go out at ${n(v.ppa, 'pounds')} per acre
+      from a spreader throwing a ${n(v.swath)}-foot swath at ${n(v.mph)} miles
+      per hour. What output must the spreader be set to deliver?`,
+    solve: v => v.ppa * v.swath * v.mph * 88 / 43560,
+    unit: 'pounds per minute',
+    places: 1,
+    band: [1.5, 50],
+    spread: 150,
+    slips: [
+      { why: 'left the 88 out of the acres per minute',
+        value: v => v.ppa * v.swath * v.mph / 43560 },
+      { why: 'read the swath figure as yards',
+        value: v => v.ppa * v.swath * 3 * v.mph * 88 / 43560 },
+      { why: 'doubled the swath as if the throw to each side counted separately',
+        value: v => v.ppa * v.swath * v.mph * 176 / 43560 },
+      { why: 'halved the coverage for alternate swaths a spreader does not run',
+        value: v => v.ppa * v.swath * v.mph * 44 / 43560 },
+      { why: 'moved the decimal one place to the left',
+        value: v => v.ppa * v.swath * v.mph * 8.8 / 43560 },
+      { why: 'moved the decimal one place to the right',
+        value: v => v.ppa * v.swath * v.mph * 880 / 43560 },
+    ],
+    teach: (v, ans, n) => `Coverage first: ${n(v.swath)} x ${n(v.mph)} x 88 /
+      43,560 = ${n(v.swath * v.mph * 88 / 43560)} acres per minute. The
+      spreader must feed that coverage at the label rate: ${n(v.ppa)} x
+      ${n(v.swath * v.mph * 88 / 43560)} = ${n(ans)} pounds per minute. If the
+      lowest non-clogging setting delivers more than this, raise the boat
+      speed to lift the acres per minute instead — and recalibrate for each
+      granule size, since output differs with the particle.`,
+    fallback: { ppa: 40, swath: 40, mph: 2.5 },
+  },
 ];

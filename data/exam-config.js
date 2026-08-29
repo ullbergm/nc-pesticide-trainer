@@ -409,9 +409,11 @@ const EXAM_CONFIG = {
     questions name the printed page instead.</p>
     <p>${DRILL_COUNT} of the cards are calculation drills rather than written questions. A
     drill is one of the methods the manuals teach — the dosage formulas in the core
-    manual's appendix C, the area and calibration-test arithmetic in its chapter 11, and
+    manual's appendix C, the area and calibration-test arithmetic in its chapter 11,
     the aerial manual's whole sequence from a timed catch to the gallons that go in the
-    tank — with new numbers drawn every time it comes up. What gets easy is doing the
+    tank, and the aquatic manual's dosage and boat-calibration chapter, from pond acres
+    and the 2.7 acre-foot constant to gallons per acre from a timed run — with new
+    numbers drawn every time it comes up. What gets easy is doing the
     conversion rather than recalling the answer it had last time, and each wrong choice is
     a particular mistake — a conversion left out, a ratio inverted, a decimal misplaced —
     rather than a number near the right one. A nonprogrammable calculator is allowed at

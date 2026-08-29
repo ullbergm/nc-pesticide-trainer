@@ -15,7 +15,7 @@ Practice questions with spaced repetition for the North Carolina pesticide
 applicator certification exams: the 100-question commercial Core exam, the
 50-question Private Applicator exam, the Aerial Methods exam every aerial
 applicator adds on top, and the Pesticide Dealer exam, all passed at 70%. The
-bank has 1365 questions and 28 calculation drills, written
+bank has 1365 questions and 36 calculation drills, written
 with the recipe in
 [docs/question-authoring.md](docs/question-authoring.md) and covering seven
 sources end to end: all eleven chapters of the
@@ -59,11 +59,13 @@ right place; the category manuals are sold in print by the NC State Pesticide
 Safety Education Program with no public PDF, so their questions name the
 printed page instead.
 
-The 28 **calculation drills** are counted apart from the questions because they
+The 36 **calculation drills** are counted apart from the questions because they
 are not questions in the same sense. A drill is a method — the dosage formulas
 in the core manual's appendix C, the area and calibration-test arithmetic in
-its chapter 11, and the whole sequence the aerial manual's chapter 5 works
-through from a timed catch to the gallons that go in the tank — with new
+its chapter 11, the whole sequence the aerial manual's chapter 5 works
+through from a timed catch to the gallons that go in the tank, and the
+aquatic manual's chapter 8 from pond acres and the 2.7 acre-foot constant to
+a boat calibrated from a timed run — with new
 numbers drawn every time the card comes up. What gets easy is doing the
 conversion rather than recalling the answer it had last time, which is the one
 thing a fixed question cannot teach. Every wrong choice is a particular mistake
@@ -281,7 +283,7 @@ js/storage.js            localStorage persistence, export/import
 js/license.js            NC license lookup (public NCDA&CS search), caching the licenses you keep
 js/app.js                UI and session logic
 data/questions.js        question bank (1365 questions, tagged by section and source page)
-data/problems.js         28 calculation drills, as methods with the numbers left open
+data/problems.js         36 calculation drills, as methods with the numbers left open
 data/manual-pages.js     printed page numbers to PDF page numbers, for the citation links
 data/aerial-pages.js     the same map for the aerial manual
 data/law-pages.js        the same map for the NC Pesticide Law
