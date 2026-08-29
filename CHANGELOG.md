@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.4.0](https://github.com/ullbergm/nc-pesticide-trainer/compare/v2.3.0...v2.4.0) (2026-08-29)
+
+
+### Features
+
+* add calculation drills for the Aquatic exam ([c571790](https://github.com/ullbergm/nc-pesticide-trainer/commit/c571790ffad1c244019f3b80ee3cb2d68884133b))
+* add the Aquatic category exam, written from the Aquatic Weed Management Training Manual ([13d8b7b](https://github.com/ullbergm/nc-pesticide-trainer/commit/13d8b7b8f7325997344136abf3386cb6fd933423))
+* add the dealer training manual as a source and widen the dealer exam ([12a280c](https://github.com/ullbergm/nc-pesticide-trainer/commit/12a280c9d87aa22a25928c235bb192ba382245c4))
+* add the K(SA) category exam, written from Ectoparasites of Pets ([9bff20b](https://github.com/ullbergm/nc-pesticide-trainer/commit/9bff20b3fcd049b899f04034763ad4d8a2e6b07e))
+
 ## [2.3.0](https://github.com/ullbergm/nc-pesticide-trainer/compare/v2.2.0...v2.3.0) (2026-08-28)
 
 
