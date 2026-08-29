@@ -10,13 +10,17 @@
    "Pesticide Applicator Certification and Licensing", which is how the
    certification and licensing system is described to applicators themselves:
    exam formats, credit requirements, and reciprocity, none of which the
-   manuals cover and some of which the rules leave to practice. One North
-   Carolina category manual is covered so far: "Ectoparasites of Pets" (J. J.
-   Arends, NC Agricultural Extension Service, January 1994), the study manual
-   for the Agricultural Pest Animal - Small Animal category, K(SA), whose
-   questions carry `manual: "cat-ksa"`. The NC study manuals are sold in
-   print with no public PDF, so those questions cite the printed page without
-   a link; the remaining category manuals are planned as further `manual`
+   manuals cover and some of which the rules leave to practice. Two North
+   Carolina category manuals are covered so far: "Ectoparasites of Pets"
+   (J. J. Arends, NC Agricultural Extension Service, January 1994), the study
+   manual for the Agricultural Pest Animal - Small Animal category, K(SA),
+   whose questions carry `manual: "cat-ksa"`, and the "Aquatic Weed
+   Management Training Manual - For North Carolina Applicators" (K. A.
+   Langeland ed., UF/IFAS, July 1991, revised for NC by S. H. Kay and J. H.
+   Wilson), the study manual for the Aquatic Pest Control category (A), whose
+   questions carry `manual: "cat-a"`. The NC study manuals are sold in print
+   with no public PDF, so those questions cite the printed page without a
+   link; the remaining category manuals are planned as further `manual`
    values.
 
    Each source numbers its own sections from 1, so `section` is a section
@@ -29,9 +33,11 @@
    AG-714 numbers nothing at all, so its headings are numbered in the order
    they are printed in ("sec. 3"). Ids follow the same split: s<section>-NNN
    for the core manual, a<section> for the aerial one, l<section> for the law,
-   r<section> for the rules, n<section> for AG-714, and ksa<section> for the
-   K(SA) manual, which numbers nothing either, so its major headings are
-   numbered in the order they are printed in.
+   r<section> for the rules, n<section> for AG-714, ksa<section> for the
+   K(SA) manual, and aq<section> for the Aquatic manual; the two category
+   manuals number nothing, so their major headings are numbered in the order
+   they are printed in, and the Aquatic manual's back matter (conversion
+   factors and glossary) is section 12, labeled "app.".
 
    A manual question cites the page printed in its manual. A law or rule
    question is cited the way lawyers and inspectors cite it, by section number
@@ -19398,5 +19404,2878 @@ const QUESTION_BANK = [
   "answer": 2,
   "explanation": "Questions concerning pesticide disposal or labels go to the Pesticide Section, Food and Drug Protection Division, NCDA, in Raleigh. Questions about the product itself should go to its supplier before the product is used, and disposal of unused product and of the container should follow what is noted on the label.",
   "page": "11"
+ },
+ {
+  "id": "aq1-001",
+  "section": 1,
+  "sectionName": "Introduction and History",
+  "manual": "cat-a",
+  "question": "How many aquatic herbicides are currently classified as restricted use?",
+  "choices": [
+   "Two — xylene and acrolein",
+   "None",
+   "Eight, one for each labeled active ingredient",
+   "All of them, because they are applied to public waters"
+  ],
+  "answer": 1,
+  "explanation": "There are currently no aquatic herbicides classified as restricted use. Even so, most employers require aquatic applicators to be certified, and all aquatic plant managers are encouraged to become certified.",
+  "page": "1"
+ },
+ {
+  "id": "aq1-002",
+  "section": 1,
+  "sectionName": "Introduction and History",
+  "manual": "cat-a",
+  "question": "Federal regulations (40 CFR 171.4) require aquatic applicators to demonstrate competency beyond the core standards. Which area is on that list?",
+  "choices": [
+   "The taxonomy of every aquatic plant family in the region",
+   "The maintenance schedules of application equipment",
+   "The economics of aquatic plant management programs",
+   "Water use situations and the potential downstream effects of applied herbicides"
+  ],
+  "answer": 3,
+  "explanation": "Aquatic applicators must show practical knowledge of the secondary effects caused by improper application rates, incorrect formulations, and faulty application; of various water use situations and the potential of downstream effects; of effects on plants, fish, birds, beneficial insects, and other organisms; and of the principles of limited area application.",
+  "page": "1"
+ },
+ {
+  "id": "aq1-003",
+  "section": 1,
+  "sectionName": "Introduction and History",
+  "manual": "cat-a",
+  "question": "How was waterhyacinth introduced into Florida in 1884?",
+  "choices": [
+   "A visitor to the Cotton States Exposition in New Orleans brought plants home to a lawn fountain on the St. Johns River",
+   "It escaped from commercial aquarium plant growers near Miami",
+   "It arrived in ballast water discharged by sailing ships from South America",
+   "It was planted deliberately to feed cattle along Louisiana bayous"
+  ],
+  "answer": 0,
+  "explanation": "Waterhyacinth was introduced in 1884 when a visitor to the Cotton States Exposition in New Orleans took plants to a lawn fountain on the St. Johns River near Palatka, Florida. By 1896 it was distributed through most of the basin, and by 1898 steamboats could not reach their docks in some areas.",
+  "page": "3"
+ },
+ {
+  "id": "aq1-004",
+  "section": 1,
+  "sectionName": "Introduction and History",
+  "manual": "cat-a",
+  "question": "How did alligatorweed reach the United States?",
+  "choices": [
+   "In shipments of aquarium plants sold in Florida",
+   "As an ornamental planted around garden ponds",
+   "In ballast carried by sailing ships from South America",
+   "On dredging equipment moved between southern rivers"
+  ],
+  "answer": 2,
+  "explanation": "Alligatorweed came from South America in the late 1800s, apparently in ballast from sailing ships; the first record is from 1885. Its spread paralleled waterhyacinth's, and the two drove the earliest federal control programs.",
+  "page": "3"
+ },
+ {
+  "id": "aq1-005",
+  "section": 1,
+  "sectionName": "Introduction and History",
+  "manual": "cat-a",
+  "question": "What did the River and Harbor Act of 1899 authorize for waterhyacinth control?",
+  "choices": [
+   "Application of sodium arsenite in Florida's navigable rivers",
+   "Vessels and log booms to remove and contain the plant in navigable waters of Florida and Louisiana",
+   "A five-year project for the progressive eradication of noxious aquatic plants",
+   "Cost sharing between the Corps of Engineers and local governments"
+  ],
+  "answer": 1,
+  "explanation": "The River and Harbor Act of 1899 provided for vessels and log booms to remove and contain waterhyacinth in the navigable waters of Florida and Louisiana. In 1902 Congress authorized extermination by any mechanical, chemical, or other means, but in 1905 it prohibited any chemical injurious to cattle or man.",
+  "page": "3"
+ },
+ {
+  "id": "aq1-006",
+  "section": 1,
+  "sectionName": "Introduction and History",
+  "manual": "cat-a",
+  "question": "What does the manual identify as the first adjuvants used in aquatic weed control?",
+  "choices": [
+   "Emulsifiers blended into the earliest 2,4-D formulations",
+   "Whale oil soap added to copper sulfate sprays",
+   "Wetting agents developed for wettable powder fungicides",
+   "Repellent additives such as cow manure, tobacco, and camphor oil meant to keep cattle away from treated plants"
+  ],
+  "answer": 3,
+  "explanation": "After Congress prohibited chemicals injurious to cattle or man, materials with repellent qualities — cow manure, tobacco, camphor oil, citronella, and the like — were added to sprays so cattle would avoid treated vegetation. These were the first adjuvants; none was both effective and economical.",
+  "page": "3"
+ },
+ {
+  "id": "aq1-007",
+  "section": 1,
+  "sectionName": "Introduction and History",
+  "manual": "cat-a",
+  "question": "What event marks the beginning of the modern age of aquatic plant management?",
+  "choices": [
+   "The start of ground and aerial 2,4-D applications to waterhyacinth in 1947",
+   "The release of the alligatorweed flea beetle in 1964",
+   "The passage of Public Law 85-500 in 1958",
+   "The first mechanical waterhyacinth crusher built in 1900"
+  ],
+  "answer": 0,
+  "explanation": "From 1944 to 1946, the USDA, the Jacksonville District Corps of Engineers, and the Everglades Experiment Station evaluated 2,4-D against waterhyacinth and found it effective, economical, and not toxic to fish, cattle, or humans. Ground and aerial applications began in 1947 — the beginning of the modern age of aquatic plant management.",
+  "page": "4"
+ },
+ {
+  "id": "aq1-008",
+  "section": 1,
+  "sectionName": "Introduction and History",
+  "manual": "cat-a",
+  "question": "Why was Section 104 of Public Law 85-500 (1958) important to aquatic plant management?",
+  "choices": [
+   "It was the first federal funding for aquatic herbicide research stations",
+   "It banned chemicals injurious to cattle from navigable waters",
+   "It recognized reasons for control beyond navigation — flood control, drainage, agriculture, fish and wildlife conservation, and public health",
+   "It transferred aquatic weed control from the USDA to the EPA"
+  ],
+  "answer": 2,
+  "explanation": "Section 104 authorized a comprehensive five-year project for control and progressive eradication of waterhyacinth, alligatorweed, and other noxious aquatic plants, and was important because it recognized more reasons for control than navigation alone: flood control, drainage, agriculture, fish and wildlife conservation, and public health. Local interests paid 30 percent of costs and the Corps of Engineers 70 percent.",
+  "page": "4"
+ },
+ {
+  "id": "aq1-009",
+  "section": 1,
+  "sectionName": "Introduction and History",
+  "manual": "cat-a",
+  "question": "Which three insects were released between 1964 and 1971 for alligatorweed control?",
+  "choices": [
+   "Two weevils and a borer moth from the Amazon basin",
+   "The alligatorweed flea beetle, a stem borer, and a thrips",
+   "A leaf-mining fly, a tuber weevil, and an aquatic moth",
+   "A flea beetle, a leafhopper, and a gall midge"
+  ],
+  "answer": 1,
+  "explanation": "The search begun in South America in 1960 produced three host-specific insects released between 1964 and 1971: the alligatorweed flea beetle (Agasicles hygrophila), a stem borer (Vogtia malloi), and a thrips (Amynothrips andersoni). They have been tremendously effective, causing significant suppression in most southeastern waters.",
+  "page": "4"
+ },
+ {
+  "id": "aq1-010",
+  "section": 1,
+  "sectionName": "Introduction and History",
+  "manual": "cat-a",
+  "question": "How is hydrilla believed to have entered Florida in the late 1950s?",
+  "choices": [
+   "Through the aquarium plant industry, into canals near Miami and Crystal River",
+   "In ballast water pumped out by freighters in Tampa Bay",
+   "On boat trailers arriving from infested Gulf Coast states",
+   "Mixed into shipments of imported rice seed"
+  ],
+  "answer": 0,
+  "explanation": "Hydrilla was likely introduced by the aquarium plant industry into canals near Miami and Crystal River. It was first thought to be an Elodea species and called \"Florida elodea\"; proper identification was not made until 1966, and by the early 1970s it was in all of Florida's drainage basins.",
+  "page": "4"
+ },
+ {
+  "id": "aq1-011",
+  "section": 1,
+  "sectionName": "Introduction and History",
+  "manual": "cat-a",
+  "question": "What did Florida's 1965 attempt to control hydrilla in a Crystal River canal with 50,000 pounds of sulfuric acid demonstrate?",
+  "choices": [
+   "That acidifying the water controls hydrilla but harms fish",
+   "That hydrilla tubers are killed only by soil-applied chemicals",
+   "That lowering pH improves the activity of other herbicides",
+   "The desperation of early efforts — the attempt was unsuccessful"
+  ],
+  "answer": 3,
+  "explanation": "The state's desperation to control hydrilla is illustrated by the 1965 pumping of 50,000 pounds of sulfuric acid into a canal in Crystal River, an unsuccessful attempt at control. By 1988 Florida estimated more than 20,000 hectares (50,000 acres) of hydrilla plus another 8,000 hectares under control.",
+  "page": "4"
+ },
+ {
+  "id": "aq1-012",
+  "section": 1,
+  "sectionName": "Introduction and History",
+  "manual": "cat-a",
+  "question": "Where was Eurasian watermilfoil first identified in the United States?",
+  "choices": [
+   "In canals near Miami, Florida, in the late 1950s",
+   "In the irrigation systems of the western states",
+   "In a Washington, D.C. pond, in 1942",
+   "In the St. Johns River basin of Florida, in 1884"
+  ],
+  "answer": 2,
+  "explanation": "Eurasian watermilfoil was first identified in the United States in 1942, from a pond in Washington, D.C. (Belch Spring Pond). Through the 1940s it was collected as far west as California, and a recent study verified 392 populations in 33 states.",
+  "page": "5"
+ },
+ {
+  "id": "aq2-001",
+  "section": 2,
+  "sectionName": "Management Decision Making",
+  "manual": "cat-a",
+  "question": "What is the primary reason for weedy plant growth in a body of water?",
+  "choices": [
+   "Warm southern temperatures and a long growing season",
+   "Large areas of clear, shallow water combined with adequate nutrients",
+   "Runoff of agricultural herbicides that eliminate competing algae",
+   "Lack of bottom-feeding fish that would uproot young plants"
+  ],
+  "answer": 1,
+  "explanation": "The primary reason for weedy growth is the combination of large areas of clear, shallow water and adequate nutrients, primarily nitrogen and phosphorus. Clear, shallow water lets sunlight reach the bottom, and because aquatic plants are largely water, comparatively low nutrient levels allow rapid growth.",
+  "page": "6"
+ },
+ {
+  "id": "aq2-002",
+  "section": 2,
+  "sectionName": "Management Decision Making",
+  "manual": "cat-a",
+  "question": "What is the major reason aquatic weed problems exist at all?",
+  "choices": [
+   "The introduction of exotic species that arrived without their natural enemies",
+   "Nutrient enrichment of lakes by agriculture and development",
+   "The draining and channelization of natural wetlands",
+   "Overuse of broad spectrum herbicides that removed native competition"
+  ],
+  "answer": 0,
+  "explanation": "The major reason weed problems exist is the introduction of exotic (non-native) plant species that arrived without the natural enemies that kept them in balance at home — waterhyacinth, alligatorweed, Eurasian watermilfoil, and hydrilla being the prime examples.",
+  "page": "6"
+ },
+ {
+  "id": "aq2-003",
+  "section": 2,
+  "sectionName": "Management Decision Making",
+  "manual": "cat-a",
+  "question": "Which factor must be considered FIRST when deciding how to manage an aquatic weed?",
+  "choices": [
+   "The intended use of the water body",
+   "The physical constraints of the site",
+   "The type of plant — its correct species identification",
+   "The potential impact on fish and wildlife"
+  ],
+  "answer": 2,
+  "explanation": "The type of plant must be the first factor considered, and correct identification of the target species is critical: management that works on one species can fail entirely on a close relative. Use of the water body, physical constraints, water quality, and impacts on fish and wildlife follow.",
+  "page": "6"
+ },
+ {
+  "id": "aq2-004",
+  "section": 2,
+  "sectionName": "Management Decision Making",
+  "manual": "cat-a",
+  "question": "Most filamentous algae are readily controlled with copper. Which two genera do NOT respond well to it?",
+  "choices": [
+   "Chara and Nitella",
+   "Lyngbya and Oscillatoria",
+   "Spirogyra and Ulothrix",
+   "Pithophora and Spirogyra"
+  ],
+  "answer": 3,
+  "explanation": "Most filamentous algae species are readily controlled with copper, but Pithophora and Spirogyra do not respond well to copper treatment and may require the use of diquat — an example of why species identification comes first.",
+  "page": "6"
+ },
+ {
+  "id": "aq2-005",
+  "section": 2,
+  "sectionName": "Management Decision Making",
+  "manual": "cat-a",
+  "question": "Brazilian elodea and hydrilla look alike and grow in the same habitats. How do they differ under a drawdown?",
+  "choices": [
+   "Drawdown controls hydrilla but Brazilian elodea regrows from seed",
+   "Drawdown is very effective on Brazilian elodea but not on hydrilla",
+   "Both are controlled equally well by a winter drawdown",
+   "Neither is affected, since both survive in the moist bottom soil"
+  ],
+  "answer": 1,
+  "explanation": "Although Brazilian elodea is closely related to hydrilla, looks similar, and grows in the same habitat, lake drawdown is a very effective control for Brazilian elodea but not for hydrilla — another reason correct identification of the target species is critical.",
+  "page": "6"
+ },
+ {
+  "id": "aq2-006",
+  "section": 2,
+  "sectionName": "Management Decision Making",
+  "manual": "cat-a",
+  "question": "How long can the water use restrictions that follow an aquatic herbicide application last?",
+  "choices": [
+   "From a few days to one year, depending on the herbicide and formulation",
+   "No more than 30 days for any labeled aquatic product",
+   "Exactly the product's half-life in pond water",
+   "Until a water test shows no detectable residue"
+  ],
+  "answer": 0,
+  "explanation": "All aquatic herbicides may have some restrictions on water use following application — different ones for irrigation, livestock watering, public water supplies, fishing, and swimming. The restrictions are based on persistence, toxicity to non-target vegetation and aquatic organisms, mammalian toxicity, and human health, and vary from a few days to one year with the herbicide and its formulation.",
+  "page": "6"
+ },
+ {
+  "id": "aq2-007",
+  "section": 2,
+  "sectionName": "Management Decision Making",
+  "manual": "cat-a",
+  "question": "Why can a release of flea beetles for alligatorweed control fail near agricultural areas?",
+  "choices": [
+   "The beetles prefer crop plants to alligatorweed",
+   "Farm runoff makes the alligatorweed unpalatable to the beetles",
+   "Nearby mosquito control or agricultural spray operations interrupt the insects' life cycle",
+   "Cultivated fields block the beetles' spread between infestations"
+  ],
+  "answer": 2,
+  "explanation": "Physical constraints can rule methods out: releases of biological control insects such as flea beetles on alligatorweed may not be effective where nearby mosquito control operations or agricultural spray operations interrupt the insects' life cycle.",
+  "page": "7"
+ },
+ {
+  "id": "aq2-008",
+  "section": 2,
+  "sectionName": "Management Decision Making",
+  "manual": "cat-a",
+  "question": "Which water quality conditions can reduce the efficacy of an aquatic herbicide?",
+  "choices": [
+   "Low pH, cold water, and low dissolved oxygen",
+   "High dissolved oxygen and strong daytime sunlight",
+   "Soft water with very low mineral content",
+   "High turbidity, high alkalinity, and high concentrations of metallic ions such as iron"
+  ],
+  "answer": 3,
+  "explanation": "High turbidity from suspended soil particles or dense phytoplankton, high alkalinity, and high concentrations of metallic ions such as iron may all reduce herbicide efficacy. Dense filamentous or planktonic algae populations can also absorb herbicides applied to control macrophytes.",
+  "page": "7"
+ },
+ {
+  "id": "aq3-001",
+  "section": 3,
+  "sectionName": "Regulations",
+  "manual": "cat-a",
+  "question": "When was FIFRA enacted, and which agency administers it?",
+  "choices": [
+   "Enacted in 1947 and administered by the EPA",
+   "Enacted in 1972 and administered by the USDA",
+   "Enacted in 1947 and administered by each state",
+   "Enacted in 1958 and administered by the Corps of Engineers"
+  ],
+  "answer": 0,
+  "explanation": "The Federal Insecticide, Fungicide, and Rodenticide Act was enacted in 1947, amended in 1959 and 1964, and amended again in 1972, 1974, 1978, and 1988. It regulates the registration, manufacture, transportation, use, and marketing of pesticides and is administered by the Environmental Protection Agency.",
+  "page": "8"
+ },
+ {
+  "id": "aq3-002",
+  "section": 3,
+  "sectionName": "Regulations",
+  "manual": "cat-a",
+  "question": "A herbicide is federally registered. When is it legal to use in a given state?",
+  "choices": [
+   "Immediately — federal registration preempts state action",
+   "After the manufacturer notifies the state of the federal registration",
+   "Not until the state has also registered it, possibly with more restrictive terms",
+   "After the state waives its own testing requirements"
+  ],
+  "answer": 2,
+  "explanation": "Pesticides must be registered at the federal level and by individual states: a product registered federally is not legal for use until it is also registered by the state, and state registrations may be more restrictive than the federal one, though not less.",
+  "page": "8"
+ },
+ {
+  "id": "aq3-003",
+  "section": 3,
+  "sectionName": "Regulations",
+  "manual": "cat-a",
+  "question": "How many applicators may work under one licensed applicator's direct supervision?",
+  "choices": [
+   "No more than 5",
+   "No more than 15",
+   "No more than 25",
+   "As many as the licensee accepts responsibility for"
+  ],
+  "answer": 1,
+  "explanation": "Restricted use pesticides must be applied by licensed certified applicators or persons under their direct supervision, and a licensed applicator may have no more than 15 applicators working under his direct supervision.",
+  "page": "8"
+ },
+ {
+  "id": "aq3-004",
+  "section": 3,
+  "sectionName": "Regulations",
+  "manual": "cat-a",
+  "question": "How full should an empty container be filled with water for each rinse of the triple rinse procedure?",
+  "choices": [
+   "Completely full, so all interior surfaces are covered",
+   "To half its volume, three times",
+   "Just enough to wet the sides when shaken",
+   "To at least 10 percent of its volume, preferably one-fourth to one-third"
+  ],
+  "answer": 3,
+  "explanation": "Each rinse fills the container to at least 10 percent of its volume — preferably one-fourth to one-third — after which it is shaken so water contacts all interior surfaces and drained into the mix tank. The procedure is repeated at least two more times; washing with a pressure nozzle is also allowed.",
+  "page": "8"
+ },
+ {
+  "id": "aq3-005",
+  "section": 3,
+  "sectionName": "Regulations",
+  "manual": "cat-a",
+  "question": "After a container has been triple rinsed, what should be done to the container itself?",
+  "choices": [
+   "It may be reused for the same product only",
+   "It should be punctured or crushed so it cannot be reused",
+   "It must be returned to the dealer for recycling",
+   "It should be stored until a hazardous waste pickup"
+  ],
+  "answer": 1,
+  "explanation": "Containers should be punctured or crushed so they cannot be reused, and empty bags rinsed or shaken clean and cut so they cannot be reused. Once triple rinsed, containers can be burned, taken to a permitted landfill, or buried on the application property in some states — but state and local regulations vary, so check them; failing to triple rinse before disposal violates the law.",
+  "page": "8"
+ },
+ {
+  "id": "aq3-006",
+  "section": 3,
+  "sectionName": "Regulations",
+  "manual": "cat-a",
+  "question": "Which two aquatic herbicides are regulated as hazardous materials under RCRA?",
+  "choices": [
+   "2,4-D and endothall",
+   "Copper and simazine",
+   "Diquat and glyphosate",
+   "Fluridone and dichlobenil"
+  ],
+  "answer": 0,
+  "explanation": "2,4-D and endothall are regulated as hazardous materials under the Resource Conservation and Recovery Act, so waste from their use must be disposed of as hazardous waste. Once triple rinsed, their containers are disposed of like any others; rinse water is applied as if it were the pesticide or goes to a hazardous waste facility.",
+  "page": "8"
+ },
+ {
+  "id": "aq3-007",
+  "section": 3,
+  "sectionName": "Regulations",
+  "manual": "cat-a",
+  "question": "What should be done with container rinse water when no mix tank is available to drain it into?",
+  "choices": [
+   "Pour it back into the original container for reuse",
+   "Dilute it heavily and discharge it away from open water",
+   "Apply it in the same manner as the pesticide itself",
+   "Let it evaporate from an open pan in the storage area"
+  ],
+  "answer": 2,
+  "explanation": "Rinse water is normally drained into the mix tank and applied with the spray; when there is no mix tank, the rinse water should be applied the same way the pesticide would be. It is never discarded as ordinary waste water.",
+  "page": "8"
+ },
+ {
+  "id": "aq3-008",
+  "section": 3,
+  "sectionName": "Regulations",
+  "manual": "cat-a",
+  "question": "Under the Federal Noxious Weed Act of 1974, what is required to move a designated noxious weed within the United States?",
+  "choices": [
+   "Nothing, once the plant is already established in the country",
+   "A phytosanitary certificate from the state of origin",
+   "Written notice to the state agriculture department at the destination",
+   "A USDA permit, separate from the permit required to import plants"
+  ],
+  "answer": 3,
+  "explanation": "The Federal Noxious Weed Act of 1974 lets the USDA designate certain foreign weeds as noxious and prevent their entry. A USDA permit is required to import plants or plant products, and another permit is required to move designated noxious weeds into and throughout the United States, whether by mail, freight, baggage, or on the person. New infestations may be quarantined and controlled or eradicated.",
+  "page": "9"
+ },
+ {
+  "id": "aq3-009",
+  "section": 3,
+  "sectionName": "Regulations",
+  "manual": "cat-a",
+  "question": "Beyond this manual, what does the North Carolina note direct licensed applicators to study?",
+  "choices": [
+   "The Federal Noxious Weed Act's full statutory text",
+   "The manual \"North Carolina Pesticide Laws and Regulations\"",
+   "The EPA's registration standards for aquatic herbicides",
+   "The Corps of Engineers aquatic plant control program manual"
+  ],
+  "answer": 1,
+  "explanation": "The North Carolina note states that NC licensed applicators also need to study the manual \"North Carolina Pesticide Laws and Regulations,\" which covers the state law and rules the license is examined on.",
+  "page": "9"
+ },
+ {
+  "id": "aq4-001",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Of the roughly 200 herbicide active ingredients registered in the United States, how many are labeled for aquatic sites in most states?",
+  "choices": [
+   "Two",
+   "Four",
+   "Eight",
+   "Twenty"
+  ],
+  "answer": 2,
+  "explanation": "Only 10 of about 200 registered active ingredients are labeled for aquatic sites, and two of those — xylene and acrolein — are highly toxic and used only in the irrigation systems of the seventeen western states under the jurisdiction of the U.S. Bureau of Reclamation. That leaves eight labeled for aquatic sites in most states.",
+  "page": "10"
+ },
+ {
+  "id": "aq4-002",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Which list gives the eight active ingredients labeled for aquatic sites in most states?",
+  "choices": [
+   "Copper, 2,4-D, dichlobenil, diquat, endothall, fluridone, glyphosate, and simazine",
+   "Copper, 2,4-D, dicamba, diquat, endothall, fluridone, glyphosate, and diuron",
+   "Xylene, acrolein, copper, 2,4-D, diquat, endothall, glyphosate, and simazine",
+   "Copper, 2,4-D, diquat, endothall, fluridone, hexazinone, imazapyr, and simazine"
+  ],
+  "answer": 0,
+  "explanation": "The eight are copper, 2,4-D, dichlobenil, diquat, endothall, fluridone, glyphosate, and simazine. Dicamba, diuron, hexazinone, imazapyr, and tebuthiuron are labeled for ditch banks but not for application directly to water, and xylene and acrolein are used only in western irrigation systems.",
+  "page": "10"
+ },
+ {
+  "id": "aq4-003",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Dicamba, diuron, hexazinone, imazapyr, and tebuthiuron appear in this manual for what use?",
+  "choices": [
+   "Emergency control of hydrilla under special local need labels",
+   "Tank mixing with the eight aquatic active ingredients",
+   "Aerial application over large open-water infestations",
+   "Ditch banks — they are not applied directly to water"
+  ],
+  "answer": 3,
+  "explanation": "Several herbicides are labeled for ditch banks and are not applied directly to water: dicamba, diuron, hexazinone, imazapyr, and tebuthiuron.",
+  "page": "10"
+ },
+ {
+  "id": "aq4-004",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Why are so few herbicides labeled for aquatic use?",
+  "choices": [
+   "The market is too small for manufacturers to seek labels",
+   "Few compounds both work in the aquatic environment and meet the rigid environmental and toxicological registration criteria",
+   "The EPA caps the number of aquatic labels it will issue",
+   "Most herbicides are too expensive at the rates water treatment requires"
+  ],
+  "answer": 1,
+  "explanation": "The aquatic environment limits the number of compounds that will work — a herbicide must be taken up quickly from the water in sufficient amounts — and the compound must still meet rigid environmental and toxicology criteria for registration, including low toxicity to humans and other organisms.",
+  "page": "10"
+ },
+ {
+  "id": "aq4-005",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Which aquatic herbicides are contact herbicides?",
+  "choices": [
+   "2,4-D, glyphosate, and fluridone",
+   "Copper, diquat, and endothall",
+   "Dichlobenil, simazine, and copper",
+   "Diquat, glyphosate, and simazine"
+  ],
+  "answer": 1,
+  "explanation": "Copper, diquat, and endothall are the contact herbicides among the aquatic eight; 2,4-D, dichlobenil, fluridone, glyphosate, and simazine are systemic. Contact herbicides act quickly and are generally lethal to all plant cells they contact.",
+  "page": "10"
+ },
+ {
+  "id": "aq4-006",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Why do perennial weeds treated with a contact herbicide often need 2 to 3 retreatments a year?",
+  "choices": [
+   "The herbicide breaks down before the roots absorb it",
+   "Perennials become resistant after a single exposure",
+   "The plants resprout from unaffected parts, especially those protected beneath the hydrosoil",
+   "Contact products are diluted too quickly in open water to kill mature tissue"
+  ],
+  "answer": 2,
+  "explanation": "Contact herbicides do not move extensively in the plant and are only effective where they contact it, so they act mainly as defoliants on perennials: the plant resprouts from unaffected parts, particularly those protected beneath the hydrosoil, and retreatment is necessary, sometimes 2 to 3 times per year. They are generally more effective on annuals.",
+  "page": "11"
+ },
+ {
+  "id": "aq4-007",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Which pairing of systemic herbicide and its route of absorption is correct?",
+  "choices": [
+   "Dichlobenil absorbed by roots only; glyphosate absorbed by foliage only",
+   "Dichlobenil absorbed by foliage only; glyphosate absorbed by roots only",
+   "Both dichlobenil and glyphosate absorbed by roots and shoots alike",
+   "Glyphosate absorbed by roots and shoots; dichlobenil by foliage only"
+  ],
+  "answer": 0,
+  "explanation": "Systemic herbicides absorbed by roots are termed \"soil active\" — dichlobenil is absorbed by plant roots only — while those absorbed by leaves, such as glyphosate, are \"foliar active.\" Imazapyr is absorbed through both roots and shoots, but it is not labeled for aquatic use.",
+  "page": "11"
+ },
+ {
+  "id": "aq4-008",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "How do systemic herbicides compare with contact herbicides?",
+  "choices": [
+   "They act faster but are less selective",
+   "They act faster and are more effective on annuals",
+   "They are less selective but cheaper per acre",
+   "They act more slowly but are generally more effective on perennial and woody plants"
+  ],
+  "answer": 3,
+  "explanation": "Systemic herbicides act slowly in comparison to contact herbicides because they must move within the plant to their site of action. They are generally more effective than contact herbicides for controlling perennial and woody plants, and greater selectivity is generally achieved with them.",
+  "page": "11"
+ },
+ {
+  "id": "aq4-009",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "When are herbicides that inhibit cell division most effective?",
+  "choices": [
+   "After flowering, when food moves to the roots",
+   "Applied preemergence or during early growth",
+   "At full canopy, when leaf area is greatest",
+   "In winter, while the plants are dormant"
+  ],
+  "answer": 1,
+  "explanation": "Plants grow by increasing cell number through cell division, so herbicides that affect cell division — dichlobenil is the aquatic example — are most effective when applied preemergence or during early growth stages.",
+  "page": "11"
+ },
+ {
+  "id": "aq4-010",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Why is 2,4-D described as an organo-auxin herbicide?",
+  "choices": [
+   "It blocks the enzymes that produce the hormone auxin",
+   "It concentrates in the auxin-producing growing points",
+   "It acts like auxin, a natural plant hormone, causing abnormal tissue development such as twisting of stems and leaves",
+   "It is synthesized from plant auxin extracted industrially"
+  ],
+  "answer": 2,
+  "explanation": "Herbicides that cause abnormal tissue development — twisting of stems and leaves — are often called plant growth regulators. 2,4-D is referred to as an organo-auxin type herbicide because it acts like the natural plant hormone auxin.",
+  "page": "11"
+ },
+ {
+  "id": "aq4-011",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Why is copper best applied as an algicide on a sunny day?",
+  "choices": [
+   "Its activity is more rapid when photosynthesis is rapid",
+   "Sunlight breaks copper into its active ionic form",
+   "Algae float nearer the surface in bright light",
+   "Warm surface water keeps the copper from precipitating"
+  ],
+  "answer": 0,
+  "explanation": "Copper's algicide activity is more rapid when it is applied on a sunny day, when photosynthesis is rapid. Diquat likewise affects photosynthesis directly, and tissue death from diquat is very rapid in sunlight.",
+  "page": "12"
+ },
+ {
+  "id": "aq4-012",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "How does fluridone kill plants?",
+  "choices": [
+   "It stops cell division in the growing points",
+   "It disrupts respiration so the plant starves at night",
+   "It blocks nitrogen metabolism through a specific enzyme",
+   "It inhibits production of a pigment necessary for photosynthesis, so the plant dies slowly"
+  ],
+  "answer": 3,
+  "explanation": "Fluridone affects photosynthesis indirectly: it inhibits the production of a pigment necessary for photosynthesis, which results in slow plant death. Simazine also reduces the plant's ability to produce life-sustaining compounds and kills slowly.",
+  "page": "12"
+ },
+ {
+  "id": "aq4-013",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Which plant process does endothall act on?",
+  "choices": [
+   "Cell division",
+   "Respiration",
+   "Tissue development",
+   "Nitrogen metabolism"
+  ],
+  "answer": 1,
+  "explanation": "Endothall is classified as affecting respiration. Many herbicides have some effect on plant respiration, but those effects are probably secondary reactions; dichlobenil acts on cell division, 2,4-D on tissue development, and glyphosate on nitrogen metabolism and enzyme activity.",
+  "page": "12"
+ },
+ {
+  "id": "aq4-014",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Which aquatic herbicide is the manual's example of a broad spectrum (nonselective) product, and which is its example of a selective one?",
+  "choices": [
+   "Diquat is broad spectrum; endothall is selective",
+   "Copper is broad spectrum; simazine is selective",
+   "Glyphosate is broad spectrum; 2,4-D selectively controls broadleaf weeds with minimum impact on grasses",
+   "Fluridone is broad spectrum; dichlobenil is selective"
+  ],
+  "answer": 2,
+  "explanation": "Broad spectrum herbicides are used to control all or most vegetation, and glyphosate is the example of a broad spectrum aquatic herbicide; diquat, endothall, and fluridone are used as broad spectrum products but can be selective in certain circumstances. Selective herbicides control some plants and not others — 2,4-D controls broadleaf weeds with minimum impact on grasses.",
+  "page": "12"
+ },
+ {
+  "id": "aq4-015",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Diquat sprayed by handgun on waterhyacinth growing among bulrush also wets the bulrush. Why does the bulrush survive?",
+  "choices": [
+   "Diquat is a contact herbicide, so only the stems above water are affected and the plant regrows from its unaffected rhizomes and roots",
+   "Bulrush is naturally immune to diquat at any application rate",
+   "The waterhyacinth mat absorbs the spray before it reaches the bulrush",
+   "Diquat is inactivated by the waxy coating on bulrush stems before entering"
+  ],
+  "answer": 0,
+  "explanation": "This is selectivity through placement and mode of action: diquat is a contact herbicide, so only the parts of the bulrush stems above the water that are actually contacted are affected, while the underground rhizomes and roots are untouched and the bulrush soon regrows. The floating waterhyacinth, by contrast, is controlled.",
+  "page": "12"
+ },
+ {
+  "id": "aq4-016",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "At which growth stage are perennial plants MOST susceptible to a foliar-active herbicide such as glyphosate?",
+  "choices": [
+   "During dormancy, when reserves are lowest",
+   "During early growth, when everything moves upward",
+   "At mid-season, when the leaf canopy is fullest",
+   "Late in the season, at or after flowering, when materials are moving down to the roots"
+  ],
+  "answer": 3,
+  "explanation": "During early growth perennials transport materials upward, so soil-active herbicides like tebuthiuron and hexazinone are absorbed fastest then, while foliar-active glyphosate is least active. Later, during and after flowering, the plant translocates materials downward for root storage, and glyphosate moves down with them — the stage at which plants are most susceptible to it.",
+  "page": "13"
+ },
+ {
+  "id": "aq4-017",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Which application is hurt most by rain shortly after treatment?",
+  "choices": [
+   "A subsurface injection of endothall for submersed weeds",
+   "A foliar application of a slowly absorbed systemic such as glyphosate",
+   "A granular dichlobenil application to the lake bottom",
+   "A foliar application of quickly absorbed diquat"
+  ],
+  "answer": 1,
+  "explanation": "Rainfall soon after application can wash foliar-applied herbicides off the leaves before they are absorbed, which is a particular problem for slowly absorbed systemics like glyphosate; contact herbicides such as diquat are absorbed more quickly and are less affected. For soil-active ditch bank products, applying to moist soil after a rain is actually preferable, since the herbicide diffuses quickly into moist soil.",
+  "page": "13"
+ },
+ {
+  "id": "aq4-018",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Which of these is one of the manual's methods for keeping a herbicide in contact with submersed weeds in flowing water?",
+  "choices": [
+   "Treating only at slack tide or during low seasonal flow",
+   "Raising the application rate to offset the dilution",
+   "Using invert emulsions or polymers with trailing hoses to sink the herbicide and hold it on the target plants",
+   "Damming the treated reach for 24 hours after application"
+  ],
+  "answer": 2,
+  "explanation": "Successful control of submersed weeds requires a sufficient concentration for a long enough time, which is difficult in rapidly flowing water. The methods used are invert emulsions or polymers applied with trailing hoses to sink and adhere the herbicide, special formulations such as slow release pellets, rapidly absorbed herbicides, and sequential applications or injection equipment to increase contact time.",
+  "page": "14"
+ },
+ {
+  "id": "aq4-019",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "How does low pH affect 2,4-D amine, and what does that allow?",
+  "choices": [
+   "Activity increases at pH below 6, so lower rates can be used in low pH ponds",
+   "Activity decreases at pH below 6, so rates must be raised in acidic ponds",
+   "The amine precipitates below pH 6, so an ester must be used instead",
+   "Low pH converts the amine to a volatile form that drifts more readily"
+  ],
+  "answer": 0,
+  "explanation": "The amine formulation of 2,4-D has increased activity at pH values less than 6, so lower rates of 2,4-D can be used in ponds with low pH (less than 7). Many southeastern lakes run pH 6 to 8 — up to 9.5 during daylight in dense submersed vegetation — and changing a pond's pH is not cost effective.",
+  "page": "14"
+ },
+ {
+  "id": "aq4-020",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Why should the suction end of the filler hose be kept off the lake bottom when filling a spray tank?",
+  "choices": [
+   "Bottom water is colder and slows the chemical reaction of mixing",
+   "Mud can clog the pump's check valves and damage the seals",
+   "Algae drawn in can plug the nozzles during application",
+   "Suspended organic and clay particles drawn into the tank can bind and inactivate herbicides such as diquat and glyphosate"
+  ],
+  "answer": 3,
+  "explanation": "Organic matter and suspended clay particles can inactivate diquat by binding it, and diquat or glyphosate can be bound by particulates in the spray tank and rendered ineffective. Use the cleanest diluent water available, avoid stirring up the bottom with the boat in shallow water, and keep the suction end of the filler hose off the lake bottom.",
+  "page": "14"
+ },
+ {
+  "id": "aq4-021",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "In hard water, which copper formulations should be used for algae control, and why?",
+  "choices": [
+   "Inorganic copper sulfate, because hardness increases its solubility",
+   "Organic copper formulations, which stay in solution longer, are more readily absorbed, and are less toxic to fish",
+   "Copper of any form at doubled rates to overcome the carbonates",
+   "No copper at all — hard water makes every form ineffective"
+  ],
+  "answer": 1,
+  "explanation": "Copper is very sensitive to the carbonates measured as alkalinity: inorganic copper sulfate is much more effective, at lower rates, in soft water — where it is also more toxic to fish. In hard water, organic copper formulations should be used because they stay in solution longer, are more readily absorbed by plants, and are less toxic to fish.",
+  "page": "14"
+ },
+ {
+  "id": "aq4-022",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "For a herbicide inactivated by hard water, such as glyphosate, which make-up water should be avoided?",
+  "choices": [
+   "Rainwater collected from the equipment shed roof",
+   "Water drawn from the lake being treated",
+   "Well water",
+   "Softened or distilled water"
+  ],
+  "answer": 2,
+  "explanation": "For herbicides inactivated by hard water, use the softest water available — softened or distilled if possible, with lake water the next best choice — and avoid well water. Also use the cleanest water available, minimize the time herbicides stay mixed in the tank, and read the label for special precautions.",
+  "page": "14"
+ },
+ {
+  "id": "aq4-023",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Why does a water soluble liquid (WSL) formulation need no tank agitation?",
+  "choices": [
+   "It forms a true solution in water",
+   "Its emulsifiers keep the droplets dispersed",
+   "Its carrier clay stays suspended on its own",
+   "It is metered directly without ever entering the tank"
+  ],
+  "answer": 0,
+  "explanation": "Water soluble liquids — herbicides such as amines dissolved in a water-soluble solvent like alcohol — form true solutions in water and require no agitation. They are usually not compatible with oil-based carriers, though. Aqueous suspensions and flowables, by contrast, need agitation to stay suspended.",
+  "page": "15"
+ },
+ {
+  "id": "aq4-024",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "What are the disadvantages of wettable powder formulations?",
+  "choices": [
+   "High cost and incompatibility with water carriers",
+   "Low active ingredient content and drift hazard",
+   "Slow dissolution and the need for oil-based carriers",
+   "Abrasion of spray equipment by the suspended particles and the need for constant tank agitation"
+  ],
+  "answer": 3,
+  "explanation": "Wettable powders are fine dusts, generally containing more than 50 percent active ingredient, whose insoluble particles must be kept suspended by agitation. Their advantages are lower cost and ease of handling and measuring; their disadvantages are abrasion of spray equipment by the suspended particles and the constant tank agitation they require.",
+  "page": "15"
+ },
+ {
+  "id": "aq4-025",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "What are the advantages of granular and pelleted formulations?",
+  "choices": [
+   "High active ingredient content and excellent foliar coverage",
+   "Convenient for spot treatments, ready to use with no mixing, reduced drift hazards, and easy application",
+   "Lowest cost per acre of any formulation type",
+   "They dissolve completely, leaving no residue in the hopper"
+  ],
+  "answer": 1,
+  "explanation": "Granules and pellets carry the active ingredient — 1 to 15 percent — mixed into or sprayed onto clay particles. They are convenient for spot treatments, ready to use with no mixing, reduce drift hazards, and are easily applied; their disadvantages are sometimes higher cost and ineffectiveness as a foliar treatment.",
+  "page": "15"
+ },
+ {
+  "id": "aq4-026",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "May an applicator treat a weed species that is not named on the herbicide's label?",
+  "choices": [
+   "No — treating an unnamed weed is always a misuse of the product",
+   "Only after the manufacturer issues a supplemental label",
+   "Yes — weeds not specified on the label may be treated, and unmentioned application methods used, so long as the label does not prohibit them",
+   "Only under an emergency exemption from the state"
+  ],
+  "answer": 2,
+  "explanation": "The label is the law: it is unlawful to alter, detach, or destroy it, to use a pesticide inconsistent with the labeling, or to transfer a herbicide to an improperly labeled container. However, weeds not specified on the label may be treated, and application methods not mentioned may be used, as long as they are not prohibited on the label.",
+  "page": "16"
+ },
+ {
+  "id": "aq4-027",
+  "section": 4,
+  "sectionName": "Herbicide Technology",
+  "manual": "cat-a",
+  "question": "Why should even a routine applicator read the labels of familiar products often?",
+  "choices": [
+   "Labels are often changed by industry",
+   "Rereading is required to log recertification credit",
+   "Ink on stored containers fades and must be verified",
+   "State law requires a documented label review each season"
+  ],
+  "answer": 0,
+  "explanation": "Labels are often changed, so read them often even when application jobs are routine. All appropriate labeling — supplemental labels, special local need labels, and emergency use labels — must be at the application site, and the manufacturer's material safety data sheet should be on hand.",
+  "page": "16"
+ },
+ {
+  "id": "aq5-001",
+  "section": 5,
+  "sectionName": "Herbicide Safety",
+  "manual": "cat-a",
+  "question": "What causes most pesticide accidents and excess exposure?",
+  "choices": [
+   "Spray drift reaching the applicator during application",
+   "Careless handling or mixing of the concentrate and failure to use proper safety equipment",
+   "Contaminated drinking water at the application site",
+   "Faulty respirator cartridges left in service too long"
+  ],
+  "answer": 1,
+  "explanation": "Most pesticide accidents or excess exposure result from careless handling or mixing of the concentrate and from not using the proper safety equipment. The applicator is also required by law to have copies of the label and supplementary labeling in possession at the application site for each herbicide used.",
+  "page": "17"
+ },
+ {
+  "id": "aq5-002",
+  "section": 5,
+  "sectionName": "Herbicide Safety",
+  "manual": "cat-a",
+  "question": "What is the most common route of acute pesticide exposure?",
+  "choices": [
+   "Inhalation of spray mist during windy applications",
+   "Accidental ingestion while eating or smoking",
+   "Dermal exposure through splashes and spills",
+   "Absorption through the eyes from drift"
+  ],
+  "answer": 2,
+  "explanation": "Acute toxicity results from a single dose, and dermal exposure through splashes and spills is the most common route. Symptoms often occur rapidly, within 0 to 48 hours, leaving little doubt of the reason; get medical attention immediately.",
+  "page": "17"
+ },
+ {
+  "id": "aq5-003",
+  "section": 5,
+  "sectionName": "Herbicide Safety",
+  "manual": "cat-a",
+  "question": "What does the manual name as the most important contributor to chronic pesticide exposure?",
+  "choices": [
+   "Not properly cleaning yourself",
+   "Working in poorly ventilated storage buildings",
+   "Reusing rinsed containers for mixing",
+   "Applying on windy days without a respirator"
+  ],
+  "answer": 0,
+  "explanation": "Chronic exposure most often results from wearing contaminated clothing, leaky spray equipment, inadequate protective clothing and equipment, not properly cleaning spray equipment — and, most importantly, not cleaning yourself. Daily low-level exposure builds residues that increase the risk of illness and susceptibility to acute exposure.",
+  "page": "17"
+ },
+ {
+  "id": "aq5-004",
+  "section": 5,
+  "sectionName": "Herbicide Safety",
+  "manual": "cat-a",
+  "question": "Which currently used aquatic herbicides fall into the chronic toxicity category?",
+  "choices": [
+   "2,4-D and endothall",
+   "Copper compounds only",
+   "Every product carrying the Danger signal word",
+   "None of them"
+  ],
+  "answer": 3,
+  "explanation": "No currently used aquatic herbicides fall into the chronic category. Chronic exposure is still a real concern for the applicator because of repeated handling, which is why protective habits matter even with low-toxicity products.",
+  "page": "17"
+ },
+ {
+  "id": "aq5-005",
+  "section": 5,
+  "sectionName": "Herbicide Safety",
+  "manual": "cat-a",
+  "question": "What are the three major routes by which pesticides enter the body?",
+  "choices": [
+   "Splashes, spills, and drift",
+   "Oral, dermal, and inhalation",
+   "Acute, chronic, and residual",
+   "Skin, eyes, and open wounds"
+  ],
+  "answer": 1,
+  "explanation": "The three major routes of entry are oral (ingestion), dermal (skin absorption), and inhalation. Acute oral poisoning is most often caused by accidental swallowing, usually through carelessness such as eating, drinking, or smoking before cleaning up.",
+  "page": "17"
+ },
+ {
+  "id": "aq5-006",
+  "section": 5,
+  "sectionName": "Herbicide Safety",
+  "manual": "cat-a",
+  "question": "Where does inhalation exposure to pesticides most commonly occur?",
+  "choices": [
+   "On the spray boat, downwind of the handgun",
+   "While pouring dry formulations into the hopper",
+   "During prolonged exposure in poorly ventilated greenhouses and storage facilities",
+   "While cleaning nozzles with compressed air"
+  ],
+  "answer": 2,
+  "explanation": "Inhalation of spray mist, vapors, or dust most commonly results from prolonged exposure in poorly ventilated greenhouses and storage facilities; drift, improper respirator use, and very fine dusts and droplets also contribute.",
+  "page": "18"
+ },
+ {
+  "id": "aq5-007",
+  "section": 5,
+  "sectionName": "Herbicide Safety",
+  "manual": "cat-a",
+  "question": "How should sleeves and pant legs be worn with gloves and boots?",
+  "choices": [
+   "Sleeves outside the gloves and pant legs outside the boots",
+   "Sleeves tucked into the gloves and pant legs into the boots",
+   "Sleeves inside the gloves but pant legs outside the boots",
+   "However is most comfortable, as long as skin is covered"
+  ],
+  "answer": 0,
+  "explanation": "Sleeves are worn outside the gloves and pant legs outside the boots, so spills and spray run off rather than funneling in. Gloves should be unlined and waterproof — never absorbent cotton, leather, or fabric — and boots unlined rubber; canvas and leather shoes absorb pesticides and cannot be decontaminated.",
+  "page": "18"
+ },
+ {
+  "id": "aq5-008",
+  "section": 5,
+  "sectionName": "Herbicide Safety",
+  "manual": "cat-a",
+  "question": "When should goggles or a face shield be worn?",
+  "choices": [
+   "Only when the label's signal word is Danger",
+   "Only during aerial or high-pressure applications",
+   "Whenever the wind rises enough to cause drift",
+   "Anytime the concentrate is handled"
+  ],
+  "answer": 3,
+  "explanation": "Goggles or a face shield should be worn anytime the concentrate is being handled, because the eyes readily absorb pesticides. Eye protection is also needed when spray mist or dust may drift toward the face.",
+  "page": "18"
+ },
+ {
+  "id": "aq5-009",
+  "section": 5,
+  "sectionName": "Herbicide Safety",
+  "manual": "cat-a",
+  "question": "Which storage practice does the manual's safe-practice list call for?",
+  "choices": [
+   "Storing concentrates below ground level to contain spills",
+   "Storing pesticides in a well-ventilated, secure, posted facility with limited access",
+   "Repackaging opened containers into sealed drums",
+   "Keeping products refrigerated to slow their degradation"
+  ],
+  "answer": 1,
+  "explanation": "Pesticides should be stored in a well-ventilated, posted, and secure facility with access limited to those who know pesticide safety, and an inventory kept. The list also includes keeping pesticides in their original containers, cleaning spills immediately, disposing of containers properly, knowing the symptoms of poisoning and first aid, never eating, drinking, or smoking while handling pesticides, and washing hands before those activities and immediately after spray operations.",
+  "page": "19"
+ },
+ {
+  "id": "aq6-001",
+  "section": 6,
+  "sectionName": "Adjuvants",
+  "manual": "cat-a",
+  "question": "What does the term \"adjuvant\" cover in aquatic weed spraying?",
+  "choices": [
+   "The inert clay carrier in a granular formulation",
+   "A second herbicide added to broaden the spectrum of control",
+   "A material added to the spray solution that facilitates or modifies the action of the herbicide",
+   "The solvent that keeps an emulsifiable concentrate liquid"
+  ],
+  "answer": 2,
+  "explanation": "Adjuvants are materials added to the spray solution that facilitate or modify the action of the herbicide. The word is all-inclusive for spray tank additives, from wetting agents to foaming agents; the earliest adjuvant work dates to 1889, when soap was found to increase the toxicity of arsenical insecticides.",
+  "page": "20"
+ },
+ {
+  "id": "aq6-002",
+  "section": 6,
+  "sectionName": "Adjuvants",
+  "manual": "cat-a",
+  "question": "Every surfactant is an adjuvant. Why are the two terms NOT interchangeable?",
+  "choices": [
+   "\"Adjuvant\" covers all spray tank additives, while a surfactant specifically modifies the distribution of spray on plant foliage",
+   "Surfactants are regulated as pesticides while adjuvants are not",
+   "Adjuvants are added at the factory and surfactants at the tank",
+   "Surfactants work only in oil carriers, adjuvants only in water"
+  ],
+  "answer": 0,
+  "explanation": "Adjuvant is the all-inclusive term for spray tank additives. A surfactant — surface-active agent — facilitates and accentuates emulsifying, dispersing, spreading, wetting, or other surface-modifying properties of liquids; it modifies how the spray distributes on foliage. So a surfactant is an adjuvant, but not every adjuvant is a surfactant.",
+  "page": "20"
+ },
+ {
+  "id": "aq6-003",
+  "section": 6,
+  "sectionName": "Adjuvants",
+  "manual": "cat-a",
+  "question": "Why are household detergents undesirable as spray additives?",
+  "choices": [
+   "They lower the spray solution's pH out of the effective range",
+   "They foam so heavily that pumps lose their prime",
+   "They react with herbicides to form insoluble precipitates",
+   "They contain only 10 to 20 percent surfactant, plus additives that may interfere with the application"
+  ],
+  "answer": 3,
+  "explanation": "Before the 1950s household detergents and oils were common spray additives, but detergents contain only 10 to 20 percent surfactant along with additives that may interfere with the application. Soaps are undesirable too: they form scums with the calcium, magnesium, and iron in hard water.",
+  "page": "20"
+ },
+ {
+  "id": "aq6-004",
+  "section": 6,
+  "sectionName": "Adjuvants",
+  "manual": "cat-a",
+  "question": "What are the three categories of adjuvants?",
+  "choices": [
+   "Wetting agents, stickers, and spreaders",
+   "Activator, spray-modifier, and utility-modifier adjuvants",
+   "Surfactants, oils, and polymers",
+   "Emulsifiers, buffers, and antifoam agents"
+  ],
+  "answer": 1,
+  "explanation": "Adjuvants are classified as activator adjuvants, which increase the activity of the herbicide; spray-modifier adjuvants, which influence delivery and placement; and utility-modifier adjuvants, which improve the conditions in which the mixture is useful. Stickers, spreaders, and foams fall under spray modifiers, and emulsifiers, buffers, and antifoam agents under utility modifiers.",
+  "page": "20"
+ },
+ {
+  "id": "aq6-005",
+  "section": 6,
+  "sectionName": "Adjuvants",
+  "manual": "cat-a",
+  "question": "How do surfactants increase the leaf penetration of a spray solution?",
+  "choices": [
+   "By dissolving the leaf's waxy cuticle chemically",
+   "By carrying the herbicide through the stomata as a vapor",
+   "By reducing surface tension, which improves wetting of the leaf surface",
+   "By holding droplets on the leaf until they dry to crystals"
+  ],
+  "answer": 2,
+  "explanation": "Surfactants enhance the penetration of spray solution through leaf tissues, and the increase in leaf penetration is associated with the reduction of surface tension, which improves the wetting of the leaf surface.",
+  "page": "20"
+ },
+ {
+  "id": "aq6-006",
+  "section": 6,
+  "sectionName": "Adjuvants",
+  "manual": "cat-a",
+  "question": "What is the usual makeup of a marketed oil-surfactant concentrate, and its common range of use rates?",
+  "choices": [
+   "About 80 percent oil and 20 percent surfactant, applied at 1 quart to 2 gallons per acre",
+   "About 50 percent oil and 50 percent surfactant, applied at 1 to 2 pints per acre",
+   "About 20 percent oil and 80 percent surfactant, applied at 1 to 4 ounces per acre",
+   "Pure paraffinic oil with no surfactant, applied at 5 gallons per acre"
+  ],
+  "answer": 0,
+  "explanation": "Marketed oil-surfactant concentrates are about 80 percent oil and 20 percent surfactant, and while rates vary, 1 quart to 2 gallons per acre are most common. Oil-water emulsions — which look milky in water — increase the retention time of sprayed material and enhance uptake through leaf surfaces.",
+  "page": "21"
+ },
+ {
+  "id": "aq6-007",
+  "section": 6,
+  "sectionName": "Adjuvants",
+  "manual": "cat-a",
+  "question": "Why can a solution-type polymer NOT be used as a sinking agent?",
+  "choices": [
+   "It floats because its density is lower than water's",
+   "It dissociates on contact with the water surface",
+   "It clogs the trailing hoses used for deep placement",
+   "It binds the herbicide before the spray leaves the tank"
+  ],
+  "answer": 1,
+  "explanation": "Polymers are long-chain carbon molecules used primarily for drift control, at 0.1 to 1.0 percent of spray volume. Sinking-agent polymers have higher molecular weights, are formulated as emulsions, and need good agitation; drift-control polymers formulated as solutions mix easily but are not sinking agents, because they dissociate upon contact with the water surface.",
+  "page": "21"
+ },
+ {
+  "id": "aq6-008",
+  "section": 6,
+  "sectionName": "Adjuvants",
+  "manual": "cat-a",
+  "question": "What does an inverting oil blended with water form?",
+  "choices": [
+   "Oil droplets dispersed through water, looking milky in the tank",
+   "A foam of air bubbles stabilized by surfactant",
+   "A polymer gel that thickens the spray to a syrup",
+   "Droplets of water surrounded by oil, with the consistency of mayonnaise"
+  ],
+  "answer": 3,
+  "explanation": "Inverting oils blended with water form droplets of water surrounded by oil — an invert emulsion, resembling mayonnaise, which is itself an invert emulsion. The oil-to-water ratio is usually 1:10 to 1:30. Inverts reduce drift, increase contact time on the target foliage, and act as sinking agents, but they require proper equipment, the right blending sequence, and experience.",
+  "page": "21"
+ },
+ {
+  "id": "aq6-009",
+  "section": 6,
+  "sectionName": "Adjuvants",
+  "manual": "cat-a",
+  "question": "When a buffering agent is used, when is it added to the spray tank?",
+  "choices": [
+   "Last, after the herbicide is thoroughly mixed",
+   "Together with the herbicide, premixed in a bucket",
+   "Before the herbicide is added",
+   "Only after foaming appears in the tank"
+  ],
+  "answer": 2,
+  "explanation": "Buffering agents, which increase the dispersion and solubility of herbicides in alkaline or acid water, should be added to the spray tank before the herbicide is added. Antifoam agents — most commonly silicone based, at about 0.1 percent or less of spray volume — are the other utility modifier significant to aquatic work, and are especially useful when mixing in soft water, where foaming problems are usually greatest.",
+  "page": "22"
+ },
+ {
+  "id": "aq7-001",
+  "section": 7,
+  "sectionName": "Equipment and Application Methods",
+  "manual": "cat-a",
+  "question": "When is metering herbicide directly into the pump suction more efficient than using a spray tank?",
+  "choices": [
+   "When several herbicides must be mixed for one application",
+   "When treating large areas, since no time is lost refilling the tank",
+   "When the herbicide requires constant mechanical agitation",
+   "When treating shallow water where the boat cannot draw diluent"
+  ],
+  "answer": 1,
+  "explanation": "With direct metering, herbicide is fed into the suction side of the pump at a rate that applies the correct amount per acre while the diluent is drawn directly from the water body being treated. The spray tank method is well suited to relatively small areas or when several herbicides are mixed; direct metering is more efficient for large areas because no time is spent refilling a tank.",
+  "page": "23"
+ },
+ {
+  "id": "aq7-002",
+  "section": 7,
+  "sectionName": "Equipment and Application Methods",
+  "manual": "cat-a",
+  "question": "Which type of tank agitation handles polymers AND invert emulsions?",
+  "choices": [
+   "Mechanical agitation with a paddle wheel",
+   "Hydraulic agitation through a venturi device",
+   "Recirculation through the transfer pump",
+   "Air sparging from a compressor line"
+  ],
+  "answer": 0,
+  "explanation": "Mechanical paddle wheel agitators are probably the best type: they stir vigorously and allow use of polymers as well as invert emulsions, and a clutch is sometimes added so the operator agitates only when needed. Hydraulic agitation is adequate for keeping wettable powders in suspension but will not stir enough for invert emulsions or polymers.",
+  "page": "23"
+ },
+ {
+  "id": "aq7-003",
+  "section": 7,
+  "sectionName": "Equipment and Application Methods",
+  "manual": "cat-a",
+  "question": "Where does a hydraulic agitation line tap into the spray system?",
+  "choices": [
+   "Into the tank's drain fitting at its lowest point",
+   "Into the suction line just ahead of the pump",
+   "Into the high-pressure side of the pump",
+   "Into the boom, downstream of the regulator"
+  ],
+  "answer": 2,
+  "explanation": "The hydraulic agitation line taps into the high-pressure side of the pump, so the pump must deliver enough flow to supply the boom or handgun and the agitator at the same time. If maximum pressure with the regulator closed is below what is needed, the agitator orifice size must be reduced.",
+  "page": "24"
+ },
+ {
+  "id": "aq7-004",
+  "section": 7,
+  "sectionName": "Equipment and Application Methods",
+  "manual": "cat-a",
+  "question": "What happens to a weak suction hose, and what does the manual recommend?",
+  "choices": [
+   "It bursts at the fitting; double-clamp every joint",
+   "It swells and leaks; replace it every season",
+   "It kinks at the tank; support it with a spring guard",
+   "It collapses under partial vacuum, starving the pump; use reinforced hose at least as large as the pump inlet"
+  ],
+  "answer": 3,
+  "explanation": "Suction hoses operate under partial vacuum, so they will not burst, but they can collapse: a collapsed hose restricts flow and starves the pump, causing decreased output and accelerated wear. Choose reinforced suction hose, and as a rule of thumb make the suction hose diameter at least as large as the pump's inlet port.",
+  "page": "24"
+ },
+ {
+  "id": "aq7-005",
+  "section": 7,
+  "sectionName": "Equipment and Application Methods",
+  "manual": "cat-a",
+  "question": "Where is pressure greatest in a spray system?",
+  "choices": [
+   "At the nozzle tips",
+   "At the pump",
+   "At the pressure regulator",
+   "At the boom manifold"
+  ],
+  "answer": 1,
+  "explanation": "The greatest pressure occurs at the pump; pressure is lost along the hose depending on its inside diameter, its length, and the flow rate. For example, a 1/2-inch inside diameter hose loses about 1 psi per foot of hose at 10 gallons per minute.",
+  "page": "24"
+ },
+ {
+  "id": "aq7-006",
+  "section": 7,
+  "sectionName": "Equipment and Application Methods",
+  "manual": "cat-a",
+  "question": "Why are piston pumps often chosen for aquatic weed control?",
+  "choices": [
+   "They sustain the high pressures needed for handgun spraying and are dependable and long lived",
+   "They deliver the highest flow volume of any pump type",
+   "They are the least expensive pumps commonly available",
+   "They meter herbicide precisely without an in-line orifice"
+  ],
+  "answer": 0,
+  "explanation": "Piston pumps can sustain high pressures for handgun spraying and are dependable, long lived, and adaptable; their disadvantages are expense and relatively low volume, which is usually still sufficient. Being positive displacement pumps, their output is proportional to speed and virtually independent of pressure; output comes in spurts, so a surge tank is desirable, and a glycerine-filled pressure gauge lasts longer and is easier to read.",
+  "page": "25"
+ },
+ {
+  "id": "aq7-007",
+  "section": 7,
+  "sectionName": "Equipment and Application Methods",
+  "manual": "cat-a",
+  "question": "What does the unloader valve in a piston pump system do when the handgun is shut off?",
+  "choices": [
+   "Shuts the engine down before pressure can build",
+   "Vents the excess pressure to the atmosphere as mist",
+   "Cracks open under the rising pressure and bypasses fluid back to the tank",
+   "Closes the suction line so the pump runs dry harmlessly"
+  ],
+  "answer": 2,
+  "explanation": "When the handgun is shut off, pressure rises until it overcomes the spring force in the unloader valve, which cracks open and bypasses fluid to the tank. Without it, a positive displacement pump would keep forcing fluid into the closed system until a hose burst; the same plumbing is appropriate for all positive displacement pumps — piston, diaphragm, and gear.",
+  "page": "25"
+ },
+ {
+  "id": "aq7-008",
+  "section": 7,
+  "sectionName": "Equipment and Application Methods",
+  "manual": "cat-a",
+  "question": "What is the centrifugal pump suited for in aquatic weed work?",
+  "choices": [
+   "Feeding the handgun during bank applications",
+   "Transferring fluids between tanks and refilling the spray tank from the water body",
+   "Metering herbicide into the suction line",
+   "Driving hydraulic agitation at high pressure"
+  ],
+  "answer": 1,
+  "explanation": "Centrifugal pumps produce high flow at low pressure, which makes them especially useful for transferring fluids from tank to tank or refilling the spray tank from the water body — a small centrifugal pump driven by a two-stroke engine serves well there. They cannot generate high pressure, so they are not suitable for most aquatic weed spraying systems.",
+  "page": "25"
+ },
+ {
+  "id": "aq7-009",
+  "section": 7,
+  "sectionName": "Equipment and Application Methods",
+  "manual": "cat-a",
+  "question": "Why are diaphragm pumps replacing piston pumps in many uses?",
+  "choices": [
+   "They produce far higher pressure than pistons can",
+   "They tolerate abrasive wettable powders that destroy pistons",
+   "They can run dry indefinitely without damage",
+   "They cost less, need less maintenance, and are smaller for similar flow and pressure"
+  ],
+  "answer": 3,
+  "explanation": "Diaphragm pumps offer relatively low cost, low maintenance, and small size for similar flow and pressure, and like piston pumps they are positive displacement: output depends on pump speed and stays constant regardless of pressure. Gear pumps, whose pumping gears are contacted by corrosive chemicals, are becoming less popular for the same reason.",
+  "page": "25"
+ },
+ {
+  "id": "aq7-010",
+  "section": 7,
+  "sectionName": "Equipment and Application Methods",
+  "manual": "cat-a",
+  "question": "What kind of nozzle output suits handgun spraying of surface, emersed, and ditch bank weeds?",
+  "choices": [
+   "A high flow rate of 3 to 6 gallons per minute in a straight stream with large droplets",
+   "A fine hollow-cone mist at less than 1 gallon per minute",
+   "A wide flat fan with the smallest droplets available",
+   "A pulsed stream that alternates coarse and fine droplets"
+  ],
+  "answer": 0,
+  "explanation": "Handgun nozzles for surface, emersed, and ditch bank applications have a high flow rate — 3 to 6 gallons per minute — and produce a straight stream with a large droplet size, giving thorough wetting of the target with minimum drift. Nozzle selection is always a balance of spray pattern, droplet size, and metered flow rate.",
+  "page": "26"
+ },
+ {
+  "id": "aq7-011",
+  "section": 7,
+  "sectionName": "Equipment and Application Methods",
+  "manual": "cat-a",
+  "question": "How is herbicide placed deep in a weed mat or near the bottom?",
+  "choices": [
+   "By pellets broadcast from a blower spreader",
+   "By high-pressure jets angled down from the boom",
+   "Through weighted trailing hoses, often ending in a capped galvanized pipe with small holes drilled in it",
+   "By divers placing porous bags of granules"
+  ],
+  "answer": 2,
+  "explanation": "For bottom placement or deep-water injection, nozzles are attached to long trailing hoses from a bow-mounted boom and usually weighted so placement stays deep in the weed mat or near the bottom. A common nozzle is a piece of galvanized pipe, capped on one end, with small holes drilled in it — 9 to 30 inches long depending on the weight needed — and free of clamps or protrusions that would catch plants.",
+  "page": "26"
+ },
+ {
+  "id": "aq7-012",
+  "section": 7,
+  "sectionName": "Equipment and Application Methods",
+  "manual": "cat-a",
+  "question": "What is a microfoil boom?",
+  "choices": [
+   "A trailing boom that injects herbicide below the thermocline",
+   "A specialized aerial boom that produces large droplets at low pressure and low volume",
+   "A boat boom whose nozzles ride on foil-shaped floats",
+   "A hand boom with foil-lined nozzles that resist corrosion"
+  ],
+  "answer": 1,
+  "explanation": "For aerial application, hollow cone or flat fan nozzles improve coverage at a smaller spray volume per acre, and the microfoil boom is a specialized aerial boom that produces large droplets at low pressure and low volume — large droplets being the aerial applicator's defense against drift.",
+  "page": "27"
+ },
+ {
+  "id": "aq7-013",
+  "section": 7,
+  "sectionName": "Equipment and Application Methods",
+  "manual": "cat-a",
+  "question": "Spraying a 1 to 2 percent polymer mixture, output drops sharply even though the pump is positive displacement. Why?",
+  "choices": [
+   "The polymer clogs the nozzle orifices as it dries",
+   "The regulator bypasses more fluid as viscosity rises",
+   "Slippage inside the pump increases with thick fluids",
+   "The pump is starved on the suction side — thick mixture cannot reach it fast enough"
+  ],
+  "answer": 3,
+  "explanation": "A positive displacement pump forces out whatever enters it, so the flow reduction is not at the nozzles: the pump is starved on the suction side, because the thickened mixture cannot flow to it fast enough. Systems intended for water-polymer mixtures need extra-large suction lines with a minimum of fittings between the tank and the pump inlet.",
+  "page": "28"
+ },
+ {
+  "id": "aq7-014",
+  "section": 7,
+  "sectionName": "Equipment and Application Methods",
+  "manual": "cat-a",
+  "question": "What is the main advantage of a blower-type spreader over a centrifugal spreader for granules?",
+  "choices": [
+   "It creates little dust, since no rotor strikes the pellets",
+   "It spreads a swath twice as wide as a centrifugal's",
+   "It meters the granules more precisely per acre",
+   "It handles the 20 to 400 pounds per acre without refilling"
+  ],
+  "answer": 0,
+  "explanation": "The blower type spreader — a low pressure, high speed two-cycle blower with a venturi discharge nozzle — creates little dust, whereas a centrifugal spreader's spinning rotor striking the pellets can. The centrifugal spreader's attractions are a wide swath, 30 to 40 feet with large granules, and no structure extending beyond the boat's sides; its disadvantage is the large quantity of material handled, 20 to 400 pounds per acre.",
+  "page": "29"
+ },
+ {
+  "id": "aq8-001",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "Why must the labeled rate be applied accurately?",
+  "choices": [
+   "Only to keep treatment costs from running over budget",
+   "Mainly to keep the spray log defensible in an audit",
+   "To achieve control, avoid killing nontarget organisms, avoid wasting money, and stay within legal requirements",
+   "Because underdosing breeds herbicide-resistant weeds"
+  ],
+  "answer": 2,
+  "explanation": "Accurate application of the recommended rate is needed to achieve adequate control of the target plant, to avoid mortality of nontarget organisms, to avoid wasted money from over application, and to ensure the application is within legal requirements.",
+  "page": "30"
+ },
+ {
+  "id": "aq8-002",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "In which three ways are aquatic herbicide rates given?",
+  "choices": [
+   "Per gallon of diluent, per tank, and per hour of spraying",
+   "Pounds or gallons per acre, a final water concentration in ppm, or a percent solution applied to foliage",
+   "Ounces per 100 feet of shoreline, ppm, and pounds per acre-foot",
+   "By signal word, by formulation, and by species treated"
+  ],
+  "answer": 1,
+  "explanation": "Rates are given as an amount of formulation per acre (surface acre or bottom acre), as a final concentration of active ingredient in the water, usually in parts per million (ppm), or as a percent or other proportion solution applied to the foliage of plants.",
+  "page": "30"
+ },
+ {
+  "id": "aq8-003",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "When timing a boat over a measured course to determine its speed, why run the course in two different directions?",
+  "choices": [
+   "To give the engine time to reach operating temperature",
+   "To confirm the course markers have not drifted",
+   "To double the sample size for the stopwatch reading",
+   "To average out the effect of wind and water current"
+  ],
+  "answer": 3,
+  "explanation": "Boat speed at a specific engine rpm is determined by timing the boat over a marked distance, and the speed should be measured in two different directions and averaged, because wind and current help in one direction and hinder in the other.",
+  "page": "30"
+ },
+ {
+  "id": "aq8-004",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "How many square feet are in one acre?",
+  "choices": [
+   "43,560",
+   "27,878",
+   "46,656",
+   "36,000"
+  ],
+  "answer": 0,
+  "explanation": "One acre is 43,560 square feet, so the surface acres of a rectangular pond are its length times its width in feet divided by 43,560. For a triangle it is one-half the base times the height divided by 43,560, and for a circle 3.14 times the radius squared divided by 43,560.",
+  "page": "31"
+ },
+ {
+  "id": "aq8-005",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "How is the area of an irregularly shaped lake estimated?",
+  "choices": [
+   "By averaging the longest and shortest crossing distances",
+   "By inscribing the outline in a rectangle and multiplying the rectangle's area by the proportion the lake occupies",
+   "By pacing the shoreline and squaring one-fourth of its length",
+   "By treating the lake as a circle of the same shoreline length"
+  ],
+  "answer": 1,
+  "explanation": "Inscribe a sketch of the lake in a rectangle, compute the rectangle's area, estimate the proportion of the rectangle the lake occupies — graph paper helps: count the blocks falling in the lake against the total — and multiply the two together.",
+  "page": "32"
+ },
+ {
+  "id": "aq8-006",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "Why should a large treatment area be marked off in subplots of 25 acres or smaller?",
+  "choices": [
+   "Permits are issued in 25-acre increments",
+   "Smaller plots keep the boat crew from missing swaths",
+   "So the application rate can be checked continuously as the work proceeds",
+   "Because a tank load covers almost exactly 25 acres"
+  ],
+  "answer": 2,
+  "explanation": "Large-area measurement is best done in rectangular shapes marked as subplots of 25 acres or smaller so the application rate can be checked continuously. Plots are laid out to conform to the swath width, so that a set number of swaths equals an acre — the length of a one-acre swath being 43,560 divided by the swath width.",
+  "page": "33"
+ },
+ {
+  "id": "aq8-007",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "A boat with an 8-foot boom treats alternate swaths for submersed weeds. What is the effective swath width?",
+  "choices": [
+   "16 feet — twice the boom length",
+   "8 feet — the boom length, as always",
+   "4 feet — half the boom, to allow for overlap",
+   "12 feet — the boom plus a half-boom of mixing"
+  ],
+  "answer": 0,
+  "explanation": "In boom applications to submersed weeds, often only alternate swaths are actually treated, making the effective swath — the distance between the centers of treated swaths — twice the boom length. The herbicide is assumed to mix throughout the water column by the sprayboat's turbulence and environmental factors.",
+  "page": "34"
+ },
+ {
+  "id": "aq8-008",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "How is the average depth of a small pond measured for a concentration-based treatment?",
+  "choices": [
+   "Take the deepest sounding and halve it",
+   "Take one transect down the pond's long axis",
+   "Use the depth at the dam, where water is released",
+   "Measure across the pond in at least two directions and average all the soundings"
+  ],
+  "answer": 3,
+  "explanation": "If depth is not uniform, measure the average depth: on small ponds take soundings across the pond in at least two directions, and divide the sum of the measurements by their number. The more measurements, the greater the accuracy.",
+  "page": "35"
+ },
+ {
+  "id": "aq8-009",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "How are acre-feet calculated?",
+  "choices": [
+   "Surface acres divided by average depth in feet",
+   "Average depth in feet multiplied by surface acres",
+   "Length times width times 7.48",
+   "Surface acres times maximum depth times 0.5"
+  ],
+  "answer": 1,
+  "explanation": "Acre-feet — the convenient unit for a water body's volume — equal the average depth in feet multiplied by the surface acres. A pond of 1.6 surface acres averaging 4.3 feet deep holds about 6.9 acre-feet.",
+  "page": "35"
+ },
+ {
+  "id": "aq8-010",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "In the equation \"herbicide (lb a.i.) = ppm desired × acre-feet × 2.7\", where does the 2.7 come from?",
+  "choices": [
+   "It is the specific gravity of most liquid formulations",
+   "It converts surface acres to bottom acres",
+   "An acre-foot of water weighs 2,700,000 pounds, so 2.7 pounds of substance in one acre-foot equals 1 ppm",
+   "It corrects for herbicide bound by sediments during mixing"
+  ],
+  "answer": 2,
+  "explanation": "One acre-foot of water weighs 2,700,000 pounds, so 2.7 pounds of a substance dissolved in one acre-foot gives a concentration of one part per million by weight. The pounds of active ingredient needed are therefore the desired ppm times the acre-feet times 2.7.",
+  "page": "35"
+ },
+ {
+  "id": "aq8-011",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "How is a required amount of active ingredient converted into an amount of formulated product?",
+  "choices": [
+   "For dry formulations divide by the percent a.i. as a decimal; for liquids divide by the pounds of a.i. per gallon",
+   "Multiply by the percent a.i. for dry products and by gallons per pound for liquids",
+   "Divide by the specific gravity printed on the label",
+   "Multiply by 2.7 for dry products and 8.34 for liquids"
+  ],
+  "answer": 0,
+  "explanation": "For dry formulations — wettable powders, dry flowables, pellets, granules — divide the pounds of active ingredient by the percent active ingredient expressed as a decimal (an 80 WP: divide by 0.80). For liquids, divide by the pounds of active ingredient per gallon (a 4 lb/gal formulation: divide by 4). Copper sulfate, for example, is 25 percent elemental copper, so 9.29 lb of copper requires about 37 lb of copper sulfate.",
+  "page": "36"
+ },
+ {
+  "id": "aq8-012",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "Why does the maximum theoretical water concentration from a granular 2,4-D treatment usually never occur?",
+  "choices": [
+   "Granules release only a fraction of their load before settling",
+   "Applicators routinely apply below the labeled rate for safety",
+   "The label rate already includes a tenfold dilution factor",
+   "The herbicide is quickly taken up by plants, diluted with untreated water, and adsorbed to bottom sediments where it degrades"
+  ],
+  "answer": 3,
+  "explanation": "In the manual's example the maximum potential concentration was 0.37 ppm against an experimentally determined toxic concentration of about 3.3 ppm for fathead minnows, a sensitive test organism — roughly a tenfold safety factor. The maximum concentration probably never occurs anyway, because the herbicide is rapidly taken up by plants, diluted with untreated water, and adsorbed onto bottom sediments where it degrades.",
+  "page": "37"
+ },
+ {
+  "id": "aq8-013",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "How much herbicide goes into a spray tank to make a percent solution, and how many fluid ounces are in a gallon?",
+  "choices": [
+   "Tank volume × percent; 100 fluid ounces per gallon",
+   "Tank volume × percent ÷ 100; 128 fluid ounces per gallon",
+   "Tank volume ÷ percent; 128 fluid ounces per gallon",
+   "Tank volume × percent × 100; 64 fluid ounces per gallon"
+  ],
+  "answer": 1,
+  "explanation": "Percent means parts per one hundred on a volume basis, so the herbicide needed per tank is the tank volume times the percent solution divided by 100 — for 4 gallons of a 1.5 percent solution, 0.06 gallon, which at 128 fluid ounces per gallon is about 7.7 fluid ounces. Note that the a.i. concentration of a percent solution depends on the formulation's a.i. per gallon, so percent solutions of different formulations of the same herbicide can differ.",
+  "page": "38"
+ },
+ {
+  "id": "aq8-014",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "What is the basic equation for gallons per acre (GPA) in calibration?",
+  "choices": [
+   "GPA = acres per minute ÷ gallons per minute",
+   "GPA = gallons per minute × boat speed in mph",
+   "GPA = gallons per minute ÷ acres per minute",
+   "GPA = tank volume ÷ swath width"
+  ],
+  "answer": 2,
+  "explanation": "Calibration means adjusting the equipment to deliver the correct amount: gallons per acre equal gallons per minute divided by acres per minute, and pounds per acre equal pounds per minute divided by acres per minute. Because output changes with viscosity, when polymers are used the GPM must be determined with the polymer in the mixture.",
+  "page": "40"
+ },
+ {
+  "id": "aq8-015",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "During a boom calibration, one hose's output deviates well beyond 10 to 15 percent from the average. What does that indicate?",
+  "choices": [
+   "The nozzle may be clogged, worn, or the wrong size, and should be checked",
+   "The boat's speed varied during the timed run",
+   "The tank agitation was left running during the test",
+   "Normal variation — individual outputs are never uniform"
+  ],
+  "answer": 0,
+  "explanation": "Catching each nozzle's output also measures uniformity: percent deviation is the average minus the individual output, divided by the average, times 100. A nozzle deviating 10 to 15 percent — depending on the accuracy needed — should be checked for clogging, wear, or wrong size. In the manual's example a hose ran 36 percent low from pieces of a deteriorated regulator disc, and all hoses were flushed before recalibrating.",
+  "page": "41"
+ },
+ {
+  "id": "aq8-016",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "One mile per hour equals how many feet per minute — the constant behind the acres-per-minute equation?",
+  "choices": [
+   "60",
+   "100",
+   "44",
+   "88"
+  ],
+  "answer": 3,
+  "explanation": "One mile per hour is 88 feet per minute, so acres per minute equal swath width (feet) times speed (mph) times 88, divided by 43,560 — simplified to swath times mph divided by 495, or, with about 1 percent error, 2 times swath times mph divided by 1,000.",
+  "page": "42"
+ },
+ {
+  "id": "aq8-017",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "What is a normal treating speed for a spray boat?",
+  "choices": [
+   "1 to 2 mph, barely making way",
+   "3 to 4 mph, at idle",
+   "6 to 8 mph, on a slow plane",
+   "10 to 12 mph, to cover acreage"
+  ],
+  "answer": 1,
+  "explanation": "A normal speed for treating by boat is 3 to 4 mph at idle — about a fast walking pace. Speed is measured over at least 100 feet with the spray tank half full and the actual crew and gear aboard, timed in both directions and averaged.",
+  "page": "42"
+ },
+ {
+  "id": "aq8-018",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "To DOUBLE a nozzle's output by pressure alone, how much must the pressure increase?",
+  "choices": [
+   "It must double",
+   "It must triple",
+   "It must increase four times",
+   "It must increase eight times"
+  ],
+  "answer": 2,
+  "explanation": "Output only doubles when pressure is increased four times, which is why pressure changes suit only small rate adjustments; large changes call for a different nozzle size or number. The application rate can also be varied through acres per minute — doubling the swath width or the speed doubles the coverage rate.",
+  "page": "42"
+ },
+ {
+  "id": "aq8-019",
+  "section": 8,
+  "sectionName": "Applying the Right Amount",
+  "manual": "cat-a",
+  "question": "How is the volume of a rectangular spray tank calculated in gallons?",
+  "choices": [
+   "Length × width × depth in feet × 7.48",
+   "Length × width × depth in feet × 8.34",
+   "Length × width × depth in inches ÷ 231",
+   "Length × width in feet × 43.56"
+  ],
+  "answer": 0,
+  "explanation": "A cubic foot holds 7.48 gallons, so a rectangular tank's volume in gallons is length times width times depth in feet times 7.48; a cylindrical tank is the area of its circular end times its length times 7.48. Other useful equations: acres per tank = tank volume ÷ GPA, and speed in mph = feet per minute ÷ 88.",
+  "page": "49"
+ },
+ {
+  "id": "aq9-001",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "What are the two approaches to biological control of aquatic plants?",
+  "choices": [
+   "Classical control and chemical-assisted control",
+   "The introduction approach and the augmentation-manipulation approach",
+   "Predator stocking and pathogen spraying",
+   "Host-specific control and broad spectrum control"
+  ],
+  "answer": 1,
+  "explanation": "The two types are the introduction approach — purposefully introducing natural controls such as insects or pathogens, in small numbers that build to a self-perpetuating balance with the weed — and the augmentation-manipulation approach, releasing bioagents at levels capable of providing control at strategic times, the way herbivorous fish are used.",
+  "page": "50"
+ },
+ {
+  "id": "aq9-002",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "What benefit-to-cost ratio has been estimated for successful introduction-approach biological control?",
+  "choices": [
+   "2:1 to 5:1",
+   "10:1 to 20:1",
+   "50:1 to 100:1 or higher",
+   "About 1:1, breaking even over time"
+  ],
+  "answer": 2,
+  "explanation": "The introduction approach is attractive because control can be permanent and self-perpetuating: additional releases are usually unnecessary, and although the initial expense is high, it is among the least expensive methods in the long run, with benefit-to-cost ratios estimated at 50-100:1 or higher.",
+  "page": "50"
+ },
+ {
+  "id": "aq9-003",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "Which advantage belongs to biological control agents?",
+  "choices": [
+   "Constant pressure on the target weed and low long-term cost",
+   "Immediate results visible within days of release",
+   "Precise control of exactly how much vegetation is removed",
+   "Effectiveness against every weed species in the water body"
+  ],
+  "answer": 0,
+  "explanation": "The advantages of bioagents are longevity of control once established, constant pressure on the weed, low long-term cost, high effectiveness against specific weeds, minimum impact on nontarget species with the introduction approach, and, with some fish, production of edible protein. What they do not give is speed or broad-spectrum action.",
+  "page": "50"
+ },
+ {
+  "id": "aq9-004",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "Why are triploid grass carp the only exotic fish legally usable for weed control in most states?",
+  "choices": [
+   "They eat only hydrilla and ignore native plants",
+   "They are too slow-growing to compete with game fish",
+   "They cannot survive winters north of Florida",
+   "They carry three sets of chromosomes and are sterile, so their numbers can be regulated"
+  ],
+  "answer": 3,
+  "explanation": "Triploid grass carp are produced in hatcheries with three sets of chromosomes instead of the normal two, which makes them sterile: they cannot reproduce, so their numbers can be regulated. A permit is usually required for their possession and use, and they should not yet be released in large open systems because their feeding is nonselective and their movements unpredictable.",
+  "page": "51"
+ },
+ {
+  "id": "aq9-005",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "What stocking size and rate does the manual give for grass carp against hydrilla?",
+  "choices": [
+   "Fingerlings at 100 or more per acre",
+   "Fish of 1 pound (10 to 12 inches) or larger, at 20 to 25 per acre",
+   "Half-pound fish at 5 per acre, restocked yearly",
+   "Any size, at 300 per acre alongside tilapia"
+  ],
+  "answer": 1,
+  "explanation": "Fish of 1 pound (10-12 inches) or larger should be stocked so they survive predators — birds, snakes, and other fish — and stocking 20 to 25 per acre effectively controls hydrilla, with more fish needed in dense stands. Grass carp prefer submersed plants and will also consume terrestrial and aquatic grasses.",
+  "page": "51"
+ },
+ {
+  "id": "aq9-006",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "Why should grass carp NOT be stocked directly into an extremely dense weed infestation?",
+  "choices": [
+   "Oxygen levels there are too low; reduce the density with herbicides or machines first, then stock low numbers to prevent regrowth",
+   "The fish cannot swim through the vegetation to feed on it",
+   "Dense weeds shelter the predators that eat stocked fish",
+   "The carp would eat through it too fast and starve afterward"
+  ],
+  "answer": 0,
+  "explanation": "Extremely dense infestations should not be stocked directly because of low oxygen conditions in them. Reduce the weed density first with herbicides or mechanical control, then stock low numbers of grass carp to prevent regrowth.",
+  "page": "51"
+ },
+ {
+  "id": "aq9-007",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "Which vegetation do grass carp NOT control?",
+  "choices": [
+   "Hydrilla and other submersed vascular plants",
+   "Tender young emergent shoots along the margins",
+   "Most filamentous algae, and phytoplankton",
+   "Terrestrial grasses fallen into the water"
+  ],
+  "answer": 2,
+  "explanation": "Although young grass carp feed on filamentous algae such as Cladophora and Spirogyra, grass carp are not effective for control of most filamentous algae and do not control phytoplankton. They prefer submersed plants and will browse the tips of young, tender emergent vegetation.",
+  "page": "51"
+ },
+ {
+  "id": "aq9-008",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "Why do tilapia need annual restocking in temperate climates?",
+  "choices": [
+   "State law requires the population be removed each fall",
+   "They exhaust their food supply within a single season",
+   "Game fish eliminate them once vegetation is reduced",
+   "They do not overwinter where water falls below 65°F, unless a warm refuge such as a thermal spring or power plant effluent exists"
+  ],
+  "answer": 3,
+  "explanation": "Tilapia are tropical fish that suppress softer vegetation — filamentous algae and bladderwort — at high stocking densities around 300 per acre: the blue tilapia feeds entirely on algae and the redbelly tilapia on larger submersed vegetation. They will not overwinter below 65°F, so temperate waters need annual restocking unless a warm water refuge exists; both species also reproduce rapidly and consume small animals important to desirable fish, and their legality varies by state — check state agencies before stocking any fish.",
+  "page": "52"
+ },
+ {
+  "id": "aq9-009",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "What must be proven about a foreign insect before it can be released in the United States for weed control?",
+  "choices": [
+   "That it survives no more than one generation in the wild",
+   "That it is host-specific — unable to reproduce in the absence of its host plant",
+   "That it can overwinter throughout the target weed's range",
+   "That it feeds faster than the weed can grow"
+  ],
+  "answer": 1,
+  "explanation": "A foreign insect must be extensively tested and proven host-specific before release: it cannot reproduce in the absence of its host, which ensures no harm to crops. Host specificity is also why an introduced agent's population perishes as its target weed declines.",
+  "page": "52"
+ },
+ {
+  "id": "aq9-010",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "Why was alligatorweed the FIRST aquatic weed targeted for insect biological control?",
+  "choices": [
+   "It was difficult to control with herbicides",
+   "It supported the largest number of candidate insects",
+   "Its floating mats made insect releases easy to place",
+   "It was the only target the USDA had funding to survey"
+  ],
+  "answer": 0,
+  "explanation": "Alligatorweed was the first aquatic weed target for biocontrol because it was difficult to control with herbicides. The flea beetle defoliates it severely but is less effective in temperate areas — little effect north of South Carolina — and can be enhanced by collecting and releasing adults early in the year after cold winters; adults are obtainable from the Corps of Engineers' Jacksonville District.",
+  "page": "52"
+ },
+ {
+  "id": "aq9-011",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "What indicates that waterhyacinth weevils are present on a mat?",
+  "choices": [
+   "Collapsed stems flattening whole sections of the mat",
+   "Yellowed leaf tips across the entire infestation",
+   "Distinctive adult feeding scars on the leaves, with mature larvae in the petiole bases",
+   "Silken webbing over the youngest leaves"
+  ],
+  "answer": 2,
+  "explanation": "The distinctive feeding scars of the adults on the leaves indicate the weevils' presence; mature larvae are found in the petiole bases or stem, and the adults fly only intermittently. Of the three waterhyacinth insects, the weevils — especially the chevroned waterhyacinth weevil — have been most effective; the borer moth devastates young stands during early mat development but is sporadic. Long-term decline is the normal biocontrol pattern: stressed mats fail to expand and become more vulnerable to disease and frost.",
+  "page": "53"
+ },
+ {
+  "id": "aq9-012",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "What happened after the weevil Neohydronomus affinis was released on a 75-acre waterlettuce infestation at Lake Okeechobee in April 1987?",
+  "choices": [
+   "It failed to establish and was re-released twice",
+   "By April 1989 the waterlettuce was thoroughly suppressed",
+   "It controlled the edges but not the mat's interior",
+   "It switched hosts to waterhyacinth within a year"
+  ],
+  "answer": 1,
+  "explanation": "The waterlettuce weevil released on Kraemer Island, Lake Okeechobee, in April 1987 had thoroughly suppressed the 75-acre infestation by April 1989. A moth used against waterlettuce in Thailand, Namangana pectinicornis, has also recently been released in Florida.",
+  "page": "53"
+ },
+ {
+  "id": "aq9-013",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "When does the hydrilla tuber weevil Bagous affinis attack the plant's tubers?",
+  "choices": [
+   "While the tubers are forming in spring",
+   "Under winter ice cover, when the plant is dormant",
+   "Continuously, throughout the growing season",
+   "After a drawdown, when the bottom is exposed"
+  ],
+  "answer": 3,
+  "explanation": "The tuber weevil from India and Pakistan, first released at Lake Tohopekaliga on 30 April 1987, feeds on hydrilla tubers after a drawdown. Two leaf-mining Hydrellia flies whose larvae burrow within and destroy up to a dozen leaves have also been introduced, while the accidentally introduced moth Parapoynx diminutalis defoliates hydrilla too sporadically to be acceptable control.",
+  "page": "53"
+ },
+ {
+  "id": "aq9-014",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "Why are herbivorous snails such as Marisa NOT under consideration as biocontrol agents?",
+  "choices": [
+   "They are prolific, generalized herbivores that pose environmental risks, serve as intermediate hosts for parasites, and are ineffective unconfined",
+   "They cannot survive in the warm waters where weeds grow worst",
+   "They feed only on algae and leave vascular plants alone",
+   "Their shells damage mechanical harvesters and pumps"
+  ],
+  "answer": 0,
+  "explanation": "Snails can control submersed plants under confined conditions but are not under consideration: as prolific, generalized herbivores they carry environmental risk, they are intermediate hosts for parasites of fish and humans, and they are ineffective unconfined. Manatees likewise proved impractical — at King's Bay a study found ten times the normal wintering population could not consume the existing hydrilla biomass.",
+  "page": "54"
+ },
+ {
+  "id": "aq9-015",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "Which advantage does mechanical harvesting have over herbicide treatment?",
+  "choices": [
+   "It costs less per acre than any chemical program",
+   "It covers large areas faster than a spray boat",
+   "The water is usable immediately, and the removed plants cannot deplete oxygen as they rot or feed algal blooms",
+   "It removes the roots, so regrowth is slower than after spraying"
+  ],
+  "answer": 2,
+  "explanation": "Harvesting gives immediate control of small areas, and because the plants are removed from the water there are no herbicide water use restrictions, no oxygen depletion from rotting vegetation, and less likelihood of algal blooms since the nutrients leave the lake. Its disadvantages are high cost, slowness, heavy maintenance, unsuitability where depths or obstructions interfere, the need for a disposal area, removal of wildlife and desirable vegetation, drifting plant fragments that infest new areas, and turbidity from disturbed sediments — which is why it is practical mainly for marinas, swimming areas, and boating trails.",
+  "page": "54"
+ },
+ {
+  "id": "aq9-016",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "How do Brazilian elodea and hydrilla respond to a drawdown?",
+  "choices": [
+   "Both are eliminated for a season at most",
+   "Brazilian elodea is controlled for up to three years, while hydrilla tubers deep in the hydrosoil survive even several consecutive drawdowns",
+   "Hydrilla is controlled for years, Brazilian elodea regrows at once",
+   "Neither is affected unless the drawdown lasts a full year"
+  ],
+  "answer": 1,
+  "explanation": "Brazilian elodea is sensitive to drawdown and has been controlled for up to three years, while hydrilla is only partially controlled on sandy bottoms and little affected in organic sediments: its tubers, buried deep in the hydrosoil, are protected from desiccation and survive several consecutive drawdowns. Drawdowns are usually done in winter to combine drying and freezing, since summer drawdowns hurt recreation, stress fish, and spread emergents like cattails and willows.",
+  "page": "55"
+ },
+ {
+  "id": "aq9-017",
+  "section": 9,
+  "sectionName": "Other Management Methods",
+  "manual": "cat-a",
+  "question": "Under what conditions are light-blocking pond dyes effective?",
+  "choices": [
+   "In any water body, as long as the dose is repeated monthly",
+   "Only in flowing canals where the dye disperses evenly",
+   "In shallow margins where submersed weeds start growing",
+   "In ponds with little or no flow-through, and generally only in water at least 3 feet deep"
+  ],
+  "answer": 3,
+  "explanation": "Dyes control submersed plants by blocking the light needed for photosynthesis; they are not toxic to aquatic organisms or to humans or animals drinking the water, and the pond remains productive for fish. They work only in ponds with little or no flow-through and generally only in water 3 feet or deeper. Bottom covers must be specially made: gases produced on the pond bottom accumulate under nonpermeable plastic sheeting and float it.",
+  "page": "55"
+ },
+ {
+  "id": "aq10-001",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "About how long does the research required to label an aquatic herbicide take?",
+  "choices": [
+   "2 years",
+   "5 years",
+   "10 years",
+   "25 years"
+  ],
+  "answer": 2,
+  "explanation": "Research requiring approximately 10 years is conducted before an aquatic herbicide is labeled by the EPA, and herbicides registered before the guidelines of the 1978 FIFRA amendments must be reregistered. A product is not labeled until it is determined to perform its intended function without unreasonable adverse effects on the environment.",
+  "page": "57"
+ },
+ {
+  "id": "aq10-002",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "Which data are required before an aquatic herbicide is registered?",
+  "choices": [
+   "Residues in potable water, fish, shellfish, and irrigated crops; environmental fate; breakdown products; routes of entry; acute and long-term toxicity; and toxicity to aquatic organisms",
+   "Efficacy trials on every labeled weed species in three states",
+   "Manufacturing costs, projected sales, and market impact",
+   "Five years of field monitoring from state trial programs"
+  ],
+  "answer": 0,
+  "explanation": "Required data include residues in potable water, fish, shellfish, and irrigated crops; environmental fate; breakdown and its products; skin absorption and routes of entry in test animals; short-term acute toxicity; birth defects, tumors, and abnormalities after long-term exposure; and toxicity to aquatic organisms including waterfowl, fish, and invertebrates. The data are reviewed by the manufacturer, the EPA, and the states.",
+  "page": "57"
+ },
+ {
+  "id": "aq10-003",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "How is a residue tolerance for humans derived from animal test data?",
+  "choices": [
+   "The lowest lethal dose is halved and set as the tolerance",
+   "The residue causing no observable effect in chronically exposed test animals is divided by 100 or 1,000",
+   "The average field residue is multiplied by a safety factor of 10",
+   "The acute LD50 is converted to an equivalent human dose"
+  ],
+  "answer": 1,
+  "explanation": "The residue level that causes no observable effect in chronically exposed test animals is divided by 100 or 1,000, and the allowed residue is set so the average person ingests less. Tolerances, residue data, and environmental fate together determine the water use restrictions on the label.",
+  "page": "57"
+ },
+ {
+  "id": "aq10-004",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "What role do macrophytes play in the aquatic community?",
+  "choices": [
+   "They are the main oxygen consumers the applicator must remove",
+   "They compete with phytoplankton but contribute little else",
+   "They matter mainly as spawning substrate for rough fish",
+   "They provide habitat for the animals game fish eat, protective cover for game fish, nesting sites, and food for birds and mammals"
+  ],
+  "answer": 3,
+  "explanation": "In the aquatic food chain plants fix the sun's energy, invertebrates eat plants, and fish and birds eat the invertebrates. Macrophytes also provide habitat for the animals that game fish feed on, protective cover for the game fish themselves, nesting sites, and food for birds and mammals — which is why weed management aims at problem growth, not vegetation as such.",
+  "page": "58"
+ },
+ {
+  "id": "aq10-005",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "At which plants are the majority of publicly funded aquatic plant management programs directed?",
+  "choices": [
+   "Cattails, waterlilies, pondweeds, and coontail",
+   "Hydrilla, Eurasian watermilfoil, waterhyacinth, and alligatorweed",
+   "Duckweeds, watermeal, and filamentous algae",
+   "Torpedograss, maidencane, and giant reed"
+  ],
+  "answer": 1,
+  "explanation": "The majority of publicly funded programs are directed at the non-native plants — hydrilla, Eurasian watermilfoil, waterhyacinth, and alligatorweed — which have decreased fish population quality, competed with native vegetation, decreased water quality, and hindered water use. Managed properly, they can be controlled with minimum impact on native plants.",
+  "page": "58"
+ },
+ {
+  "id": "aq10-006",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "Why does water sometimes turn green after a large herbicide treatment?",
+  "choices": [
+   "The dying weeds release chlorophyll into the water",
+   "Copper in the treatment tints the water itself",
+   "Decaying vegetation releases nitrogen and phosphorus, feeding a phytoplankton bloom",
+   "Sunlight reaches deeper and bleaches the bottom sediments"
+  ],
+  "answer": 2,
+  "explanation": "Killing large amounts of vegetation releases nitrogen and phosphorus as it decays, and phytoplankton use them: the resulting blooms turn water green and decrease clarity. Such blooms also occur naturally, and they are temporary.",
+  "page": "58"
+ },
+ {
+  "id": "aq10-007",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "Which formulation does the manual name as directly toxic to fish and therefore kept out of waters where fisheries are a concern?",
+  "choices": [
+   "The dimethyl amine salt of endothall",
+   "The isopropyl amine salt of glyphosate",
+   "The butoxyethyl ester of 2,4-D",
+   "Chelated copper compounds of any kind"
+  ],
+  "answer": 0,
+  "explanation": "Direct toxicity occurs only if a formulation known to be toxic to fish — for example, the dimethyl amine salt of endothall — is applied in an enclosed water body, so it is not used where fisheries are a concern. Copper is normally below toxic concentrations, but rates for difficult filamentous algae can be toxic in enclosed ponds, and copper toxicity is of greatest concern in soft water, increasing as hardness decreases.",
+  "page": "58"
+ },
+ {
+  "id": "aq10-008",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "What is the MOST common cause of fish kills associated with herbicide treatments?",
+  "choices": [
+   "Direct toxicity of the herbicide at labeled rates",
+   "The indirect effect of lowered dissolved oxygen as the killed vegetation decays",
+   "Ammonia released by the decomposing plants",
+   "Starvation after the vegetation the food chain rested on is gone"
+  ],
+  "answer": 1,
+  "explanation": "The most common reason for a herbicide-associated fish kill is indirect: decaying vegetation consumes dissolved oxygen while the killed plants no longer produce it, and prolonged low oxygen kills fish. Natural fish kills happen the same way in productive waters when phytoplankton die after prolonged cloudy warm weather.",
+  "page": "59"
+ },
+ {
+  "id": "aq10-009",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "When is dissolved oxygen lowest in a productive lake?",
+  "choices": [
+   "Mid-afternoon, at peak temperature",
+   "At dusk, as photosynthesis winds down",
+   "In early morning, after plants have consumed oxygen through the dark hours",
+   "At midnight, when respiration begins"
+  ],
+  "answer": 2,
+  "explanation": "Dissolved oxygen in lakes and ponds commonly ranges from 0.0 to 12 ppm, and in productive lakes it is lowest in early morning because plants consume oxygen in darkness; decaying organic matter consumes it too. Fish tolerate the daily fluctuation but not prolonged low oxygen.",
+  "page": "59"
+ },
+ {
+  "id": "aq10-010",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "How should a large weed population be treated to minimize the risk of an oxygen-depletion fish kill?",
+  "choices": [
+   "All at once in late summer, when regrowth is slowest",
+   "With doubled rates, so the kill and decay pass quickly",
+   "Only after aeration equipment is installed",
+   "By a series of partial applications, in spring while the water is cooler"
+  ],
+  "answer": 3,
+  "explanation": "Control large populations with a series of partial applications and treat in spring when the water is cooler — cool water holds more oxygen than warm — then maintain the low densities. The dangerous combination is large weed populations, warm water, prolonged cloudiness, and restricted fish movement; a herbicide effective on higher plants but not phytoplankton also helps, since the phytoplankton keep producing oxygen.",
+  "page": "59"
+ },
+ {
+  "id": "aq10-011",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "When making a partial-area application of a fish-toxic product, where should treatment begin?",
+  "choices": [
+   "Near shore, proceeding toward open water so fish can escape to untreated water",
+   "In open water, proceeding toward shore to herd fish into the shallows",
+   "At the outlet, so treated water leaves the system first",
+   "Wherever the vegetation is densest, to limit total product used"
+  ],
+  "answer": 0,
+  "explanation": "Partial-area applications in large water bodies are unlikely to kill fish because fish are mobile and have avoidance mechanisms. With products toxic to fish, such as the dimethyl amine salt of endothall, start near shore and proceed toward open water so the fish escape into untreated water.",
+  "page": "59"
+ },
+ {
+  "id": "aq10-012",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "What is the difference between the disappearance and the dissipation of a herbicide?",
+  "choices": [
+   "They are the manual's terms for the same process",
+   "Disappearance is removal from part of the environment — dilution, adsorption, volatilization, absorption; dissipation is breakdown into simpler compounds",
+   "Disappearance is measured in water, dissipation in sediment",
+   "Dissipation is removal by plants; disappearance is removal by sunlight"
+  ],
+  "answer": 1,
+  "explanation": "Disappearance means removal from a part of the environment: dilution, adsorption to bottom sediments, volatilization, absorption by plants and animals, or dissipation. Dissipation means actual breakdown into simpler compounds by photolysis, microbial degradation, or metabolism. Adsorption can make a herbicide biologically unavailable even when its dissipation is slow.",
+  "page": "60"
+ },
+ {
+  "id": "aq10-013",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "Which aquatic herbicide never breaks down, because it is a naturally occurring element?",
+  "choices": [
+   "Simazine",
+   "Endothall",
+   "Diquat",
+   "Copper"
+  ],
+  "answer": 3,
+  "explanation": "Copper is a naturally occurring element, essential at low concentrations for plant growth, and does not break down: it forms insoluble compounds, binds to charged particles, and rapidly disappears from the water. It can accumulate in bottom sediments after repeated high rates, though the accumulation is rarely toxic or significantly above background, and it is slowly transported out through plant uptake and the food chain.",
+  "page": "60"
+ },
+ {
+  "id": "aq10-014",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "How quickly are 2,4-D and endothall completely broken down in water?",
+  "choices": [
+   "2,4-D in about 3 weeks (sometimes 1); endothall in about 2 weeks",
+   "Both persist about 90 days in enclosed water",
+   "2,4-D in 6 months; endothall in 3 months",
+   "Both are gone within 48 hours of application"
+  ],
+  "answer": 0,
+  "explanation": "2,4-D dissipates mostly by microbial degradation and is completely decomposed in about 3 weeks in water, sometimes as quickly as 1 week, breaking into naturally occurring compounds — 2 pounds of 2,4-D amine become about 1 pound of carbon dioxide, a quarter pound of water, a quarter pound of ammonia, and a half pound of chlorine. Endothall is likewise rapidly and completely broken down by microorganisms into carbon dioxide and water, in about 2 weeks in water and 1 week in bottom sediments.",
+  "page": "60"
+ },
+ {
+  "id": "aq10-015",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "What happens to glyphosate that enters the water?",
+  "choices": [
+   "It persists dissolved for up to two years",
+   "It volatilizes from the surface within days",
+   "It binds tightly to dissolved and suspended particles and sediments and becomes inactive",
+   "It is photodegraded within hours of entering"
+  ],
+  "answer": 2,
+  "explanation": "Glyphosate is not applied directly to water; what enters binds tightly to dissolved and suspended particles and to bottom sediments and becomes inactive, then breaks down into carbon dioxide, water, nitrogen, and phosphorus over several months. Diquat behaves similarly — bound to particles and sediments, rarely found more than 10 days after application and often undetectable in 3.",
+  "page": "61"
+ },
+ {
+  "id": "aq10-016",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "Why do fall and winter applications of fluridone have longer half-lives?",
+  "choices": [
+   "Cold water shuts down the microbes that degrade it",
+   "Its main degradation route is photodegradation, and those seasons bring less direct sun and shorter days",
+   "Dormant plants absorb none of the applied material",
+   "Ice cover keeps it from volatilizing off the surface"
+  ],
+  "answer": 1,
+  "explanation": "Fluridone dissipates mainly by photodegradation, with metabolism and microbial breakdown also contributing — microbial breakdown being most important in bottom sediments. Fall and winter applications, with less direct sunlight and shorter days, have longer half-lives; fluridone is usually gone from pondwater in about 3 months but can remain up to 9, and in bottom sediment from 4 months to a year.",
+  "page": "61"
+ },
+ {
+  "id": "aq10-017",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "How persistent is simazine in treated water?",
+  "choices": [
+   "Undetectable within 10 days, like diquat",
+   "Completely decomposed in about 3 weeks",
+   "Gone from the water column in 90 days at most",
+   "It can persist up to 2 years, with a usual pond half-life of about 30 days"
+  ],
+  "answer": 3,
+  "explanation": "Simazine can persist in water for up to 2 years, though its usual half-life in ponds is about 30 days. It disappears through uptake by plants and organisms and adsorption to bottom sediments, and dissipates mainly by slow microbial breakdown.",
+  "page": "61"
+ },
+ {
+  "id": "aq10-018",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "What does the \"half-life\" of a herbicide mean?",
+  "choices": [
+   "The time required for half of the material to disappear",
+   "Half the interval between application and full weed control",
+   "The point at which the product loses half its efficacy in storage",
+   "The time until residues fall below half the legal tolerance"
+  ],
+  "answer": 0,
+  "explanation": "The half-life is the time required for half the material to disappear. Dichlobenil, for example, has a soil half-life of 1.5 to 12 months depending on soil type, moisture, temperature, and microbes; applied in enclosed water it can persist up to 90 days, and it is lost by volatility from the water and soil surface and broken down slowly by microorganisms.",
+  "page": "61"
+ },
+ {
+  "id": "aq10-019",
+  "section": 10,
+  "sectionName": "Environmental and Public Health",
+  "manual": "cat-a",
+  "question": "Keeping waterhyacinth below 5 percent coverage under maintenance control reduced herbicide use by what factor?",
+  "choices": [
+   "1.5",
+   "4.0",
+   "2.6",
+   "10"
+  ],
+  "answer": 2,
+  "explanation": "Maintenance control — controlling the plant at low levels before it reaches problem proportions — reduced herbicide use by a factor of up to 2.6 and detritus deposition by a factor of 4.0, while easing the oxygen depression under mats. Unmanaged waterhyacinth doubles every 7 to 10 days, and ten plants can cover an acre in a single growing period, often weighing 200 tons; maintenance management is the most environmentally sound method for waterhyacinth control and is recommended, though crews spend more time traveling between small populations and the public, no longer seeing a weed problem, may question the spraying — which makes public education important.",
+  "page": "62"
+ },
+ {
+  "id": "aq11-001",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "Why is plant identification vital to the aquatic applicator?",
+  "choices": [
+   "The spray record must list every species in the treated area",
+   "It selects the proper herbicide, protects nontarget plants, and taxonomic relationships help predict the sensitivity of untested plants",
+   "State law requires a botanist's confirmation before treatment",
+   "Herbicide labels are organized by plant family rather than by species"
+  ],
+  "answer": 1,
+  "explanation": "Correct identification lets the applicator select the proper herbicide, identify nontarget plants so damage to them is minimized, and use taxonomic relationships to predict herbicide sensitivity for plants that have not been tested — besides being a personal challenge. The applicator should know the major weeds and the important nontarget plants such as spatterdock, giant bulrush, waterlily, and maidencane.",
+  "page": "63"
+ },
+ {
+  "id": "aq11-002",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "Why are common plant names a problem, and what is the remedy?",
+  "choices": [
+   "One plant can have several names and one name can cover unrelated plants; use WSSA official common names or scientific names",
+   "They change from year to year; use the label's trade names instead",
+   "They are regional slang; use the French-derived horticultural names",
+   "They are too long for spray records; use standard abbreviations"
+  ],
+  "answer": 0,
+  "explanation": "Common names confuse because a plant can carry several and the same name can be used for unrelated plants — \"coontail\" is official for Ceratophyllum demersum but is also used for variable leaf milfoil. The remedy is the Weed Science Society of America's official common names or the scientific name, which is a genus plus a species: waterhyacinth is Eichhornia crassipes.",
+  "page": "63"
+ },
+ {
+  "id": "aq11-003",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "What distinguishes an emersed plant from a floating leaf plant?",
+  "choices": [
+   "Emersed plants are never rooted; floating leaf plants always are",
+   "Emersed plants grow only in water too deep for rooting",
+   "An emersed plant is rooted in the bottom and self-supporting above the surface; a floating leaf plant is attached to the bottom with leaves that float on the surface",
+   "The two terms describe the same growth habit at different seasons"
+  ],
+  "answer": 2,
+  "explanation": "The growth habits are: submersed plants grow completely below the surface and depend on the water for support; emersed plants are rooted in the bottom, extend above the surface, and are self-supporting; floating plants are not attached and float on the surface; floating leaf plants are attached to the bottom with leaves that float on the surface, may or may not be self-supporting, and can also be emersed.",
+  "page": "63"
+ },
+ {
+  "id": "aq11-004",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "Which group of freshwater algae is the most troublesome?",
+  "choices": [
+   "The green algae",
+   "The charophytes",
+   "The diatoms",
+   "The bluegreen algae"
+  ],
+  "answer": 3,
+  "explanation": "Algae are single-celled or multi-celled plants that lack true supporting or conducting tissues, separated into groups by life cycles and pigments. The two most important groups in freshwater are the green algae and the bluegreen algae, and members of the bluegreen algae are the most troublesome.",
+  "page": "64"
+ },
+ {
+  "id": "aq11-005",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "Muskgrass (Chara) and stonewort (Nitella) belong to which algal growth form?",
+  "choices": [
+   "Planktonic algae, suspended in the water column",
+   "Macrophytic algae — large, multicellular, branching charophytes",
+   "Filamentous algae, forming threads and mats",
+   "Colonial algae, in floating gelatinous balls"
+  ],
+  "answer": 1,
+  "explanation": "By growth form, algae are planktonic (single cells or small colonies, free floating or suspended), filamentous (cells attached end to end in threads that form mats — the green Spirogyra and the bluegreen Lyngbya are common problem causers), or macrophytic: the large, multicellular, branching charophytes, of which muskgrass (Chara sp.) and stonewort (Nitella sp.) are the two important examples.",
+  "page": "64"
+ },
+ {
+  "id": "aq11-006",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "Which two truly aquatic ferns will the applicator commonly encounter in the United States?",
+  "choices": [
+   "Royal fern and cinnamon fern",
+   "Karibaweed and giant water fern",
+   "Water fern (Salvinia minima) and mosquito fern (Azolla caroliniana)",
+   "Marsh fern and chain fern"
+  ],
+  "answer": 2,
+  "explanation": "Ferns reproduce by spores rather than seeds, produced in cases on the underside of the leaves. Only two truly aquatic ferns are commonly encountered: water fern, a floating plant about 3/4 inch across with paired rounded leaves bearing stiff branched hairs, and mosquito fern, less than 1/2 inch across, made of many tiny overlapping leaves that may be green, brownish-red, or red.",
+  "page": "65"
+ },
+ {
+  "id": "aq11-007",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "How is karibaweed (Salvinia molesta) — a severe problem in South America but not yet introduced into the US — distinguished from common water fern?",
+  "choices": [
+   "The hairs on its upper leaf surface are fused at the top, rather than spread open",
+   "Its leaves are smooth, with no hairs on the upper surface",
+   "It is half the size of water fern, with single leaves",
+   "Its roots are true roots rather than root-like leaves"
+  ],
+  "answer": 0,
+  "explanation": "Karibaweed, also called giant water fern, is slightly larger than water fern, but the main distinguishing characteristic is that the hairs on its upper leaf surface are fused at the top, compared to being spread open on common water fern. It causes severe problems in South America but has not yet been introduced into the United States.",
+  "page": "65"
+ },
+ {
+  "id": "aq11-008",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "What is the applicator's best way to tell monocots from dicots?",
+  "choices": [
+   "Count the petals: monocots have four or five",
+   "Check the roots: monocots grow from taproots",
+   "Compare heights: dicots overtop monocots",
+   "Look at the leaf veins: monocots have parallel veins, dicots have net veins"
+  ],
+  "answer": 3,
+  "explanation": "Flowering plants divide into monocotyledons (narrow leaf plants) and dicotyledons (broad leaf plants). Many separating characteristics require a microscope, so the applicator's best test is the leaf veins: monocot veins run more or less parallel, dicot veins branch into a network. Monocots also usually have flower parts in multiples of three, dicots in fours and fives.",
+  "page": "66"
+ },
+ {
+  "id": "aq11-009",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "What marks the rhizomes of torpedograss (Panicum repens)?",
+  "choices": [
+   "They float, buoyed by hollow air chambers",
+   "Their tips are pointed, hard, and glossy-white",
+   "They are jointed, with feathery roots at each node",
+   "They are bright pink, like alligatorweed stems"
+  ],
+  "answer": 1,
+  "explanation": "Torpedograss is an emersed perennial grass growing from extensive rhizomes whose tips are pointed, hard, and glossy-white — the \"torpedoes.\" Its leaves are rolled with fine hairs on the upper surface, and the seedheads branch sharply upward with flowers attached individually along the branches.",
+  "page": "66"
+ },
+ {
+  "id": "aq11-010",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "Which description fits giant reed (Phragmites australis)?",
+  "choices": [
+   "A perennial herb to 16 feet, in large colonies with runners, its dense 1-2 foot seedhead carrying a silky beard of hairs at its base",
+   "A low, running grass whose seedhead has two branches from one point",
+   "A 3-foot emergent with a spike of violet-blue flowers",
+   "A 10-foot emergent whose brown spike comes apart puffy and white"
+  ],
+  "answer": 0,
+  "explanation": "Giant reed (common reed) grows to 16 feet in large colonies with extensive aboveground and underground runners; leaves are flat, 9-25 inches long, and the dense seedheads, 1-2 feet long and terminal on the stem, carry a silky beard of hairs at the base, with silvery, hairy flowers. The two-branched seedhead is knotgrass, the violet-blue spike is pickerelweed, and the puffy brown spike is a cattail.",
+  "page": "67"
+ },
+ {
+  "id": "aq11-011",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "How is southern (giant) bulrush told from the very similar softstem bulrush?",
+  "choices": [
+   "Its stems are square rather than round in cross-section",
+   "Its flower cluster sits at mid-stem rather than at the top",
+   "The bristles around its nutlet are feathery, where softstem bulrush's are barbed",
+   "It grows to 3 feet, half the height of softstem bulrush"
+  ],
+  "answer": 2,
+  "explanation": "Southern bulrush (Scirpus californicus) has emersed, leafless, spongy, rounded, 3-angled stems 3-10 feet tall from thick runners, with the flower cluster at the end of the stem and a 1/2-3 inch bract continuing the stem line. The bristles around its nutlet are feathery, compared to the barbed bristles of softstem bulrush (Scirpus validus), a very similar species.",
+  "page": "68"
+ },
+ {
+  "id": "aq11-012",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "What gives slender spikerush its proliferating growth habit?",
+  "choices": [
+   "Stolons that root wherever a node touches bottom",
+   "Turions that break free and sprout where they drift",
+   "Rhizome fragments spread by boat traffic",
+   "Seeds that germinate on the mother plant, forming daughter plants whose seeds do the same"
+  ],
+  "answer": 3,
+  "explanation": "Slender spikerush (Eleocharis baldwinii) is erect and 1-4 inches tall on moist pond edges, but its most common and troublesome form is submersed, with long stems proliferating through the water column and leaves reduced to bladeless sheaths. Its seeds germinate on the mother plant and form daughter plants, which in turn carry seeds that germinate into further daughters — the proliferating habit.",
+  "page": "68"
+ },
+ {
+  "id": "aq11-013",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "What makes soft rush (Juncus effusus) look like its flowers emerge from the side of the stem?",
+  "choices": [
+   "The flower stalk fuses to the stem for half its length",
+   "A bract continues the stem above where the flowers attach",
+   "The stem kinks at the flower cluster and continues upward",
+   "The true stem is underground; the \"stem\" is a rolled leaf"
+  ],
+  "answer": 1,
+  "explanation": "Soft rush is a shoreline or emergent plant with leafless, cylindrical, hollow stems 2-4 feet tall. The flowers actually occur at the end of the stem, but a bract continues above them, making it appear that the flowers come out of the stem's side; basal chestnut-colored sheaths wrap the base of each stem.",
+  "page": "69"
+ },
+ {
+  "id": "aq11-014",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "When no flowers are present, how is American frogbit distinguished from waterhyacinth?",
+  "choices": [
+   "By its silvery roots and rhizomes and its branched leaf veins",
+   "By the spongy floats swelling its leaf stalks",
+   "By its leaves, which are twice the size of waterhyacinth's",
+   "By its stems, which are hollow and rooted at the nodes"
+  ],
+  "answer": 0,
+  "explanation": "American frogbit's crowded, erect growth form can superficially be confused with waterhyacinth. In flower they are easy to separate — frogbit bears single, silvery white flowers 1/2-1 inch across, waterhyacinth large blue to violet flowers in spikes — and without flowers, frogbit shows silvery roots and rhizomes and leaf veins that are branched. Its young uncrowded plants have floating heart-shaped leaves with spongy tissue on the underside.",
+  "page": "69"
+ },
+ {
+  "id": "aq11-015",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "What are hydrilla's two types of vegetative reproductive structures, and where does each form?",
+  "choices": [
+   "Stolons on the surface and winter buds in the leaf whorls",
+   "Bulbils in the flowers and offsets at the stem base",
+   "Turions in the leaf axils and tubers beneath the soil surface at the ends of rhizomes",
+   "Fragments from the stem tips and spores on the leaf undersides"
+  ],
+  "answer": 2,
+  "explanation": "Hydrilla produces turions in the leaf axils and tubers beneath the soil surface at the ends of its rhizomes, along with extensive rhizomes and stolons from which branches arise; new plants also grow from fragments. Its leaves come in whorls of usually 4-8 with visible, curved, coarse marginal teeth that make the plant rough to the touch, and the midvein is often red, often with at least one spine or bump on the lower surface.",
+  "page": "70"
+ },
+ {
+  "id": "aq11-016",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "Which characters separate Brazilian elodea from hydrilla?",
+  "choices": [
+   "Whorls of only two leaves and a square stem",
+   "Minute marginal teeth, smooth midveins, and very dense layers of overlapping leaves at the stem tips",
+   "Coarse teeth, red midveins, and abundant tubers",
+   "Brown stems and leaves reduced to bladeless sheaths"
+  ],
+  "answer": 1,
+  "explanation": "Brazilian elodea (Egeria densa) is superficially very similar to hydrilla, with leaves in whorls of usually 4-8, but its marginal teeth are minute, its midveins are smooth, and the very dense layers of overlapping leaves at its stem tips are useful in separating it. Only male flowers have been observed — white and greenish, up to an inch across, usually extending above the surface — and it reproduces by fragmentation.",
+  "page": "70"
+ },
+ {
+  "id": "aq11-017",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "How is American eelgrass told from the similar-looking springtape?",
+  "choices": [
+   "Eelgrass leaves are stiff and hold themselves upright",
+   "Springtape has no veins at all in its leaves",
+   "Eelgrass grows from tubers, springtape from rhizomes",
+   "Eelgrass veins are not raised, as they are in springtape"
+  ],
+  "answer": 3,
+  "explanation": "American eelgrass (Vallisneria americana) is a submersed plant with ribbon-like leaves showing definite veins and some crossveins in the midportion but none visible at the margins; the veins are not raised, as they are in the similar-appearing springtape (Sagittaria kurtziana). The leaf tips are blunt with a few marginal teeth, and rhizomes are produced.",
+  "page": "71"
+ },
+ {
+  "id": "aq11-018",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "How are southern naiad and slender (spiny leaf) naiad separated?",
+  "choices": [
+   "By leaf width in cells: southern naiad's blades are 21-46 cells wide, slender naiad's stiff, recurved leaves 9-16",
+   "By flower color: southern white, slender purple",
+   "By habit: southern floats free, slender roots in the bottom",
+   "By season: southern grows in summer, slender in winter"
+  ],
+  "answer": 0,
+  "explanation": "Southern naiad (Najas guadalupensis) has slender branching stems and deep green to reddish-green leaves, opposite or in whorls of three, narrow and broadened at the base with minute marginal spines, the blade 21-46 cells wide. Slender naiad (Najas minor) has opposite sheathing leaves that are short-toothed, stiff, and recurved, only 9-16 cells wide.",
+  "page": "72"
+ },
+ {
+  "id": "aq11-019",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "What lets an uncrowded waterhyacinth plant float?",
+  "choices": [
+   "Air chambers running the length of its hollow stems",
+   "The dense mat of neighbors holding each plant up",
+   "Leaf stalks that are swollen and filled with spongy tissue",
+   "Waxy leaves that trap a film of air beneath the blade"
+  ],
+  "answer": 2,
+  "explanation": "Under uncrowded conditions waterhyacinth's leaf stalks are swollen and filled with spongy tissue, acting as floats. Daughter plants connect by stolons that hold mats together, numerous fibrous dark — often purple or black — roots hang beneath, and the showy light blue to violet flowers grow in spikes with a yellow marking on the upper portion of the uppermost petal. Mature plants are typically about a foot tall but may reach three feet.",
+  "page": "73"
+ },
+ {
+  "id": "aq11-020",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "Which trait separates the three duckweed-family genera?",
+  "choices": [
+   "Frond shape: round, oval, or shoe-sole shaped",
+   "Roots per frond: common duckweed one, giant duckweed two to several, watermeal none",
+   "Color: green, red-tinged, or gray",
+   "Flower size: large, small, or absent"
+  ],
+  "answer": 1,
+  "explanation": "Duckweed leaves and stems are reduced to \"fronds.\" Common duckweed (Lemna) has shoe-sole-shaped fronds under 1/4 inch with a single root per frond; giant duckweed (Spirodela) has somewhat rounded fronds under 5/16 inch, usually larger, with two to several roots and several visible veins; common watermeal (Wolffia) is a rootless speck under 1/32 inch that feels grainy rolled between the fingertips. Waterlettuce, by contrast, is a floating rosette of gray-green, densely hairy leaves like a loose head of lettuce.",
+  "page": "74"
+ },
+ {
+  "id": "aq11-021",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "Both have floating heart-shaped leaves — how is spatterdock told from waterlily?",
+  "choices": [
+   "Spatterdock's basal lobes are pointed and its flowers showy",
+   "Waterlily's leaves stand erect above the water surface",
+   "Spatterdock's leaves attach at the center like an umbrella",
+   "Spatterdock's basal lobes are rounded at the tip and its yellow flowers are not showy; waterlily's lobes are pointed and its many-petaled flowers are showy"
+  ],
+  "answer": 3,
+  "explanation": "Waterlily (Nymphaea) blades are nearly circular, notched to the center where the stalk attaches, with basal lobes pointed at the tip, and all species have showy, many-petaled flowers floating on the surface. Spatterdock (Nuphar luteum) leaves are heart-shaped, usually longer than wide, deeply notched with basal lobes rounded at the tip, its stalks often elongating until the blades stand emersed — and its yellow flowers are not showy.",
+  "page": "76"
+ },
+ {
+  "id": "aq11-022",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "Which features identify American lotus?",
+  "choices": [
+   "Circular leaves up to 40 inches wide attached at the middle like an umbrella, and fruits resembling upturned showerheads",
+   "Football-shaped leaves with a slimy coating beneath",
+   "Heart-shaped floating leaves and dull purple flowers",
+   "Diamond-shaped floating leaves on a submersed stem"
+  ],
+  "answer": 0,
+  "explanation": "American lotus (Nelumbo lutea) is a floating leaf or emersed perennial from a long slender rhizome, with large circular blades up to 40 inches wide attached in the middle (peltate) like an umbrella. Its showy yellow flowers are 4-6 inches wide, and the persistent fruits resemble showerheads pointing upward, holding up to 25 hard seeds about a half inch across.",
+  "page": "76"
+ },
+ {
+  "id": "aq11-023",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "Why is watershield often called \"snot-bonnet\"?",
+  "choices": [
+   "Its dull purple flowers droop like a wet bonnet",
+   "The underside of its leaves and its leaf stalks are coated with slime",
+   "Its floating leaves fold shut over touched insects",
+   "Its rhizome exudes mucilage when broken"
+  ],
+  "answer": 1,
+  "explanation": "Watershield (Brasenia schreberi) is a floating leaf perennial whose stalk attaches at the center of the elliptic, football-shaped blade like an umbrella handle; the leaf underside and stalk carry a slimy coating, earning the name snot-bonnet. Its 1-2 inch flowers are dull purple and emerged. Fanwort, in the same family, is submersed with opposite leaves divided into narrow Y-branching segments and sometimes diamond-shaped floating leaves.",
+  "page": "77"
+ },
+ {
+  "id": "aq11-024",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "What structure distinguishes the bladderworts?",
+  "choices": [
+   "Inflated leaf stalks that float the rosette",
+   "Whorled, fan-shaped leaves with one-sided teeth",
+   "Small insect-trapping bladders on plants that lack true roots",
+   "A basal rosette of sticky, glandular leaves"
+  ],
+  "answer": 2,
+  "explanation": "Bladderworts (Utricularia) are submersed or emersed plants that all lack true roots, with yellow or purple two-lipped, often spurred flowers. The presence of small insect-trap bladders distinguishes them; the bladders are more common and more easily seen in the submersed species, and species growing in wet sand have their bladders in the sand.",
+  "page": "78"
+ },
+ {
+  "id": "aq11-025",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "Which description fits Eurasian watermilfoil?",
+  "choices": [
+   "Reddish-to-brown stems with olive green leaves in whorls of 3-6, each with 10-16 hairlike segment pairs like weather-beaten feathers",
+   "Firm light green foliage emersed up to 8 inches above the surface",
+   "Limp featherlike submersed leaves plus stiff unsegmented emersed leaves",
+   "Opposite fan-shaped leaves on a rough, brittle stem"
+  ],
+  "answer": 0,
+  "explanation": "Eurasian watermilfoil is a submersed perennial with reddish to brown stems; the olive green leaves grow in whorls of three to six with 10-16 very narrow segments on each side, giving the look of weather-beaten feathers, and flowers occur on emersed spikes usually in whorls of four. Parrotfeather has firm, light green foliage emersed up to 8 inches with a waxy coating on the emersed leaves; variable milfoil carries two leaf types — limp, featherlike submersed leaves and stiff, unsegmented emersed ones.",
+  "page": "78"
+ },
+ {
+  "id": "aq11-026",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "Which pair of characters belongs to alligatorweed?",
+  "choices": [
+   "Solid pink stems and alternate leaves in rosettes",
+   "Square stems and yellow flowers on side branches",
+   "Fan-shaped whorled leaves attached by holdfasts",
+   "Hollow, usually pink stems that root at the nodes, and whitish scaly flowers in a head at the end of a stalk"
+  ],
+  "answer": 3,
+  "explanation": "Alligatorweed is a floating, emersed, or terrestrial sprawling herb whose hollow stems — usually pink, and inflated when floating — root at the nodes. The opposite leaves are about a half inch wide and an inch and a half long, tapering at the base, and the whitish, scaly flowers form a head at the end of a stalk. Coontail, by contrast, attaches by holdfasts without true roots and has whorled, fan-shaped, finely dissected leaves with teeth on one side, rough to the touch.",
+  "page": "80"
+ },
+ {
+  "id": "aq11-027",
+  "section": 11,
+  "sectionName": "Aquatic Plant Identification",
+  "manual": "cat-a",
+  "question": "What characterizes the flowers of the water primroses (Ludwigia)?",
+  "choices": [
+   "Two-lipped purple flowers with a spur",
+   "Four or five sepals with four or five yellow petals",
+   "Spikes of small silvery flowers with a hairy beard",
+   "Single white flowers a half inch across at the leaf base"
+  ],
+  "answer": 1,
+  "explanation": "The water primroses range from small woody shrubs to creeping, floating herbs, but all are characterized by flowers of 4 or 5 sepals and 4 or 5 yellow petals, with fruits that are elongate, often club-shaped capsules.",
+  "page": "81"
+ },
+ {
+  "id": "aq12-001",
+  "section": 12,
+  "sectionName": "Appendices",
+  "sectionLabel": "app.",
+  "manual": "cat-a",
+  "question": "What is an acre-foot?",
+  "choices": [
+   "The water that flows past a point in one hour",
+   "One acre of bottom covered to the plants' height",
+   "A volume of water equal to one acre that is one foot in depth",
+   "The volume of a channel one foot wide across one acre"
+  ],
+  "answer": 2,
+  "explanation": "An acre-foot is a volume of water equal to one acre of water one foot in depth — 43,560 cubic feet, or about 325,850 gallons. It is the working unit for concentration-based aquatic treatments.",
+  "page": "88"
+ },
+ {
+  "id": "aq12-002",
+  "section": 12,
+  "sectionName": "Appendices",
+  "sectionLabel": "app.",
+  "manual": "cat-a",
+  "question": "About how much active ingredient applied to one acre-foot of water gives a concentration of 1 ppm by weight?",
+  "choices": [
+   "2.72 pounds",
+   "8.34 pounds",
+   "1 pound",
+   "27.2 pounds"
+  ],
+  "answer": 0,
+  "explanation": "One part per million by weight is one part of a substance in one million parts of another by weight: approximately 2.72 pounds of active ingredient applied to one acre-foot of water gives 1 ppmw. Per million gallons of water, the figure is 8.345 pounds.",
+  "page": "90"
+ },
+ {
+  "id": "aq12-003",
+  "section": 12,
+  "sectionName": "Appendices",
+  "sectionLabel": "app.",
+  "manual": "cat-a",
+  "question": "What is the difference between an LD50 and an LC50?",
+  "choices": [
+   "LD50 applies to fish, LC50 to mammals",
+   "An LD50 is a dose in mg per kg of body weight lethal to half the test organisms; an LC50 is a concentration in air or water that kills half of them",
+   "LD50 measures chronic toxicity, LC50 acute toxicity",
+   "They are interchangeable names for the same measurement"
+  ],
+  "answer": 1,
+  "explanation": "The LD50 is the dose calculated to be lethal to 50 percent of the organisms in a test situation, expressed as milligrams of chemical per kilogram of body weight; the toxicant may be fed (oral), applied to the skin (dermal), or administered as vapors (inhalation). The LC50 is the concentration of a chemical in air (inhalation toxicity) or water (aquatic toxicity) that kills 50 percent of the test organisms.",
+  "page": "90"
+ },
+ {
+  "id": "aq12-004",
+  "section": 12,
+  "sectionName": "Appendices",
+  "sectionLabel": "app.",
+  "manual": "cat-a",
+  "question": "Two chemicals applied together produce a combined effect GREATER than predicted from each alone. What is this called?",
+  "choices": [
+   "Antagonism",
+   "Compatibility",
+   "Potentiation",
+   "Synergism"
+  ],
+  "answer": 3,
+  "explanation": "Synergism is an interaction of two or more chemicals whose combined effect is greater than the effect predicted from each applied separately; antagonism is the opposite, a combined effect less than predicted. Compatibility merely means the products can be mixed and applied together without undesirably altering either.",
+  "page": "92"
+ },
+ {
+  "id": "aq12-005",
+  "section": 12,
+  "sectionName": "Appendices",
+  "sectionLabel": "app.",
+  "manual": "cat-a",
+  "question": "By the glossary's classification, what total hardness makes water \"hard\"?",
+  "choices": [
+   "More than 25 mg calcium carbonate per liter",
+   "More than 100 mg calcium carbonate per liter",
+   "More than 250 mg calcium carbonate per liter",
+   "More than 500 mg calcium carbonate per liter"
+  ],
+  "answer": 1,
+  "explanation": "Soft waters have a total hardness of less than 50 mg calcium carbonate per liter (parts per million), hard waters more than 100, and moderately hard waters fall between 50 and 100. Hardness matters because herbicides can react with its components and become inactive or precipitate.",
+  "page": "91"
+ },
+ {
+  "id": "aq12-006",
+  "section": 12,
+  "sectionName": "Appendices",
+  "sectionLabel": "app.",
+  "manual": "cat-a",
+  "question": "How does a persistent herbicide differ from a residual herbicide?",
+  "choices": [
+   "Persistent products act through foliage, residual through soil",
+   "A persistent herbicide binds to sediments; a residual one stays dissolved",
+   "A persistent herbicide harms susceptible rotation crops or native regrowth for an extended period; a residual one kills germinating weed seedlings in soil over a relatively short period",
+   "The terms differ only in which agency's labels use them"
+  ],
+  "answer": 2,
+  "explanation": "A persistent herbicide, applied at the recommended rate, will harm susceptible crops planted in normal rotation after the treated crop or interfere with regrowth of native vegetation in non-crop sites for an extended time. A residual herbicide persists in the soil and injures or kills germinating weed seedlings over a relatively short period.",
+  "page": "90"
+ },
+ {
+  "id": "aq12-007",
+  "section": 12,
+  "sectionName": "Appendices",
+  "sectionLabel": "app.",
+  "manual": "cat-a",
+  "question": "By the glossary's size line, what separates a granule from a pellet?",
+  "choices": [
+   "Granules are generally under 10 cubic millimeters per particle; pelleted formulations are usually larger",
+   "Granules dissolve in water; pellets stay intact",
+   "Pellets carry higher active ingredient percentages",
+   "Granules need a liquid carrier; pellets do not"
+  ],
+  "answer": 0,
+  "explanation": "Both are dry formulations of herbicide in discrete particles designed to be applied without a liquid carrier: a granular formulation's particles are generally less than 10 cubic millimeters, while a pelleted formulation's are usually larger than 10 cubic millimeters.",
+  "page": "90"
+ },
+ {
+  "id": "aq12-008",
+  "section": 12,
+  "sectionName": "Appendices",
+  "sectionLabel": "app.",
+  "manual": "cat-a",
+  "question": "What is weed ERADICATION, as distinct from weed control?",
+  "choices": [
+   "Reducing an infestation below the level of economic damage",
+   "Treating an entire water body rather than spots within it",
+   "Removing every plant large enough to be seen from shore",
+   "Eliminating all live plant parts and viable seeds of a weed from a site"
+  ],
+  "answer": 3,
+  "explanation": "Weed control is the process of reducing weed growth or infestation to an acceptable level for aesthetic, economic, public health, or other reasons. Weed eradication is the elimination of all live plant parts and viable seeds of a weed from a site — a far higher bar.",
+  "page": "92"
+ },
+ {
+  "id": "aq12-009",
+  "section": 12,
+  "sectionName": "Appendices",
+  "sectionLabel": "app.",
+  "manual": "cat-a",
+  "question": "How many gallons does one cubic foot of water hold, and how much does one gallon weigh?",
+  "choices": [
+   "8.34 gallons; 7.48 pounds",
+   "6.23 gallons; 8.80 pounds",
+   "7.48 gallons; 8.34 pounds",
+   "7.00 gallons; 8.00 pounds"
+  ],
+  "answer": 2,
+  "explanation": "A cubic foot holds 7.48 gallons and weighs 62.4 pounds, and a gallon of water weighs 8.34 pounds. These two constants, with 43,560 square feet to the acre, underlie the tank volume and dosage arithmetic in the calibration chapter.",
+  "page": "84"
  }
 ];
