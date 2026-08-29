@@ -10,9 +10,14 @@
    "Pesticide Applicator Certification and Licensing", which is how the
    certification and licensing system is described to applicators themselves:
    exam formats, credit requirements, and reciprocity, none of which the
-   manuals cover and some of which the rules leave to practice. Nothing here
-   comes from a North Carolina study manual; those are sold in print, and
-   questions from them are planned as further `manual` values.
+   manuals cover and some of which the rules leave to practice. One North
+   Carolina category manual is covered so far: "Ectoparasites of Pets" (J. J.
+   Arends, NC Agricultural Extension Service, January 1994), the study manual
+   for the Agricultural Pest Animal - Small Animal category, K(SA), whose
+   questions carry `manual: "cat-ksa"`. The NC study manuals are sold in
+   print with no public PDF, so those questions cite the printed page without
+   a link; the remaining category manuals are planned as further `manual`
+   values.
 
    Each source numbers its own sections from 1, so `section` is a section
    number within the source named by `manual` ("default" when absent), and the
@@ -24,7 +29,9 @@
    AG-714 numbers nothing at all, so its headings are numbered in the order
    they are printed in ("sec. 3"). Ids follow the same split: s<section>-NNN
    for the core manual, a<section> for the aerial one, l<section> for the law,
-   r<section> for the rules, n<section> for AG-714.
+   r<section> for the rules, n<section> for AG-714, and ksa<section> for the
+   K(SA) manual, which numbers nothing either, so its major headings are
+   numbered in the order they are printed in.
 
    A manual question cites the page printed in its manual. A law or rule
    question is cited the way lawyers and inspectors cite it, by section number
@@ -18079,5 +18086,1317 @@ const QUESTION_BANK = [
   "answer": 0,
   "explanation": "Credit is given only for pesticide-related topics, and the number of credit hours equals the number of hours of pesticide training scheduled. A program that mixes in other subjects earns credit for its pesticide portion.",
   "page": "Recertification Course Approval"
+ },
+ {
+  "id": "ksa1-001",
+  "section": 1,
+  "sectionName": "Introduction and Pest Biology",
+  "manual": "cat-ksa",
+  "question": "How are pests of pets best controlled?",
+  "choices": [
+   "With the strongest labeled pesticide, applied on a regular preventive schedule",
+   "With biological control alone, keeping pesticides off the animal entirely",
+   "With cultural, biological, and chemical measures combined in an IPM program",
+   "With repeated chemical treatments rotated among different product classes"
+  ],
+  "answer": 2,
+  "explanation": "Pests are best controlled by combining cultural, biological, and chemical control measures in an integrated pest management (IPM) program. Only when all possible management and cultural practices, available biological control, and judicious pesticide use are combined does the most effective control come at the most reasonable cost.",
+  "page": "3"
+ },
+ {
+  "id": "ksa1-002",
+  "section": 1,
+  "sectionName": "Introduction and Pest Biology",
+  "manual": "cat-ksa",
+  "question": "What happens to a control program that relies on only one part of an integrated program?",
+  "choices": [
+   "It works, but at a higher cost than a combined program",
+   "It fails",
+   "It succeeds if the one part is judicious pesticide use",
+   "It works indoors but not where animals go outside"
+  ],
+  "answer": 1,
+  "explanation": "A control program that relies on only one part of an integrated program will fail. Effective, economical control comes only from instituting every possible management and cultural practice, using available biological control, and combining them with judicious pesticide use.",
+  "page": "3"
+ },
+ {
+  "id": "ksa1-003",
+  "section": 1,
+  "sectionName": "Introduction and Pest Biology",
+  "manual": "cat-ksa",
+  "question": "What is the first step in choosing the proper control program for a pest of pets?",
+  "choices": [
+   "Identifying the pest correctly",
+   "Measuring how large the pest population is",
+   "Choosing between a systemic and a contact product",
+   "Finding where the animal picked the pest up"
+  ],
+  "answer": 0,
+  "explanation": "Control programs differ from pest to pest, so the first step in choosing the proper program is identifying the pest correctly. It is impossible to recommend a sound control program without knowing what the \"bug\" is, or whether it is even a pest of the animal it was found on.",
+  "page": "3"
+ },
+ {
+  "id": "ksa1-004",
+  "section": 1,
+  "sectionName": "Introduction and Pest Biology",
+  "manual": "cat-ksa",
+  "question": "Why is identification of the pest called critical at the start of a control program?",
+  "choices": [
+   "It fixes the pesticide rate and the retreatment interval the product label will require",
+   "It establishes whether the pest came from another animal or from the premises",
+   "It decides whether treatment can be done at home or needs a veterinarian's supervision",
+   "It determines what stages are present, where they are on or off the host, and the right control"
+  ],
+  "answer": 3,
+  "explanation": "Identification determines what stage or stages of the pest are present, where those stages physically are — on or off the host — and what the appropriate control method is. Any control or management program begins with a basic understanding of the pest and its biology.",
+  "page": "3"
+ },
+ {
+  "id": "ksa1-005",
+  "section": 1,
+  "sectionName": "Introduction and Pest Biology",
+  "manual": "cat-ksa",
+  "question": "How do mites differ from insects in body regions?",
+  "choices": [
+   "Mites have three body regions where insects have two",
+   "Mites have two body regions, a head and an abdomen, where insects have three",
+   "Both groups have three regions, but the mite's thorax is fused to its head",
+   "Mites have a single undivided body region where insects have two"
+  ],
+  "answer": 1,
+  "explanation": "Mites have only two body regions, a head and an abdomen. Insects have three: head, thorax, and abdomen. Telling the two groups apart matters because control programs are different for each pest.",
+  "page": "3"
+ },
+ {
+  "id": "ksa1-006",
+  "section": 1,
+  "sectionName": "Introduction and Pest Biology",
+  "manual": "cat-ksa",
+  "question": "How many legs does an adult mite have compared with an insect?",
+  "choices": [
+   "Eight legs, two more than an insect's six",
+   "Six legs, the same number as an insect",
+   "Ten legs, four more than an insect's six",
+   "Six legs as an adult, while insects have eight"
+  ],
+  "answer": 0,
+  "explanation": "In the adult stage a mite has 8 legs, which is 2 more than an insect's 6. The leg count, together with the number of body regions, is what separates the two groups.",
+  "page": "3"
+ },
+ {
+  "id": "ksa1-007",
+  "section": 1,
+  "sectionName": "Introduction and Pest Biology",
+  "manual": "cat-ksa",
+  "question": "In the general mite life cycle, what emerges from the egg?",
+  "choices": [
+   "An eight-legged nymph that feeds and molts into an adult",
+   "A wormlike larva that pupates before becoming an adult",
+   "A six-legged larva that feeds, molts, and becomes an eight-legged nymph",
+   "A miniature eight-legged adult that only needs to grow"
+  ],
+  "answer": 2,
+  "explanation": "The mite cycle starts with an egg that is resistant to drying out, cold, and heat. A 6-legged larva emerges from it, feeds, molts, and turns into an 8-legged nymph; the nymph feeds and molts into the adult, which mates, feeds, and lays eggs to begin the cycle again.",
+  "page": "3"
+ },
+ {
+  "id": "ksa1-008",
+  "section": 1,
+  "sectionName": "Introduction and Pest Biology",
+  "manual": "cat-ksa",
+  "question": "Which pests of pets are the best illustration of incomplete development, with egg, nymph, and adult stages?",
+  "choices": [
+   "Fleas",
+   "Lice",
+   "Flies",
+   "Ticks"
+  ],
+  "answer": 1,
+  "explanation": "Incomplete development runs egg, nymph, adult: the nymph that hatches resembles the adult, only smaller, and molts into larger nymphs until it matures. Lice are the best illustration of this development among pests of pets; fleas and flies develop by complete metamorphosis instead.",
+  "page": "3"
+ },
+ {
+  "id": "ksa1-009",
+  "section": 1,
+  "sectionName": "Introduction and Pest Biology",
+  "manual": "cat-ksa",
+  "question": "Which pests of pets are the most common ones with a complete life cycle of egg, larva, pupa, and adult?",
+  "choices": [
+   "Lice and mites",
+   "Ticks and chiggers",
+   "Sucking lice and chewing lice",
+   "Fleas and flies"
+  ],
+  "answer": 3,
+  "explanation": "An insect with a complete life cycle has 4 distinct stages — egg, wormlike larva, pupa (a resting stage), and adult — and each stage looks distinctly different. Fleas and flies are the most common pests of pets with this type of biology.",
+  "page": "4"
+ },
+ {
+  "id": "ksa1-010",
+  "section": 1,
+  "sectionName": "Introduction and Pest Biology",
+  "manual": "cat-ksa",
+  "question": "What happens to an insect or mite whose waxy outer exoskeleton layers are destroyed by solvents such as gasoline?",
+  "choices": [
+   "It molts early and reenters the life cycle at the larval stage",
+   "It suffocates, because the solvent blocks its breathing openings",
+   "It dies of dehydration, since the waxy layers protect it from water loss",
+   "It survives, because the chitin underneath is unaffected by solvents"
+  ],
+  "answer": 2,
+  "explanation": "Both insects and mites are covered by an exoskeleton, a hard covering of chitin whose outer layers are waxy and protect the animal from water loss. If those waxy layers are destroyed or altered — by solvents, gasoline, and the like — the arthropod dies of dehydration.",
+  "page": "4"
+ },
+ {
+  "id": "ksa2-001",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "Which clinical signs do the mites that parasitize small animals have in common?",
+  "choices": [
+   "Scabs, rough skin, hair or fur loss, and excessive scratching",
+   "Watery eyes, sneezing, nasal discharge, and coughing",
+   "Weight loss, pale gums, weakness, and reduced appetite",
+   "Swollen joints, lameness, fever, and enlarged lymph nodes"
+  ],
+  "answer": 0,
+  "explanation": "Most mites that parasitize small animals live on the skin, under scabs, or in burrows in the epidermis, and all cause similar clinical symptoms: scabs, rough skin, hair or fur loss, and excessive scratching. Secondary bacterial or fungal problems commonly develop on top.",
+  "page": "4"
+ },
+ {
+  "id": "ksa2-002",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "In which seasons are the scabies mites of dogs and cats most commonly seen?",
+  "choices": [
+   "Summer and early fall",
+   "Winter and early spring",
+   "Spring and summer",
+   "Fall and early winter"
+  ],
+  "answer": 1,
+  "explanation": "Sarcoptes scabiei var. canis in dogs and Notoedres cati in cats are more commonly seen in winter and early spring. The mite tunnels in the epidermis, the upper layer of the animal's skin.",
+  "page": "4"
+ },
+ {
+  "id": "ksa2-003",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "Which mite causes scabies in cats?",
+  "choices": [
+   "Sarcoptes scabiei var. canis",
+   "Cheyletiella blakei",
+   "Demodex canis",
+   "Notoedres cati"
+  ],
+  "answer": 3,
+  "explanation": "Scabies in cats is caused by Notoedres cati; Sarcoptes scabiei var. canis is the scabies mite of dogs. Cheyletiella blakei is the \"scruffy dandruff\" mite found on cats, and Demodex canis causes red mange in dogs.",
+  "page": "4"
+ },
+ {
+  "id": "ksa2-004",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "On a dog with scabies, where will the majority of the mites be found?",
+  "choices": [
+   "Along the back and the base of the tail",
+   "On the belly, where the skin is thinnest",
+   "Near the head of the animal",
+   "Inside the ear canals"
+  ],
+  "answer": 2,
+  "explanation": "The scabies mite tunnels in the epidermis, and the majority of the mites will be found near the head of the animal. A dog with scabies has skin that is red and rough, and it is common to see some hair loss.",
+  "page": "4"
+ },
+ {
+  "id": "ksa2-005",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "How is a scabies infestation diagnosed?",
+  "choices": [
+   "By combing the coat and examining the debris with a hand lens",
+   "By a skin scraping checked for mites under low power with a microscope",
+   "By a blood test the veterinarian sends to a laboratory",
+   "By pressing clear tape to the skin and looking for eggs"
+  ],
+  "answer": 1,
+  "explanation": "Diagnosis is done by a skin scraping, then checking for mites under low power with a microscope. Scabies mites tunnel in the upper layer of the skin, so they are recovered by scraping rather than found loose in the coat.",
+  "page": "4"
+ },
+ {
+  "id": "ksa2-006",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "A person handling a scabies-infested dog picks up mites. What happens to those mites on the human?",
+  "choices": [
+   "They die in 2 to 5 days on average, unless they transfer back to a dog",
+   "They establish and must be treated with a prescription scabicide",
+   "They die within a few hours, since they cannot bite human skin",
+   "They persist for 2 to 5 weeks before dying out on their own"
+  ],
+  "answer": 0,
+  "explanation": "Sarcoptes scabiei var. canis is a pest of dogs only, but it will attempt to colonize other species, and handling an infested dog can leave mites trying to colonize the handler, causing mild discomfort. This is commonly called transient scabies, and the mites die in 2 to 5 days on average unless they transfer back to a dog.",
+  "page": "4"
+ },
+ {
+  "id": "ksa2-007",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "When one animal is treated for scabies, what does the manual direct for the other animals?",
+  "choices": [
+   "Only the animals already showing red, rough skin are treated along with it",
+   "Nothing further is needed as long as the treated animal got a systemic product",
+   "All animals on the premises are quarantined for 2 to 5 days and then rechecked",
+   "Treated animals are isolated from untreated ones, and all contact animals are treated"
+  ],
+  "answer": 3,
+  "explanation": "Scabies is spread from dog to dog or cat to cat, so treated animals should be isolated from untreated animals, and all animals that were in contact with the infested animal should be treated.",
+  "page": "4"
+ },
+ {
+  "id": "ksa2-008",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "Because scabies mites live in the upper layers of the skin, what must a dip or spray achieve to work?",
+  "choices": [
+   "Stay on the coat for 24 hours before rinsing",
+   "Wet the animal to the skin so the mites contact the insecticide",
+   "Be repeated daily until skin scrapings come back clean",
+   "Be combined with clipping the coat over the affected areas"
+  ],
+  "answer": 1,
+  "explanation": "Because scabies mites are in the upper layers of the skin, treatment is difficult: with a dip or spray the animal must be wet to the skin to make sure the mites contact the insecticide. Best is a systemic — a product absorbed and transported by blood and cellular fluids — since for mites only products that get to the skin or into it provide effective control.",
+  "page": "4"
+ },
+ {
+  "id": "ksa2-009",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "What causes the \"dirty ears\" seen with ear mite (Otodectes cynotis) infestations?",
+  "choices": [
+   "A bacterial infection that follows the mites into the canal",
+   "Blood the mites draw pooling and drying in the ear canal",
+   "A red waxy mix of the mites' dried fecal material and the host's ear wax",
+   "Soil and debris the scratching animal packs into its ears"
+  ],
+  "answer": 2,
+  "explanation": "\"Dirty ears\" are caused by a red waxy material consisting of the mites' dried fecal material and the wax of the host. Chronic ear scratching and the associated hair or fur loss are common symptoms, and the female mite lays her eggs in the internal ear canal.",
+  "page": "4"
+ },
+ {
+  "id": "ksa2-010",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "How are ear mites diagnosed and commonly treated?",
+  "choices": [
+   "An ear scraping identifies the mites; treatment is a systemic or a liquid product applied into the ear",
+   "An ear swab is cultured for the mites; treatment is a medicated bath repeated weekly until clear",
+   "The mites are visible to the naked eye; treatment is flushing both ears daily with warm mineral oil",
+   "A blood test confirms the mites; treatment is a dust worked into the coat of the head and neck"
+  ],
+  "answer": 0,
+  "explanation": "Diagnosis is possible by scraping the ear and identifying the mites in the sample. Common treatment is with a systemic, or liquid products applied into the ear, where the mites live.",
+  "page": "4"
+ },
+ {
+  "id": "ksa2-011",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "What control does the manual recommend for grain (astigmatid) mites infesting a dog or cat?",
+  "choices": [
+   "A single systemic treatment, repeated only if symptoms return",
+   "None, other than stopping the animal from contacting the infested grain",
+   "Treating the head and mouth area, where the lesions develop",
+   "Fumigating the stored grain before the animal is allowed back"
+  ],
+  "answer": 1,
+  "explanation": "Cats and dogs that hunt around stored grain can become infested with grain-feeding mites, with irritated skin and lesions generally around the head and mouth. Often no mites are found and the problem comes and goes as the animal goes outside; no control is recommended other than stopping the animal from contacting the infested grain.",
+  "page": "5"
+ },
+ {
+  "id": "ksa2-012",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "Cheyletiella mites can reach a new host by hitching a ride on fleas. What is this called?",
+  "choices": [
+   "Parasitism",
+   "Metamorphosis",
+   "Questing",
+   "Phoresy"
+  ],
+  "answer": 3,
+  "explanation": "Cheyletiella can be transmitted by contact and by fleas. When it is transmitted by fleas, this is called \"phoresy,\" which means the mite has hitched a ride on another arthropod to get to a new host.",
+  "page": "5"
+ },
+ {
+  "id": "ksa2-013",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "Where are Cheyletiella (\"scruffy dandruff\") infestations generally found?",
+  "choices": [
+   "On young animals, and where many animals are kept — kennels, catteries, laboratories",
+   "On old and debilitated animals kept indoors and away from other pets",
+   "On animals that hunt around barns, feed rooms, and other stored-grain areas",
+   "On long-haired adult cats, which are the only hosts this mite will colonize"
+  ],
+  "answer": 0,
+  "explanation": "Cheyletiella yasguri on puppies and C. blakei on cats are generally associated with young animals and with situations where large numbers of animals are present: kennels, catteries, or laboratories. The mites can also cause itching and dermatitis on the humans who handle infested animals, and because the mite is common on young animals, treatment should be recommended by a veterinarian. Diagnosis is by skin scraping.",
+  "page": "5"
+ },
+ {
+  "id": "ksa2-014",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "Where does Demodex canis, the red mange mite, live on the dog?",
+  "choices": [
+   "In burrows it tunnels through the epidermis, mostly near the animal's head",
+   "In the internal ear canal, where the females lay their eggs",
+   "In the hair follicles and sebaceous (oil) glands of the host",
+   "On the hair shafts near the skin, glued in place like louse nits"
+  ],
+  "answer": 2,
+  "explanation": "Demodex canis is an elongate mite that lives in the hair follicle of the host. It is always associated with the hair follicle and sebaceous (oil) glands, where its entire life cycle takes place.",
+  "page": "5"
+ },
+ {
+  "id": "ksa2-015",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "In the squamous or crusty form of demodectic mange, what does the skin look like?",
+  "choices": [
+   "Thickened, darkened, and wrinkled",
+   "Covered with pus pockets and severe dermatitis",
+   "Red and rough, with scattered hair loss",
+   "Dry and flaking, like heavy dandruff"
+  ],
+  "answer": 0,
+  "explanation": "Dogs show two forms of demodectic mange: the squamous or crusty form, where the skin is thickened, darkened, and wrinkled, and the pustular form, with pus pockets, severe dermatitis, and possible bacterial infection.",
+  "page": "5"
+ },
+ {
+  "id": "ksa2-016",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "Which dogs most commonly develop demodectic mange?",
+  "choices": [
+   "Working dogs in their prime, stressed by heavy exercise",
+   "Long-haired breeds of any age kept mostly indoors",
+   "Dogs recently boarded in kennels with many other dogs",
+   "Puppies 4 to 9 months old and old or debilitated animals"
+  ],
+  "answer": 3,
+  "explanation": "Demodectic mange is most common in puppies 4 to 9 months of age and in old and debilitated animals; the severity of an infestation is governed by predisposing factors — age, health status or condition, and other illness or infection. Treatment is the same as recommended for scabies, but because young and old dogs are the usual cases, a veterinarian should be consulted to ensure their safety.",
+  "page": "5"
+ },
+ {
+  "id": "ksa2-017",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "Which chigger life stage feeds on pets, livestock, and humans?",
+  "choices": [
+   "The nymph",
+   "The larva",
+   "The adult",
+   "Every active stage"
+  ],
+  "answer": 1,
+  "explanation": "Only the larval stage of chiggers feeds on pets, livestock, and humans; the intense itching and redness are a reaction to injected saliva. After feeding, the larvae drop to the ground and molt to nymphs, and the nymphs and adults live in the soil and do not feed on animals. The normal hosts are reptiles, birds, and rabbits.",
+  "page": "5"
+ },
+ {
+  "id": "ksa2-018",
+  "section": 2,
+  "sectionName": "Mites",
+  "manual": "cat-ksa",
+  "question": "Why should chigger treatment for a pet be geared toward repellent protection rather than killing mites on the animal?",
+  "choices": [
+   "Chigger larvae are resistant to the insecticides labeled for use on pets",
+   "The larvae burrow too deeply into the skin for contact products to reach",
+   "By the time the reaction is noticed, the larvae have finished feeding and dropped off",
+   "Repellents also relieve the itching and redness that the feeding causes"
+  ],
+  "answer": 2,
+  "explanation": "By the time the skin reaction is observed or felt, the chigger larvae have finished feeding and dropped to the ground to molt into nymphs, so treatment should protect the animal in the form of insecticide repellent treatments. After feeding, treatment to stop the itching and redness is recommended. On dogs and cats the face and ears are the preferred feeding areas.",
+  "page": "5"
+ },
+ {
+  "id": "ksa3-001",
+  "section": 3,
+  "sectionName": "Ticks",
+  "manual": "cat-ksa",
+  "question": "In what ways do ticks damage their hosts?",
+  "choices": [
+   "Blood loss, tick paralysis, tick toxicosis, and wounds that let blow flies in",
+   "Skin thickening, hair loss, dandruff, and secondary mange",
+   "Anemia, tapeworm transmission, plague, and murine typhus",
+   "Itching, ear damage, scabs, and thickened ear tissue"
+  ],
+  "answer": 0,
+  "explanation": "Ticks can damage their hosts in a number of ways: blood loss, tick paralysis, tick toxicosis, and wounds that act as entry sites for blow flies. They are also excellent vectors of diseases of both animals and humans.",
+  "page": "6"
+ },
+ {
+  "id": "ksa3-002",
+  "section": 3,
+  "sectionName": "Ticks",
+  "manual": "cat-ksa",
+  "question": "How long must a tick be attached to its host before a disease organism is transmitted?",
+  "choices": [
+   "1 to 2 hours",
+   "6 to 8 hours",
+   "12 to 24 hours",
+   "48 to 72 hours"
+  ],
+  "answer": 2,
+  "explanation": "Ticks can transmit diseases when they feed, but a tick must be attached to the host for 12 to 24 hours before a disease organism is transmitted — one reason prompt, proper removal matters.",
+  "page": "6"
+ },
+ {
+  "id": "ksa3-003",
+  "section": 3,
+  "sectionName": "Ticks",
+  "manual": "cat-ksa",
+  "question": "Which two tick-associated diseases does the manual name as common in humans?",
+  "choices": [
+   "Bubonic plague and murine typhus",
+   "Lyme disease and Rocky Mountain spotted fever",
+   "Heartworm and tick paralysis",
+   "Tularemia and ehrlichiosis"
+  ],
+  "answer": 1,
+  "explanation": "Lyme disease and Rocky Mountain spotted fever are the two common diseases of humans and animals associated with ticks that the manual names. Bubonic plague and murine typhus are vectored by fleas, and heartworm by mosquitoes.",
+  "page": "6"
+ },
+ {
+  "id": "ksa3-004",
+  "section": 3,
+  "sectionName": "Ticks",
+  "manual": "cat-ksa",
+  "question": "What is the correct way to remove an attached tick?",
+  "choices": [
+   "Twist it counterclockwise until the mouthparts release",
+   "Coat it with petroleum jelly and let it back out on its own",
+   "Burn it off with a just-extinguished match head",
+   "Grasp it with forceps below the head and pull straight out"
+  ],
+  "answer": 3,
+  "explanation": "Ticks should always be removed with forceps by grasping them below the head and pulling straight out of the skin. Take care not to contact the fluids from the tick: if the tick is infected and its fluids enter a cut on your hands, you can contract the disease without the tick ever feeding on you.",
+  "page": "6"
+ },
+ {
+  "id": "ksa3-005",
+  "section": 3,
+  "sectionName": "Ticks",
+  "manual": "cat-ksa",
+  "question": "What are the four life stages of a hard tick?",
+  "choices": [
+   "Egg, larva, pupa, and adult",
+   "Egg, larva, nymph, and adult",
+   "Egg, nymph, pupa, and adult",
+   "Larva, nymph, pupa, and adult"
+  ],
+  "answer": 1,
+  "explanation": "Hard ticks have four life stages: eggs, laid in batches on the ground in protected habitat, then larva, nymph, and adult, which live on the animal or in the ground cover. There is no pupal stage — ticks are not insects.",
+  "page": "6"
+ },
+ {
+  "id": "ksa3-006",
+  "section": 3,
+  "sectionName": "Ticks",
+  "manual": "cat-ksa",
+  "question": "How long can it take a hard tick to complete its life cycle from egg to adult?",
+  "choices": [
+   "From 2 months to as long as 3 years",
+   "From 2 weeks to about 2 months",
+   "From 10 to 14 days in warm weather",
+   "Exactly one year — one generation a season"
+  ],
+  "answer": 0,
+  "explanation": "The length of time it takes a tick to complete its life cycle from egg to adult varies from 2 months to as long as 3 years, depending on the tick and on finding hosts.",
+  "page": "6"
+ },
+ {
+  "id": "ksa3-007",
+  "section": 3,
+  "sectionName": "Ticks",
+  "manual": "cat-ksa",
+  "question": "To which group do the majority of ticks seen on small animals belong?",
+  "choices": [
+   "One-host ticks",
+   "Two-host ticks",
+   "Three-host ticks",
+   "Soft ticks"
+  ],
+  "answer": 2,
+  "explanation": "The number of hosts required for a tick to complete its life cycle indicates its group — one-host, two-host, or three-host ticks — and the majority of the ticks seen on small animals are three-host ticks, which need a different host for the larva, the nymph, and the adult.",
+  "page": "6"
+ },
+ {
+  "id": "ksa3-008",
+  "section": 3,
+  "sectionName": "Ticks",
+  "manual": "cat-ksa",
+  "question": "In the three-host tick life cycle, what do newly hatched larvae do?",
+  "choices": [
+   "Crawl to the nest or bedding of the host their mother fed on",
+   "Wait in grass or leaf litter for a host to come by, called questing",
+   "Burrow into the soil and molt to nymphs before seeking any host",
+   "Attach to the same host the female engorged on and feed there"
+  ],
+  "answer": 1,
+  "explanation": "The female drops off the host and lays her batch of eggs in grass, leaf litter, or other cover. The newly hatched larvae wait for a host to come by — called questing — then attach to host 1, feed, drop off, and molt to nymphs; the nymph feeds on host 2 and molts to an adult, which locates host 3, feeds, and completes the cycle.",
+  "page": "6"
+ },
+ {
+  "id": "ksa3-009",
+  "section": 3,
+  "sectionName": "Ticks",
+  "manual": "cat-ksa",
+  "question": "After mating, how long does a female hard tick feed before engorging and dropping off to lay her eggs?",
+  "choices": [
+   "12 to 24 hours",
+   "1 to 3 days",
+   "3 to 5 days",
+   "5 to 21 days"
+  ],
+  "answer": 3,
+  "explanation": "Adult ticks locate a host and mate, and following mating the females begin to feed for a period of 5 to 21 days. The engorged female then drops off the host to lay a batch of eggs in grass, leaf litter, or other cover.",
+  "page": "6"
+ },
+ {
+  "id": "ksa3-010",
+  "section": 3,
+  "sectionName": "Ticks",
+  "manual": "cat-ksa",
+  "question": "Which tick can become established inside a house or kennel rather than in woods and fields?",
+  "choices": [
+   "The brown dog tick (Rhipicephalus sanguineus)",
+   "The American dog tick (Dermacentor variabilis)",
+   "The lone star tick (Amblyomma americanum)",
+   "The black-legged tick (Ixodes scapularis)"
+  ],
+  "answer": 0,
+  "explanation": "The ticks commonly seen on small animals — the lone star tick, Gulf Coast tick, American dog tick, brown dog tick, and black-legged tick — are associated with the outdoors, woods, and fields, with the exception of the brown dog tick, which is commonly associated with animal pens, houses, and other places where dogs or cats sleep. It can therefore be a problem in the house as well as on the dog.",
+  "page": "6"
+ },
+ {
+  "id": "ksa3-011",
+  "section": 3,
+  "sectionName": "Ticks",
+  "manual": "cat-ksa",
+  "question": "What does control of a brown dog tick infestation require beyond treating the dog?",
+  "choices": [
+   "Treating every animal inside the fenced yard at the same time",
+   "A veterinarian-administered systemic, since sprays cannot reach the ticks",
+   "Locating and treating the source of the infestation, where the dog sleeps",
+   "Removing the dog from the premises until the ticks have died out"
+  ],
+  "answer": 2,
+  "explanation": "Brown dog ticks require a different approach because the source of the infestation — where the dog sleeps — must be located and treated along with the animal. For tick control generally it is important that the entire animal be treated: wipes, sprays, and dips work best, and collars can be effective but depend on the size of the dog, the hair coat, and the environment.",
+  "page": "6"
+ },
+ {
+  "id": "ksa4-001",
+  "section": 4,
+  "sectionName": "Lice",
+  "manual": "cat-ksa",
+  "question": "When, and on which animals, are lice most common?",
+  "choices": [
+   "In summer, on animals kept outdoors in groups",
+   "In winter, on animals that are stressed or in poor condition",
+   "In spring, on young animals in kennels and catteries",
+   "Year-round, equally on healthy and sick animals"
+  ],
+  "answer": 1,
+  "explanation": "Lice are permanent ectoparasites of birds and mammals. They are more common in winter than summer, and more common on animals that are stressed or in poor condition.",
+  "page": "7"
+ },
+ {
+  "id": "ksa4-002",
+  "section": 4,
+  "sectionName": "Lice",
+  "manual": "cat-ksa",
+  "question": "What is the most significant way lice are transmitted?",
+  "choices": [
+   "By fleas carrying them from one animal to another",
+   "By eggs scattered in the places animals sleep",
+   "By wild birds visiting kennels and outdoor runs",
+   "By direct animal-to-animal contact"
+  ],
+  "answer": 3,
+  "explanation": "Lice are spread from animal to animal strictly by contact — with an infested animal, or with anything that has come into contact with a lousy animal, such as grooming utensils, brushes, combs, and bedding. The most significant method of transmission is animal-to-animal contact.",
+  "page": "7"
+ },
+ {
+  "id": "ksa4-003",
+  "section": 4,
+  "sectionName": "Lice",
+  "manual": "cat-ksa",
+  "question": "Which description fits a chewing louse?",
+  "choices": [
+   "1 to 3 mm, flattened, its head nearly as broad as the body and round in front",
+   "1 to 3 mm, with a pointed head narrower than its body, dark when full of blood",
+   "5 to 8 mm, oval and hard-backed, with festoons along the rear edge",
+   "Under 1 mm, elongate and wormlike, living down inside the hair follicles"
+  ],
+  "answer": 0,
+  "explanation": "Chewing lice are 1–3 mm and flattened dorsoventrally, like a leaf, with a head nearly as broad as the body and round in front. They are commonly called \"biting lice\" but do not bite their hosts: they feed on the fur, feathers, hair, and skin rather than on blood.",
+  "page": "7"
+ },
+ {
+  "id": "ksa4-004",
+  "section": 4,
+  "sectionName": "Lice",
+  "manual": "cat-ksa",
+  "question": "How do chewing lice react to light?",
+  "choices": [
+   "They are drawn to it, moving up the hair shafts",
+   "They ignore it, staying fixed in place on the skin",
+   "They are sensitive to it and move away from it",
+   "They drop off the host when they are exposed to it"
+  ],
+  "answer": 2,
+  "explanation": "Chewing lice can be found in the hair near the skin. They are sensitive to light and will move away from it as they feed on the animal's hair and skin, causing irritation.",
+  "page": "7"
+ },
+ {
+  "id": "ksa4-005",
+  "section": 4,
+  "sectionName": "Lice",
+  "manual": "cat-ksa",
+  "question": "Which louse is the one species found on cats?",
+  "choices": [
+   "Trichodectes canis, a chewing louse",
+   "Felicola subrostrata, a chewing louse",
+   "Linognathus setosus, a sucking louse",
+   "Felicola subrostrata, a sucking louse"
+  ],
+  "answer": 1,
+  "explanation": "Cats have only one louse, Felicola subrostrata, a chewing louse. Lice on cats are rare, occurring on sick or very old cats, and are most common in cats with long hair. Trichodectes canis and Linognathus setosus are lice of dogs.",
+  "page": "7"
+ },
+ {
+  "id": "ksa4-006",
+  "section": 4,
+  "sectionName": "Lice",
+  "manual": "cat-ksa",
+  "question": "Which types of lice do birds and dogs each have?",
+  "choices": [
+   "Birds have both types; dogs have chewing lice only",
+   "Birds have sucking lice only; dogs have chewing lice only",
+   "Birds have chewing lice only; dogs have both chewing and sucking lice",
+   "Birds and dogs each carry both chewing and sucking lice"
+  ],
+  "answer": 2,
+  "explanation": "Birds have chewing lice only, while dogs — like other wild canids — have both sucking and chewing louse ectoparasites. Cats have a single chewing louse and no sucking lice.",
+  "page": "7"
+ },
+ {
+  "id": "ksa4-007",
+  "section": 4,
+  "sectionName": "Lice",
+  "manual": "cat-ksa",
+  "question": "Besides infesting weakened dogs, what role does the dog chewing louse Trichodectes canis play in another parasite's life cycle?",
+  "choices": [
+   "It is an intermediate host of the dog tapeworm, Dipylidium caninum",
+   "It carries Cheyletiella mites from one animal to another",
+   "It transmits heartworm microfilariae between dogs",
+   "It vectors bubonic plague among rodents and dogs"
+  ],
+  "answer": 0,
+  "explanation": "Trichodectes canis, the dog chewing louse, is found on very young animals and on old, sick, or weakened animals, and it is also an intermediate host of the dog tapeworm, Dipylidium caninum — a role fleas share.",
+  "page": "7"
+ },
+ {
+  "id": "ksa4-008",
+  "section": 4,
+  "sectionName": "Lice",
+  "manual": "cat-ksa",
+  "question": "How do sucking lice differ from chewing lice in appearance?",
+  "choices": [
+   "Pointed heads narrower than the body, dark colored when full of blood",
+   "Arrow-shaped heads broader than the body, staying pale after feeding",
+   "Rounder in front, the head nearly as broad as the louse's own body",
+   "Smaller and translucent, visible only under strong magnification"
+  ],
+  "answer": 0,
+  "explanation": "Sucking lice feed on the blood of their hosts: their heads are pointed and narrower than their bodies, and when they are full of blood their bodies are dark colored. The sucking louse Linognathus setosus is most common on long-haired dogs, infesting the area of the head and neck.",
+  "page": "7"
+ },
+ {
+  "id": "ksa4-009",
+  "section": 4,
+  "sectionName": "Lice",
+  "manual": "cat-ksa",
+  "question": "What are \"nits\"?",
+  "choices": [
+   "The larvae that hatch from louse eggs and feed on skin debris",
+   "The molted skins that lice leave on the hair as they grow",
+   "Louse eggs glued to hair or feathers, a key diagnostic sign",
+   "The flecks of dried blood sucking lice leave on the skin"
+  ],
+  "answer": 2,
+  "explanation": "Lice glue their eggs to hair or feathers — chewing lice in groups, sucking lice one egg at a time. The eggs are called \"nits\" and are a key diagnostic tool used to identify a louse-infested animal.",
+  "page": "7"
+ },
+ {
+  "id": "ksa4-010",
+  "section": 4,
+  "sectionName": "Lice",
+  "manual": "cat-ksa",
+  "question": "How long does it take lice to complete a life cycle?",
+  "choices": [
+   "5 to 7 days",
+   "10 to 14 days",
+   "3 to 4 weeks",
+   "2 months or more"
+  ],
+  "answer": 1,
+  "explanation": "Eggs hatch into nymphs, which feed and molt several times as they grow, finally maturing into adult lice. Once mated, the female begins to lay eggs and the cycle is completed; it takes 10 to 14 days to complete a cycle.",
+  "page": "7"
+ },
+ {
+  "id": "ksa4-011",
+  "section": 4,
+  "sectionName": "Lice",
+  "manual": "cat-ksa",
+  "question": "Why must a louse-infested animal be retreated 10 to 14 days after a contact insecticide treatment?",
+  "choices": [
+   "The first treatment reaches only the lice on the skin, not those on the hair",
+   "Contact products only repel lice, and the survivors return to feed",
+   "The animal is reinfested from its bedding faster than one treatment protects it",
+   "The eggs survive the treatment, so newly hatched lice must be killed before they mature"
+  ],
+  "answer": 3,
+  "explanation": "Dips, sprays, dusts, and systemics are all effective if the entire animal is treated and the environment is cleaned of all eggs that may have fallen from the pet. Eggs of lice are not killed by a contact insecticide, so the animal should be retreated in 10 to 14 days to kill all newly hatched lice before they mature and can lay eggs, starting the cycle over.",
+  "page": "7"
+ },
+ {
+  "id": "ksa4-012",
+  "section": 4,
+  "sectionName": "Lice",
+  "manual": "cat-ksa",
+  "question": "How does the manual say to check an animal for lice?",
+  "choices": [
+   "Part the hair under a bright light, checking the skin for lice and the hair shafts for eggs",
+   "Comb the coat out over white paper and watch the debris for moving specks",
+   "Scrape the skin and examine the sample under low power with a microscope",
+   "Hold the animal under a heat lamp and watch for lice moving toward the warmth"
+  ],
+  "answer": 0,
+  "explanation": "Lice are small and difficult to see. To check an animal, use a bright light and part the hair, looking at the skin for the lice and on the hair shafts for the eggs; restrain the animal and part the hair so the skin can be viewed, aided by a bright head lamp illuminating the viewing area. Further evidence of infestation is scratching or rubbing, hair or fur loss, and irritated skin.",
+  "page": "7"
+ },
+ {
+  "id": "ksa5-001",
+  "section": 5,
+  "sectionName": "Flies and Mosquitoes",
+  "manual": "cat-ksa",
+  "question": "Where do house flies (Musca domestica) breed?",
+  "choices": [
+   "In decomposing meat and dead animals",
+   "In rotting straw, grass clippings, and wet mulches",
+   "In decomposing organic matter such as manure, garbage, and wet compost piles",
+   "In standing water that lasts for more than a week"
+  ],
+  "answer": 2,
+  "explanation": "House flies breed in any decomposing organic matter, such as manure, garbage, and wet compost piles. House flies and blow flies are the most common nonbiting flies seen near kennels; blow flies breed in decomposing meat and dead animals, and rotting plant material is the stable fly's breeding site.",
+  "page": "8"
+ },
+ {
+  "id": "ksa5-002",
+  "section": 5,
+  "sectionName": "Flies and Mosquitoes",
+  "manual": "cat-ksa",
+  "question": "How quickly is the house fly's life cycle completed in the heat of summer?",
+  "choices": [
+   "In 5 to 7 days",
+   "In 10 to 14 days",
+   "In 3 to 4 weeks",
+   "In about 2 months"
+  ],
+  "answer": 1,
+  "explanation": "The house fly's life cycle is completed in 10 to 14 days during the heat of the summer, and a large number of flies can be produced in a small amount of breeding material — which is how flies breeding near a kennel or yard become a nuisance and draw prompt complaints from neighbors.",
+  "page": "8"
+ },
+ {
+  "id": "ksa5-003",
+  "section": 5,
+  "sectionName": "Flies and Mosquitoes",
+  "manual": "cat-ksa",
+  "question": "Brightly colored, metallic flies around a kennel indicate what?",
+  "choices": [
+   "A manure or wet compost pile nearby has become a breeding site",
+   "Stable flies have moved in from cattle or horses in the area",
+   "The flies are breeding in rotting straw or grass clippings",
+   "A carcass is in the area, or an animal has a necrotic wound"
+  ],
+  "answer": 3,
+  "explanation": "Blow flies are brightly colored and metallic, and seeing them indicates a carcass in the area or an animal with a wound that is necrotic. Blow flies breed in decomposing meat and dead animals.",
+  "page": "8"
+ },
+ {
+  "id": "ksa5-004",
+  "section": 5,
+  "sectionName": "Flies and Mosquitoes",
+  "manual": "cat-ksa",
+  "question": "What should be done when maggots are found in an animal's wound?",
+  "choices": [
+   "Clean the wound and treat the area to ensure no larvae remain",
+   "Leave the maggots, which feed only on dead tissue, and dress the wound",
+   "Apply a repellent around the wound to keep further flies away",
+   "Wait for the larvae to mature and drop off before treating the wound"
+  ],
+  "answer": 0,
+  "explanation": "If maggots are found in a wound, it should be cleaned and the area treated to ensure that no larvae remain.",
+  "page": "8"
+ },
+ {
+  "id": "ksa5-005",
+  "section": 5,
+  "sectionName": "Flies and Mosquitoes",
+  "manual": "cat-ksa",
+  "question": "When the stable fly (Stomoxys calcitrans) attacks dogs, where does it bite?",
+  "choices": [
+   "The muzzle and the skin around the eyes",
+   "The tips of the ears, causing scabs and thickened ear tissue",
+   "The belly and inner legs, where the hair is thin",
+   "The base of the tail and the hindquarters"
+  ],
+  "answer": 1,
+  "explanation": "The stable fly is a large blood-feeding fly that closely resembles a house fly and normally attacks cattle and horses. When it attacks dogs, it bites the animals at the tips of their ears, causing scabs and a thickening of the ear tissue; the bite is irritating, and the animals' scratching causes greater tissue damage and infection.",
+  "page": "8"
+ },
+ {
+  "id": "ksa5-006",
+  "section": 5,
+  "sectionName": "Flies and Mosquitoes",
+  "manual": "cat-ksa",
+  "question": "How is the stable fly best controlled?",
+  "choices": [
+   "By treating dogs' ears with a residual insecticide every week",
+   "With baited traps placed around the perimeter of the kennel",
+   "By locating and removing the wet, rotting plant material it breeds in",
+   "With areawide sprays timed to the flies' morning activity"
+  ],
+  "answer": 2,
+  "explanation": "Stable flies have very special breeding requirements: rotting plant material such as straw, grass clippings, seaweed, and certain mulches, if they are wet enough. Control of this fly is best accomplished by locating and removing the breeding area; for protection, the animals can be treated with a repellent.",
+  "page": "8"
+ },
+ {
+  "id": "ksa5-007",
+  "section": 5,
+  "sectionName": "Flies and Mosquitoes",
+  "manual": "cat-ksa",
+  "question": "Depending on species and temperature, how long can a fly's life cycle take to complete?",
+  "choices": [
+   "3 days to 2 weeks",
+   "1 week to 1 month",
+   "10 days to 6 weeks",
+   "10 days to 4 months or more"
+  ],
+  "answer": 3,
+  "explanation": "All flies have similar life cycles — eggs, three larval stages, pupa, and adult — and the length of time a fly requires to complete its life cycle varies from 10 days to 4 months or more, depending on the fly species and temperature. The adults may be blood feeders or, like the house fly, feed with sponging mouthparts.",
+  "page": "8"
+ },
+ {
+  "id": "ksa5-008",
+  "section": 5,
+  "sectionName": "Flies and Mosquitoes",
+  "manual": "cat-ksa",
+  "question": "Which parasite do mosquitoes transmit to pets?",
+  "choices": [
+   "Heartworms",
+   "Tapeworms",
+   "Murine typhus",
+   "Lyme disease"
+  ],
+  "answer": 0,
+  "explanation": "Mosquitoes are blood-feeding flies that can transmit heartworms to pets and many diseases to man. While feeding they cause local irritation to the animal and can pass on organisms that cause disease, such as dog heartworm.",
+  "page": "9"
+ },
+ {
+  "id": "ksa5-009",
+  "section": 5,
+  "sectionName": "Flies and Mosquitoes",
+  "manual": "cat-ksa",
+  "question": "What must mosquitoes have to complete their life cycle?",
+  "choices": [
+   "A vertebrate host available for every active stage",
+   "Moist soil that is rich in decaying plant material",
+   "Water, permanent or even just a temporary pool",
+   "Shade and air humidity above 70 percent"
+  ],
+  "answer": 2,
+  "explanation": "Mosquitoes must have water to complete their life cycle. The water can be permanent or, in many cases, just a temporary pool found in old tires, open containers, ditches, and other water-holding areas; eggs are laid in standing water or in areas that will hold water on a temporary basis, such as shallow pools, tree holes, old tires, and buckets.",
+  "page": "9"
+ },
+ {
+  "id": "ksa5-010",
+  "section": 5,
+  "sectionName": "Flies and Mosquitoes",
+  "manual": "cat-ksa",
+  "question": "Which mosquitoes feed on blood, and why?",
+  "choices": [
+   "Both sexes, needing the energy for flight and for mating",
+   "Only the females, which need the blood meal's protein to mature their eggs",
+   "Only the males, while the females take sugar meals from flowers",
+   "Both sexes, though only the female's bite passes on disease"
+  ],
+  "answer": 1,
+  "explanation": "Only the female mosquito feeds on blood: she needs the protein of the blood meal to mature her eggs, and after feeding and laying she looks for another host so she can lay more. Males do not feed on blood; adults of both sexes feed on flowers for a sugar meal to provide energy after emergence.",
+  "page": "9"
+ },
+ {
+  "id": "ksa5-011",
+  "section": 5,
+  "sectionName": "Flies and Mosquitoes",
+  "manual": "cat-ksa",
+  "question": "What are mosquito larvae and pupae called?",
+  "choices": [
+   "Maggots and cocoons",
+   "Nymphs and instars",
+   "Tumblers and wigglers, respectively",
+   "Wigglers and tumblers, respectively"
+  ],
+  "answer": 3,
+  "explanation": "Larval mosquitoes are called wigglers; they are quite active and can be seen in the standing water. The pupae are called tumblers, and it is common to find both larvae and pupae in the same container. The adult emerges from the pupa.",
+  "page": "9"
+ },
+ {
+  "id": "ksa5-012",
+  "section": 5,
+  "sectionName": "Flies and Mosquitoes",
+  "manual": "cat-ksa",
+  "question": "How are mosquitoes controlled?",
+  "choices": [
+   "Remove, modify, or treat breeding habitat; for adults, areawide sprays or a residual on the animal",
+   "Screen the kennel against the adults and put the animals on a monthly systemic",
+   "Drain only the permanent water, since temporary pools dry out before larvae mature",
+   "Fog the yard at dusk once a week through the warm months of the season"
+  ],
+  "answer": 0,
+  "explanation": "Mosquitoes are controlled by removing, modifying, or treating their breeding habitat, and adult mosquitoes by areawide spraying or by treating the animal with a residual insecticide. Temporary pools matter as much as permanent water — a pool that holds water long enough will breed them.",
+  "page": "9"
+ },
+ {
+  "id": "ksa6-001",
+  "section": 6,
+  "sectionName": "Fleas",
+  "manual": "cat-ksa",
+  "question": "Which flea is the most common one found on both dogs and cats?",
+  "choices": [
+   "The dog flea, Ctenocephalides canis",
+   "The cat flea, Ctenocephalides felis",
+   "The human flea, Pulex irritans",
+   "The sticktight flea, Echidnophaga gallinacea"
+  ],
+  "answer": 1,
+  "explanation": "Two species of fleas are common on pets: the cat flea (Ctenocephalides felis), which is the most common flea on both dogs and cats, and the dog flea (Ctenocephalides canis). The adults are found on the animal, where they feed on its blood, and fleas have a complete life cycle.",
+  "page": "10"
+ },
+ {
+  "id": "ksa6-002",
+  "section": 6,
+  "sectionName": "Fleas",
+  "manual": "cat-ksa",
+  "question": "Which tapeworm do fleas vector?",
+  "choices": [
+   "Taenia pisiformis",
+   "Echinococcus granulosus",
+   "Dipylidium caninum",
+   "Diphyllobothrium latum"
+  ],
+  "answer": 2,
+  "explanation": "Fleas vector the tapeworm Dipylidium caninum, and the salivary secretions they inject while feeding cause mild to severe reactions in the host. Fleas are also vectors of bubonic plague and murine typhus.",
+  "page": "10"
+ },
+ {
+  "id": "ksa6-003",
+  "section": 6,
+  "sectionName": "Fleas",
+  "manual": "cat-ksa",
+  "question": "Where in the United States is bubonic plague endemic in rodent and flea populations?",
+  "choices": [
+   "Mountain areas of New Mexico and California, and the Oklahoma/Kansas border",
+   "The Gulf Coast lowlands from east Texas across to northern Florida",
+   "The Appalachian mountains from north Georgia up into Pennsylvania",
+   "The upper Midwest around the shores of the Great Lakes"
+  ],
+  "answer": 0,
+  "explanation": "There are areas in the United States where bubonic plague is endemic in the rodent/flea population, such as mountain areas in New Mexico and California and the Oklahoma/Kansas border. Pets in those areas could acquire infected fleas, so care should be taken when handling or treating the animals to ensure the fleas do not bite people.",
+  "page": "10"
+ },
+ {
+  "id": "ksa6-004",
+  "section": 6,
+  "sectionName": "Fleas",
+  "manual": "cat-ksa",
+  "question": "Where will the largest percentage of larval fleas be found?",
+  "choices": [
+   "On the animal itself, in the coat along the back",
+   "In the yard, spread evenly across the sunny grass",
+   "Buried in the carpet of the rooms the family uses most",
+   "In areas where the pet sleeps or spends time resting"
+  ],
+  "answer": 3,
+  "explanation": "The largest percentage of larval fleas will be found in areas where the pet sleeps or spends resting time. Female fleas feed on the blood of their host and lay eggs on the host; the eggs fall off to the ground, and the majority fall off where the animal sleeps. This is why control of fleas cannot be accomplished through treatment of the pet alone.",
+  "page": "10"
+ },
+ {
+  "id": "ksa6-005",
+  "section": 6,
+  "sectionName": "Fleas",
+  "manual": "cat-ksa",
+  "question": "What do flea larvae feed on?",
+  "choices": [
+   "The host's blood, taken through the thin skin around the ears",
+   "Debris and the dried blood seen on the pet's skin as flea \"dirt\"",
+   "Skin scales and loose hair shed into the animal's bedding",
+   "Smaller insects living down in the carpet pile and the soil"
+  ],
+  "answer": 1,
+  "explanation": "A wormlike larva emerges from the egg and begins to feed on debris and on dried blood — the material commonly seen on the skin of the pet as flea \"dirt.\" When ready, the larva makes a pupa case using debris from its environment, and an adult flea emerges from the pupa when it is mature.",
+  "page": "10"
+ },
+ {
+  "id": "ksa6-006",
+  "section": 6,
+  "sectionName": "Fleas",
+  "manual": "cat-ksa",
+  "question": "Given that treating the pet alone cannot accomplish it, what does flea control require?",
+  "choices": [
+   "Treating every animal in the neighborhood on the same schedule",
+   "A monthly systemic treatment carried through the entire flea season",
+   "Removing breeding habitat, keeping the pet out of infested areas, and treating animal and environment",
+   "Replacing the pet's bedding and fencing the yard against wildlife"
+  ],
+  "answer": 2,
+  "explanation": "Control of fleas cannot be accomplished through treatment of the pet alone: pets soon reenter an infested area, where newly emerged fleas reinfest them. Flea control must be accomplished by removing breeding habitat, excluding the pet from infested areas, treatment of the pet, and, when appropriate, treatment of the environment.",
+  "page": "10"
+ },
+ {
+  "id": "ksa6-007",
+  "section": 6,
+  "sectionName": "Fleas",
+  "manual": "cat-ksa",
+  "question": "In a typical case — a fenced yard and a dog that is both in and out of the house — where does an integrated flea control program start?",
+  "choices": [
+   "With the house, beginning with a good vacuuming",
+   "With the yard, where the dog picks the fleas up",
+   "With the dog, dipped before anything else is treated",
+   "With the kennel bedding, removed and replaced"
+  ],
+  "answer": 0,
+  "explanation": "An integrated flea control program begins by evaluating the situation and determining where the animal is getting the fleas. In a typical fenced yard with a dog that is both in and out of the house, the starting point is the house: a good vacuuming, with special attention spent on the areas where the animal sleeps.",
+  "page": "10"
+ },
+ {
+  "id": "ksa6-008",
+  "section": 6,
+  "sectionName": "Fleas",
+  "manual": "cat-ksa",
+  "question": "After vacuuming for flea control, what should be done with the vacuum bag?",
+  "choices": [
+   "Emptied outdoors, well away from the house",
+   "Sealed in a plastic bag and reused until it is full",
+   "Dusted with insecticide and put back in the machine",
+   "Destroyed or frozen, to kill any larvae or pupae inside it"
+  ],
+  "answer": 3,
+  "explanation": "The bag from the vacuum should be destroyed or frozen to kill any larvae or pupae that may be inside it; vacuuming collects immature fleas from the areas where the animal sleeps.",
+  "page": "10"
+ },
+ {
+  "id": "ksa6-009",
+  "section": 6,
+  "sectionName": "Fleas",
+  "manual": "cat-ksa",
+  "question": "Why is an IGR (insect growth regulator) applied to the animal along with the treatment that kills adult fleas?",
+  "choices": [
+   "It kills any adult fleas that the first treatment missed",
+   "It ensures that any eggs laid by fleas on the animal will be treated",
+   "It repels the new fleas the animal picks up outdoors",
+   "It sterilizes the adult female fleas before they can feed"
+  ],
+  "answer": 1,
+  "explanation": "The animal is treated to kill all adults, and an IGR — an insect growth regulator — is applied to the animal to ensure that any eggs laid by fleas on the animal will be treated. The house should be treated with a residual and an IGR as well, to kill all existing fleas and to break the life cycle; the yard can also be treated, with special attention given to areas where the animals sleep.",
+  "page": "10"
+ },
+ {
+  "id": "ksa7-001",
+  "section": 7,
+  "sectionName": "Insecticide Use on Pets",
+  "manual": "cat-ksa",
+  "question": "Which factors is the toxicity of a pesticide to a pet related to?",
+  "choices": [
+   "Only the dose applied and the animal's body weight",
+   "The product's signal word and its formulation type",
+   "Exposure, dose, route of entry, temperature, and the animal's size, health, and breed",
+   "The animal's age and coat length, and the season it is treated in"
+  ],
+  "answer": 2,
+  "explanation": "Toxicity of a pesticide is related to a number of factors: the amount of exposure, size of dose, route of entry, temperature, and the size, health, and breed of the animal. Even a pesticide with directions for use on a pet can produce a toxic reaction if it is used incorrectly, overdosed, or applied improperly, or if the animal is in poor health.",
+  "page": "11"
+ },
+ {
+  "id": "ksa7-002",
+  "section": 7,
+  "sectionName": "Insecticide Use on Pets",
+  "manual": "cat-ksa",
+  "question": "Which set of signs indicates a toxic pesticide reaction in an animal?",
+  "choices": [
+   "Tremors, involuntary urination and defecation, salivation, lethargy, and dilated pupils",
+   "Fever, swollen lymph nodes, loss of appetite, and stiffness in the joints",
+   "Pale gums, rapid shallow breathing, and a fast but weakening pulse",
+   "Head shaking, discharge from the ears, and circling toward one side"
+  ],
+  "answer": 0,
+  "explanation": "Signs of a toxic reaction in an animal include tremors, involuntary urination and defecation, salivation, lethargy, dilation of pupils, adverse skin reactions, vomiting, lack of coordination — and death. You should be able to recognize the signs, apply the proper therapy, or get the animal to a veterinarian promptly.",
+  "page": "11"
+ },
+ {
+  "id": "ksa7-003",
+  "section": 7,
+  "sectionName": "Insecticide Use on Pets",
+  "manual": "cat-ksa",
+  "question": "Before using a pesticide on an animal, what should the applicator be familiar with in case of a toxic reaction?",
+  "choices": [
+   "The nearest emergency veterinary clinic's after-hours admission procedure",
+   "The product's own requirements for dealing with a reaction, found on its label",
+   "The antidote stocked for every product in that chemical class",
+   "The animal's baseline temperature, pulse, and breathing rate"
+  ],
+  "answer": 1,
+  "explanation": "Prior to using a pesticide on an animal, you should be familiar with the specific requirements for dealing with a toxic reaction to that product, which are found on the label. Therapy may include simple washing off of the product with water or the administration of an antidote, and may mean getting the animal to the veterinarian promptly.",
+  "page": "11"
+ },
+ {
+  "id": "ksa7-004",
+  "section": 7,
+  "sectionName": "Insecticide Use on Pets",
+  "manual": "cat-ksa",
+  "question": "Why does an applicator who treats pets need more protection than the toxicity to any one animal suggests?",
+  "choices": [
+   "Products labeled for pets are more concentrated than crop formulations",
+   "Treating animals indoors concentrates the vapors around the applicator",
+   "Bare hands absorb pesticide faster than the animal's coat and skin do",
+   "Each dog is treated once every 2 to 3 weeks; the applicator may treat 100 animals, exposed each time"
+  ],
+  "answer": 3,
+  "explanation": "While each dog is only treated once every 2 to 3 weeks, the human applicator may treat 100 animals and is exposed to the pesticide each time an animal is treated. The routes of entry are the same in humans as in pets — internal, external (skin), and chronic (repeated exposure to a product) — and the signs of a toxic reaction in humans are similar to those in pets, adding headache, cough, wheezing, drowsiness, sweating, pain, swelling, and a burning sensation in the lungs.",
+  "page": "11"
+ },
+ {
+  "id": "ksa7-005",
+  "section": 7,
+  "sectionName": "Insecticide Use on Pets",
+  "manual": "cat-ksa",
+  "question": "What do the three signal words on a pesticide label indicate?",
+  "choices": [
+   "The formulation type: liquid, dust, or systemic product",
+   "How quickly the product breaks down after it is applied",
+   "The toxicity level: Caution least stringent, Warning more, Danger the highest protection",
+   "Which species of animal the product may legally be applied to"
+  ],
+  "answer": 2,
+  "explanation": "Pesticides carry one of three signal words indicating the level of toxicity: Caution requires the least stringent precautions to protect the applicator, Warning requires slightly more protection, and Danger requires the highest level of personal protection.",
+  "page": "11"
+ },
+ {
+  "id": "ksa7-006",
+  "section": 7,
+  "sectionName": "Insecticide Use on Pets",
+  "manual": "cat-ksa",
+  "question": "What minimum protective equipment does the manual list for applicators who treat pets repeatedly?",
+  "choices": [
+   "Rubber boots, gauntlet-length rubber or plastic gloves, a plastic or rubber apron, and face protection",
+   "A half-face respirator, disposable coveralls, and chemical-resistant rubber footwear",
+   "Safety glasses, disposable examination gloves, and a washable long-sleeved smock",
+   "A long-sleeved shirt, long pants, socks, and closed shoes, laundered after each day"
+  ],
+  "answer": 0,
+  "explanation": "Because many applicators treat pets repeatedly, consideration must be given to chronic exposure, and protective clothing should not allow the pesticide to contact the skin: rubber boots, gauntlet-length rubber or plastic gloves, a plastic or rubber apron, and face protection as a minimum. Any special equipment will be noted on the product's label and should be followed before using the product.",
+  "page": "11"
+ },
+ {
+  "id": "ksa7-007",
+  "section": 7,
+  "sectionName": "Insecticide Use on Pets",
+  "manual": "cat-ksa",
+  "question": "Why must an animal's history of deworming and previous insecticide treatments be known before it is treated?",
+  "choices": [
+   "Products used earlier can make the new treatment ineffective",
+   "Overdosing and a toxic reaction could occur due to a previous treatment",
+   "The label requires rotating chemical classes between treatments",
+   "Recently dewormed animals absorb topical products more quickly"
+  ],
+  "answer": 1,
+  "explanation": "It is important to know the history of deworming and previous insecticidal treatments used on the animal, because overdosing and a toxic reaction could occur due to a previous treatment. To get the best results from any insecticide treatment, follow all directions and safety precautions printed on the label.",
+  "page": "11"
+ },
+ {
+  "id": "ksa7-008",
+  "section": 7,
+  "sectionName": "Insecticide Use on Pets",
+  "manual": "cat-ksa",
+  "question": "Which animals does the manual single out as very sensitive to many insecticides?",
+  "choices": [
+   "Terriers, spaniels, and the short-haired working breeds",
+   "Spayed and neutered animals of any breed or age",
+   "Overweight animals and the heavily muscled breeds",
+   "Whippets, greyhounds, cats, and very young, old, or sick animals"
+  ],
+  "answer": 3,
+  "explanation": "In every breed of animal there are individuals more sensitive to pesticides than others, but whippets, greyhounds, cats, and very young, old, or sick animals are very sensitive to many insecticides, and care should be taken when treating these animals.",
+  "page": "11"
+ },
+ {
+  "id": "ksa7-009",
+  "section": 7,
+  "sectionName": "Insecticide Use on Pets",
+  "manual": "cat-ksa",
+  "question": "When choosing among sprays, dips, and other ways to treat an animal for a parasite, what does the manual say matters most?",
+  "choices": [
+   "Treating where the parasite is on the animal",
+   "Choosing the product with the mildest signal word",
+   "Matching the treatment to the animal's coat length",
+   "Using a systemic whenever one is labeled for the pest"
+  ],
+  "answer": 0,
+  "explanation": "Animals can be treated in many ways — sprays, fogs, wipe- or rub-ons, dips, and systemics are all common — and when treating an animal for a parasite it is very important to treat where the parasite is. Lice are in hair and, like flies, will contact hair, so a treatment that thoroughly treats the hair gives good control; a pest like scabies, in the skin, requires that the animal be treated so the skin is wet, and it is difficult to soak the skin without dipping the animal. Regardless of the treatment used, care should be taken that both the animal and the person applying the treatment are not overexposed.",
+  "page": "11"
+ },
+ {
+  "id": "ksa7-010",
+  "section": 7,
+  "sectionName": "Insecticide Use on Pets",
+  "manual": "cat-ksa",
+  "question": "Whom does the manual say to contact with questions about pesticide disposal or labels?",
+  "choices": [
+   "The county Cooperative Extension office",
+   "The product manufacturer's technical service line",
+   "The Pesticide Section of the NCDA's Food and Drug Protection Division",
+   "The EPA's regional pesticide program office"
+  ],
+  "answer": 2,
+  "explanation": "Questions concerning pesticide disposal or labels go to the Pesticide Section, Food and Drug Protection Division, NCDA, in Raleigh. Questions about the product itself should go to its supplier before the product is used, and disposal of unused product and of the container should follow what is noted on the label.",
+  "page": "11"
  }
 ];

@@ -92,9 +92,10 @@ const DEALER_EXAM_SECTIONS = [...LAW_SECTIONS, ...RULES_DEALER, ...NCSU_DEALER];
 // passes Core and then one of these per category they want to work in, and an
 // aerial applicator adds Aerial Methods on top. Each is written from its own
 // North Carolina category manual, which is sold in print and has no public PDF
-// to cite, so none of them has questions yet.
+// to cite. The first one is authored: cat-ksa, from "Ectoparasites of Pets";
+// the rest have no questions yet.
 //
-// They are listed anyway, with the manual key their questions will carry, so
+// They are all listed anyway, with the manual key their questions carry, so
 // the app can show what the bank does not cover yet and the gap is visible
 // instead of implied. `sectionsOf` gives an empty list until the first question
 // arrives, and the exam then fills in by itself. Add a `manuals` entry beside
@@ -209,6 +210,20 @@ const EXAM_CONFIG = {
       url: 'https://content.ces.ncsu.edu/pesticide-applicator-certification-and-licensing',
       pages: NCSU_ANCHORS,
       web: true,
+    },
+    // The first North Carolina category manual in the bank: "Ectoparasites of
+    // Pets" (J. J. Arends, NC Agricultural Extension Service, January 1994),
+    // the study manual for the Agricultural Pest Animal - Small Animal
+    // category, K(SA) - applicators treating pets and the places pets are
+    // confined, pet groomers included. Like every NC study manual it is sold
+    // in print by the NC State Pesticide Safety Education Program and has no
+    // public PDF, so there is no `url` and its citations render as plain text
+    // naming the printed page; the manual has no chapter numbers, so its
+    // major headings are numbered in printed order the way AG-714's are.
+    'cat-ksa': {
+      title: 'Ectoparasites of Pets (NC pesticide training manual, 1994)',
+      cite: 'Ectoparasites of Pets', // citations read "Ectoparasites of Pets p. 6"
+      short: 'K(SA)',                // section labels: "K(SA) sec. 3 Ticks"
     },
   },
 
@@ -326,7 +341,7 @@ const EXAM_CONFIG = {
   },
 
   // Prose that names the exam, injected as HTML into the matching views.
-  homeSubtitle: `${BANK_SIZE} from the national applicator manuals, North Carolina pesticide law, and NC State Extension`,
+  homeSubtitle: `${BANK_SIZE} from the national applicator manuals, North Carolina pesticide law, NC State Extension, and the K(SA) category manual`,
   disclaimerHTML: `Questions were extracted from the national
     <a href="https://www.epa.gov/system/files/documents/2022-09/national-pesticide-applicator-cert-core-manual-2014.pdf"
        target="_blank" rel="noopener">core</a> and
@@ -337,8 +352,9 @@ const EXAM_CONFIG = {
     <a href="http://reports.oah.state.nc.us/ncac/title%2002%20-%20agriculture%20and%20consumer%20services/chapter%2009%20-%20food%20and%20drug%20protection/subchapter%20l/subchapter%20l%20rules.pdf"
        target="_blank" rel="noopener">rules</a>, and from NC State Extension's
     <a href="https://content.ces.ncsu.edu/pesticide-applicator-certification-and-licensing"
-       target="_blank" rel="noopener">AG-714</a> on certification and licensing;
-    accuracy is not guaranteed. Each question links to where it came from, so verify
+       target="_blank" rel="noopener">AG-714</a> on certification and licensing, and from
+    the printed North Carolina category manual <em>Ectoparasites of Pets</em> (1994) for the
+    K(SA) exam; accuracy is not guaranteed. Each question links to where it came from, so verify
     anything important against the source, and check the law questions against the current
     section: statutes and rules are amended, and fees and deadlines move first.
     North Carolina's exams are written from the NC manuals, which cover the same material,
@@ -361,10 +377,16 @@ const EXAM_CONFIG = {
     <a href="https://content.ces.ncsu.edu/pesticide-applicator-certification-and-licensing"
        target="_blank" rel="noopener">Pesticide Applicator Certification and Licensing</a>
     (AG-714), on exam formats, recertification credits, noncertified applicator training,
-    and reciprocity.
+    and reciprocity. A sixth source is the first North Carolina category manual in the
+    bank: <em>Ectoparasites of Pets</em> (J. J. Arends, NC Agricultural Extension Service,
+    1994), the study manual for the Agricultural Pest Animal &ndash; Small Animal category,
+    K(SA) &mdash; applicators applying pesticides to pets and the places pets are confined,
+    pet groomers included.
     Every question cites where it came from, by page for the manuals, by section for
-    the law, and by heading for AG-714. The citation is a link, so it opens the source in
-    the right place and you can check anything important against it.</p>
+    the law, and by heading for AG-714. Wherever the source is free to read online, the
+    citation is a link, so it opens the source in the right place and you can check
+    anything important against it; the NC category manual is sold in print, so its
+    questions name the printed page instead.</p>
     <p>${DRILL_COUNT} of the cards are calculation drills rather than written questions. A
     drill is one of the methods the manuals teach — the dosage formulas in the core
     manual's appendix C, the area and calibration-test arithmetic in its chapter 11, and
@@ -385,8 +407,11 @@ const EXAM_CONFIG = {
     print by the
     <a href="https://go.ncsu.edu/psep" target="_blank" rel="noopener">NC State Pesticide Safety
     Education Program</a>. They are adapted from these national manuals and add material,
-    particularly for the categories, that nothing free covers; questions sourced from them
-    are planned, and each will cite its own manual the same way.</p>
+    particularly for the categories, that nothing free covers. The first of them is now in
+    the bank: <em>Ectoparasites of Pets</em>, the K(SA) category manual, whose questions
+    cite the printed page without a link since there is no public PDF to open. Questions
+    from the remaining category manuals are planned, and each will cite its own manual
+    the same way.</p>
     <p>Questions were extracted from the sources by a language model and reviewed for
     accuracy, but mistakes are possible and accuracy is not guaranteed. Law changes:
     the statute and rules were current when the questions were written, and a citation
