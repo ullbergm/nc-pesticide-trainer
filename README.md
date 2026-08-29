@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/github/license/ullbergm/nc-pesticide-trainer)](LICENSE)
 [![Live site](https://img.shields.io/website?url=https%3A%2F%2Fnc-pesticide.ullberg.io&label=nc-pesticide.ullberg.io)](https://nc-pesticide.ullberg.io)
 
-[![Questions](https://img.shields.io/badge/questions-1104-blue)](data/questions.js)
+[![Questions](https://img.shields.io/badge/questions-1186-blue)](data/questions.js)
 [![Dependencies](https://img.shields.io/badge/dependencies-none-blue)](package.json)
 [![PWA](https://img.shields.io/badge/PWA-offline%20ready-blue)](manifest.webmanifest)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-blue)](CONTRIBUTING.md)
@@ -15,9 +15,9 @@ Practice questions with spaced repetition for the North Carolina pesticide
 applicator certification exams: the 100-question commercial Core exam, the
 50-question Private Applicator exam, the Aerial Methods exam every aerial
 applicator adds on top, and the Pesticide Dealer exam, all passed at 70%. The
-bank has 1104 questions and 28 calculation drills, written
+bank has 1186 questions and 28 calculation drills, written
 with the recipe in
-[docs/question-authoring.md](docs/question-authoring.md) and covering five
+[docs/question-authoring.md](docs/question-authoring.md) and covering six
 sources end to end: all eleven chapters of the
 [National Pesticide Applicator Certification Core Manual](https://www.epa.gov/system/files/documents/2022-09/national-pesticide-applicator-cert-core-manual-2014.pdf)
 (second edition, 2014) and all six of the
@@ -36,10 +36,19 @@ rules. Fifth is NC State Extension's
 (AG-714), the free publication that describes the certification system to
 applicators themselves: what each exam looks like, how many recertification
 credits each category takes and by when, the training a noncertified applicator
-needs, and which states North Carolina has reciprocity with. Every question
-cites where it came from, as a link that opens the source at the right place:
+needs, and which states North Carolina has reciprocity with. Sixth is the
+first North Carolina category manual in the bank: *Ectoparasites of Pets*
+(J. J. Arends, NC Agricultural Extension Service, January 1994), the study
+manual for the Agricultural Pest Animal – Small Animal category, K(SA) — for
+applicators applying pesticides to pets and the places pets are confined,
+pet groomers included — covering mites, ticks, lice, flies, mosquitoes,
+fleas, and insecticide use on pets. Every question cites where it came from:
 manual questions cite a page, law and rule questions cite their section number,
-and questions from AG-714 cite the heading they were written from.
+and questions from AG-714 cite the heading they were written from. Wherever
+the source is free to read online the citation is a link that opens it at the
+right place; the K(SA) manual is sold in print by the NC State Pesticide
+Safety Education Program with no public PDF, so its questions name the
+printed page instead.
 
 The 28 **calculation drills** are counted apart from the questions because they
 are not questions in the same sense. A drill is a method — the dosage formulas
@@ -262,7 +271,7 @@ js/readiness.js          projected score and pass odds per exam
 js/storage.js            localStorage persistence, export/import
 js/license.js            NC license lookup (public NCDA&CS search), caching the licenses you keep
 js/app.js                UI and session logic
-data/questions.js        question bank (1104 questions, tagged by section and source page)
+data/questions.js        question bank (1186 questions, tagged by section and source page)
 data/problems.js         28 calculation drills, as methods with the numbers left open
 data/manual-pages.js     printed page numbers to PDF page numbers, for the citation links
 data/aerial-pages.js     the same map for the aerial manual
