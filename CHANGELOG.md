@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.5.0](https://github.com/ullbergm/nc-pesticide-trainer/compare/v2.4.0...v2.5.0) (2026-09-02)
+
+
+### Features
+
+* turn the License tab into a CCU tracker and planner ([b9ece9d](https://github.com/ullbergm/nc-pesticide-trainer/commit/b9ece9d4fb5fc647ec0745c691b6882907fbff24))
+
+
+### Performance Improvements
+
+* defer the script pile so first paint never waits on it ([15769ce](https://github.com/ullbergm/nc-pesticide-trainer/commit/15769ce3afc010efd19e1c4fdeef797deb7a2700))
+
 ## [2.4.0](https://github.com/ullbergm/nc-pesticide-trainer/compare/v2.3.0...v2.4.0) (2026-08-29)
 
 
