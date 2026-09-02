@@ -171,7 +171,8 @@ and import for backups or for moving between devices.
   credits on record. Keep as many licenses as you hold, each refreshed on its own: a pilot's
   own license and the contractor they fly under are two separate records, and so is a spouse's
   private certification. This is the one screen that contacts a server; results are cached in
-  the browser so they load instantly and only refresh when you press Refresh.
+  the browser so they load instantly, refresh when you press Refresh, and refresh quietly once
+  a lookup is more than a week old.
 
   The credits are shown **against what they owe**, not just as what has been earned. The NC
   search reports one bucket per category — `L [4.0] A [1.0]` — and counts only hours earned;
@@ -186,6 +187,27 @@ and import for backups or for moving between devices.
   sets no requirement for, like `E` for Core, is shown as earned hours with no target rather
   than as a zero. That arithmetic is this app's, not NCDA&CS's: it is computed from a
   publication that goes stale, so the card says so and links the official search.
+
+  On top of the record sits a small planning layer, kept in the browser rather than fetched.
+  **Credits waiting to post**: a course counts toward recertification the day it is taken, but
+  can take weeks to appear on the state record — log it on the card and it rides its category's
+  meter as a second, signage-yellow segment until the first Refresh finds it posted, at which
+  point it clears itself. **Certified categories**: a record fresh into its cycle shows no
+  credit buckets at all, which is exactly when a plan is most wanted, so a bucketless card
+  offers checkboxes to declare the categories held and scores each from zero. The card also
+  totals what is still needed by category, turns the recertification date into a pace ("about
+  3 hours of approved courses a year from here covers it"), and — for ground licenses — checks
+  the course dates against the timing rule the totals cannot carry: credits must be earned in
+  at least two different years of the five-year cycle (02 NCAC 09L .0522). Because the two
+  deadlines run on two clocks — the license itself lapses on December 31 of its last year
+  (renewed annually for commercial and aerial, every three years for private), while the
+  certification behind it runs a two-, three-, or five-year cycle — the card labels each with
+  its clock and spells the cycle out ("Certification cycle: Jul 1, 2022 – Jun 30, 2027 ·
+  year 4 of 5", worked back from the record's recertification date), which is also why an
+  expiration can legitimately precede the recertify-by date. If any saved license
+  is short, Home shows a one-line banner with the hours and the deadline, linked to the tab.
+  What you log yourself travels in a progress backup; the fetched records stay out of it, and
+  Reset everything in Settings clears both.
 
 A **calculation drill** turns up in whichever of those modes the card is due
 in, with a calculator beside it: North Carolina allows a nonprogrammable one at

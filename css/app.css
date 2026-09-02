@@ -213,15 +213,25 @@
 .crname b { font-weight: 800; }
 .crnum { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .crof { font-weight: 400; color: var(--muted); }
-.crbar { height: 7px; border-radius: 999px; background: var(--surface-dark); overflow: hidden; }
+/* Two segments: confirmed hours in accent, then hours logged but not yet on
+   the record in signage yellow, so "counted" and "counted on" read apart. */
+.crbar { display: flex; height: 7px; border-radius: 999px; background: var(--surface-dark); overflow: hidden; }
 .crbar span { display: block; height: 100%; border-radius: 999px; background: var(--accent); }
+.crbar .pend { background: var(--accent2); }
 /* "met" rather than "done": .done is the session-complete screen's class,
    which centers its text and pads it out by 48px. */
 .credit.met .crbar span { background: var(--ok); }
 .credit.met .crnum { color: var(--ok); }
+.crpend { color: var(--warn); font-weight: 700; }
 .crrule { color: var(--muted); font-size: 0.78rem; }
 .crsum { margin: 0; font-size: 0.9rem; color: var(--warn); font-weight: 600; }
 .crsum.met { color: var(--ok); }
+.crsum.pend { color: var(--warn); }
+.crneed { margin: 6px 0 0; font-size: 0.85rem; }
+.crpace { margin: 4px 0 0; }
+.crspread { margin: 6px 0 0; font-size: 0.82rem; }
+.crspread.warn { color: var(--warn); font-weight: 600; }
+.crspread.hint { color: var(--muted); }
 
 .liccourses { margin-top: 10px; }
 .liccourses summary { cursor: pointer; font-weight: 600; font-size: 0.9rem; }
@@ -234,6 +244,52 @@
 .liccourses .cname { font-size: 0.9rem; }
 .liccourses .cmeta { color: var(--muted); font-size: 0.82rem; white-space: nowrap; }
 
+/* Declared categories, offered while the record shows no buckets. */
+.liccats { margin-top: 10px; }
+.liccats summary { cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+.catgrid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 6px 14px; margin-top: 8px;
+}
+.catgrid label {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: 0.85rem; cursor: pointer;
+}
+
+/* Credits waiting to post: the pending list and the small log form. */
+.licpend { margin-top: 10px; }
+.licpend summary { cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+.pendlist { list-style: none; padding: 8px 0 0; margin: 0; }
+.pendlist li {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px;
+  padding: 6px 0; border-bottom: 1px solid var(--border);
+}
+.pendlist .cname { font-size: 0.9rem; }
+.pendlist .cmeta { color: var(--muted); font-size: 0.82rem; white-space: nowrap; margin-left: auto; }
+.pendform {
+  display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px;
+  margin-top: 10px;
+}
+.pendform label {
+  display: flex; flex-direction: column; gap: 4px;
+  font-size: 0.8rem; color: var(--muted);
+}
+.pendform input, .pendform select {
+  font: inherit; color: var(--text); background: var(--card);
+  border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px;
+}
+.pendform .pendname { min-width: 150px; }
+.pendform .pendhours { width: 5em; }
+
+.cryears { margin: 8px 0 0; font-size: 0.82rem; color: var(--muted); }
+.crcycle { margin: -4px 0 8px; font-size: 0.82rem; color: var(--muted); }
+.pendoff { color: var(--warn); font-weight: 600; }
+
 .licfoot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 14px; }
 .licfoot .hint { margin-left: auto; }
 .liccard .disclaimer { margin-top: 16px; }
+
+/* The shortfall line injected into Home, dressed as the exam banner it sits
+   beside but clickable through to the License tab. */
+a.licbanner { display: block; text-decoration: none; color: var(--accent2-text); cursor: pointer; }
+a.licbanner:hover { filter: brightness(1.05); }
