@@ -69,12 +69,14 @@ export default [
     },
   },
   {
-    // The license lookup is self-contained: it defines one global and reads
-    // only the DOM and localStorage.
+    // The license lookup defines one global and reads localStorage, the
+    // AG-714 table (to match pending credits against posted courses), and
+    // Store — writable, because it wraps Store's reset/export/import so the
+    // engine's data controls reach the license keys too.
     files: ['js/license.js'],
     languageOptions: {
       sourceType: 'script',
-      globals: { ...globals.browser },
+      globals: { ...globals.browser, RECERT: 'readonly', Store: 'writable' },
     },
     rules: {
       'no-unused-vars': ['error', { varsIgnorePattern: '^License$' }],
@@ -121,11 +123,12 @@ export default [
   },
   {
     // The license view renders on top of js/license.js and the AG-714 table,
-    // and registers its route on self.APP_VIEWS for the engine.
+    // and registers its route on self.APP_VIEWS for the engine. Store is read
+    // only for todayKey, the pending-credit form's default date.
     files: ['js/license-view.js'],
     languageOptions: {
       sourceType: 'script',
-      globals: { ...globals.browser, License: 'readonly', RECERT: 'readonly' },
+      globals: { ...globals.browser, License: 'readonly', RECERT: 'readonly', Store: 'readonly' },
     },
   },
   {

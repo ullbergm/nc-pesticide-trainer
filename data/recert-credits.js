@@ -49,6 +49,11 @@ const RECERT = (() => {
     // class NC Cooperative Extension runs; X is private category credit.
     V: { name: 'Private core (pesticide safety class)', hours: 2 },
     X: { name: 'Private category', hours: 2 },
+    // The private fumigation letters. Table 2 sets no separate hour
+    // requirement for them (private category credit is the X bucket), so a
+    // record that shows one renders it named but untargeted.
+    'Z(SF)': { name: 'Soil Fumigation (private)', hours: null },
+    'Z(CF)': { name: 'Commodity Fumigation (private)', hours: null },
   };
 
   // An additional category asks three credits rather than its own full
@@ -83,6 +88,51 @@ const RECERT = (() => {
       out.push({ code: m[1], earned: Number(m[2]) });
     }
     return out;
+  }
+
+  // 02 NCAC 09L .0522(a): the credits for each ground application pest
+  // control category must be obtained in at least two years of the five-year
+  // period, so a cycle's worth cannot all be crammed into one seminar. The
+  // totals string cannot say when hours were earned; the record's course list
+  // can, which is what creditYears below reads. The aerial counterpart —
+  // one credit obtained through training in aerial methods, .0522(a)(14) —
+  // is already carried by the P bucket's own meter.
+  const SPREAD_YEARS = 2;
+
+  // A course's credit string is written differently from the cycle totals:
+  // "A 1.0, B 1.0, H 1.0, L 1.0" rather than "A [1.0] B [1.0]" (a real 026
+  // record shows both side by side). Read whichever format is there — the
+  // bracket one first, since a bare "9.0]" must not be mistaken for a code —
+  // and return the same [{code, earned}] shape as parseTotals. A course from
+  // before the current cycle is listed with a blank credit string, so it
+  // parses to nothing and drops out of every sum, which is the right answer.
+  function parseCourse(credits) {
+    const bracketed = parseTotals(credits);
+    if (bracketed.length) return bracketed;
+    const out = [];
+    const re = /([A-Za-z]+(?:\([A-Za-z]+\))?)\s+(\d+(?:\.\d+)?)/g;
+    let m;
+    while ((m = re.exec(String(credits || '')))) {
+      out.push({ code: m[1], earned: Number(m[2]) });
+    }
+    return out;
+  }
+
+  // Sum the hours on a record's course list by calendar year, oldest first:
+  // [{year, hours}]. A course whose date or credits cannot be read is left
+  // out rather than guessed at, so an empty result means "cannot tell", not
+  // "no hours".
+  function creditYears(courses) {
+    const byYear = new Map();
+    (Array.isArray(courses) ? courses : []).forEach(c => {
+      const m = /(\d{4})/.exec(String((c && c.date) || ''));
+      const hours = parseCourse(c && c.credits).reduce((n, b) => n + b.earned, 0);
+      if (!m || !hours) return;
+      const year = Number(m[1]);
+      byYear.set(year, (byYear.get(year) || 0) + hours);
+    });
+    return [...byYear].map(([year, hours]) => ({ year, hours }))
+      .sort((a, b) => a.year - b.year);
   }
 
   // Which set of rules a license recertifies under. The letter buckets alone
@@ -164,5 +214,23 @@ const RECERT = (() => {
     private: { years: 3, due: 'September 30 of the third year following certification' },
   };
 
-  return { CATEGORIES, KINDS, CYCLES, parseTotals, plan, nameOf, hoursOf };
+  // The certification cycle as a pair of dates. The record names only the
+  // end (RecertificationDateString — June 30 for commercial and aerial,
+  // September 30 for private); the start is the day after that date minus
+  // the cycle length. Verified against a live 026 record: recertify by
+  // 6/30/2027 puts the start at 7/1/2022, and NCDA's own course list agrees,
+  // blanking the credit strings of courses from before that day. Note the
+  // start is NOT derivable from the license's Expire date — that is the
+  // annual license year, a different clock entirely (a record can expire
+  // 12/31/2010 yet recertify by 9/30/2013). Takes the parsed end Date and a
+  // kind; returns {start, end, years}, or null when either is unknown.
+  function cycleWindow(end, kind) {
+    const cycle = CYCLES[kind];
+    if (!cycle || !(end instanceof Date) || Number.isNaN(end.getTime())) return null;
+    const start = new Date(end.getFullYear() - cycle.years, end.getMonth(), end.getDate() + 1);
+    return { start, end, years: cycle.years };
+  }
+
+  return { CATEGORIES, KINDS, CYCLES, SPREAD_YEARS, cycleWindow, parseTotals, parseCourse,
+           creditYears, plan, nameOf, hoursOf };
 })();

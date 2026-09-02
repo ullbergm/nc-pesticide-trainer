@@ -146,9 +146,11 @@
         // first category and one for each additional: earned here are the
         // hour, two of the three, and none of the one.
         creditTotals: 'P [1.0] O [2.0] G [0]',
+        // Course credits in the comma format real records use, which is not
+        // the bracket format of the cycle totals above.
         courses: [
-          { name: 'Aerial Application Technology Update', date: usDate(now - 96 * DAY), credits: 'P [1.0]' },
-          { name: 'Row Crop Weed Management Field Day', date: usDate(now - 41 * DAY), credits: 'O [2.0]' },
+          { name: 'Aerial Application Technology Update', date: usDate(now - 96 * DAY), credits: 'P 1.0' },
+          { name: 'Row Crop Weed Management Field Day', date: usDate(now - 41 * DAY), credits: 'O 2.0' },
         ],
       }),
       // No categories sit on a contractor license, so its card is the one

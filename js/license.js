@@ -10,7 +10,10 @@
 
    This is the one place the app talks to a server. The cache lives under its
    own localStorage key and is never folded into the study state that Export
-   writes, so a progress backup stays a progress backup. */
+   writes, so a progress backup stays a progress backup. What the user *types
+   in* on top of the record — credits logged before they post, categories
+   declared on a bucketless record — is theirs rather than a cache, so that
+   layer alone rides along in a backup (see the Store wrappers at the end). */
 const License = (() => {
   const API = 'https://apps.ncagr.gov/AgRSysAPI/api';
   // The portal ships this fixed anonymous credential in its own public
@@ -26,6 +29,7 @@ const License = (() => {
   const TOKEN_KEY = 'ncagr-token';       // {token, exp} — cached bearer token
   const CACHE_KEY = 'ncagr-licenses';    // {v, list:[{input, record, fetchedAt}]}
   const LEGACY_KEY = 'ncagr-license';    // the single {input, record, fetchedAt} this replaced
+  const USER_KEY = 'ncagr-user';         // {v, byLicense:{key:{pending, categories}}}
   const TIMEOUT = 15000;
   // Enough for a pilot's own licenses plus the contractor they fly under and
   // a spouse or two, and low enough that the cache stays a cache. Adding past
@@ -163,6 +167,105 @@ const License = (() => {
   // type, and the record's own fields are what a refresh replaces.
   const keyOf = input => `${input.typeId}:${input.number}`;
 
+  // What the user tracks on top of the state record, under its own key so a
+  // refresh — which replaces a cache entry wholesale — never touches it:
+  // credits from a course taken but not yet posted, and categories declared
+  // on a record that shows no buckets yet (a fresh cycle shows none, so there
+  // is nothing to infer them from). Keyed like the cache, so the data
+  // survives the cache cap evicting its entry and reattaches when the
+  // license is looked up again.
+  function sanitizeUser(raw) {
+    const out = {};
+    const by = raw && typeof raw === 'object' && raw.byLicense && typeof raw.byLicense === 'object'
+      ? raw.byLicense : {};
+    Object.entries(by).forEach(([key, u]) => {
+      if (!u || typeof u !== 'object') return;
+      const pending = (Array.isArray(u.pending) ? u.pending : [])
+        .filter(p => p && typeof p === 'object'
+          && typeof p.code === 'string' && p.code
+          && Number.isFinite(p.hours) && p.hours > 0)
+        .map(p => ({
+          code: p.code,
+          hours: p.hours,
+          date: typeof p.date === 'string' ? p.date : '',
+          name: typeof p.name === 'string' ? p.name : '',
+        }));
+      const categories = [...new Set((Array.isArray(u.categories) ? u.categories : [])
+        .filter(c => typeof c === 'string' && c))];
+      if (pending.length || categories.length) out[key] = { pending, categories };
+    });
+    return { v: 1, byLicense: out };
+  }
+  const userAll = () => sanitizeUser(readJSON(USER_KEY));
+  const userData = key => userAll().byLicense[key] || { pending: [], categories: [] };
+  function writeUser(key, u) {
+    const all = userAll();
+    if (u.pending.length || u.categories.length) all.byLicense[key] = u;
+    else delete all.byLicense[key];
+    writeJSON(USER_KEY, all);
+  }
+
+  // Log a credit the record does not show yet. Sanitized on the way in, so a
+  // half-filled form cannot store an entry the meters would choke on.
+  function logPending(key, entry) {
+    const code = String((entry && entry.code) || '').trim();
+    const hours = Number(entry && entry.hours);
+    if (!code || !Number.isFinite(hours) || hours <= 0) return false;
+    const u = userData(key);
+    u.pending.push({
+      code, hours,
+      date: String((entry && entry.date) || '').trim(),
+      name: String((entry && entry.name) || '').trim(),
+    });
+    writeUser(key, u);
+    return true;
+  }
+
+  function dropPending(key, index) {
+    const u = userData(key);
+    if (index < 0 || index >= u.pending.length) return;
+    u.pending.splice(index, 1);
+    writeUser(key, u);
+  }
+
+  function setCategories(key, codes) {
+    const u = userData(key);
+    u.categories = [...new Set((Array.isArray(codes) ? codes : [])
+      .filter(c => typeof c === 'string' && c))];
+    writeUser(key, u);
+  }
+
+  // '6/30/2028' (the record) and '2028-06-30' (a date input) name the same
+  // day; reduce either to one comparable key, or null when unreadable.
+  function dateKey(s) {
+    const str = String(s || '').trim();
+    let m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(str);
+    if (m) return `${m[3]}-${Number(m[1])}-${Number(m[2])}`;
+    m = /^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(str);
+    if (m) return `${m[1]}-${Number(m[2])}-${Number(m[3])}`;
+    return null;
+  }
+
+  // A pending credit is done when the record catches up: a course on the same
+  // date whose credit string carries at least those hours in that category.
+  // Matched entries are dropped so an hour is never counted twice; the rest
+  // stay, since a record can lag its courses by weeks. Runs on every lookup,
+  // which is the only moment the record can have changed.
+  function prunePending(key, record) {
+    const u = userData(key);
+    if (!u.pending.length) return;
+    const posted = (record.courses || []).map(c => ({
+      date: dateKey(c.date),
+      buckets: RECERT.parseCourse(c.credits),
+    }));
+    u.pending = u.pending.filter(p => {
+      const d = dateKey(p.date);
+      return !posted.some(c => c.date && c.date === d
+        && c.buckets.some(b => b.code === p.code && b.earned >= p.hours));
+    });
+    writeUser(key, u);
+  }
+
   // The saved list, newest refresh first, migrating the single-entry key this
   // replaced on the way. An entry is only kept if it still has the input that
   // would refresh it, since an entry that cannot be refreshed is a card that
@@ -224,13 +327,16 @@ const License = (() => {
     const record = normalize(detail);
     const entry = { input: { number: num, typeId }, record, fetchedAt: Date.now() };
     store(entry);
+    prunePending(keyOf(entry.input), record);
     return entry;
   }
 
-  // Forget one saved license, returning what is left.
+  // Forget one saved license, returning what is left. What the user logged
+  // against it goes with it: "forget this license" means all of it.
   function remove(key) {
     const list = saved().filter(e => keyOf(e.input) !== key);
     writeJSON(CACHE_KEY, { v: 1, list });
+    writeUser(key, { pending: [], categories: [] });
     return list;
   }
 
@@ -238,8 +344,43 @@ const License = (() => {
     try {
       localStorage.removeItem(CACHE_KEY);
       localStorage.removeItem(LEGACY_KEY);
+      localStorage.removeItem(USER_KEY);
+      localStorage.removeItem(TOKEN_KEY);
     } catch { /* non-fatal */ }
   }
 
-  return { enabled, TYPES, MAX_SAVED, kindOf, keyOf, lookup, saved, remove, clearCache };
+  // Settings' data controls live in the engine and know only Store, so its
+  // three verbs are wrapped here rather than edited there: Reset everything
+  // clears the license keys too (a card surviving a full reset is a surprise,
+  // not a feature), and a backup carries the user-entered layer — pending
+  // credits and declared categories — while the fetched records stay out of
+  // it, since they are a cache of state data a lookup re-fetches. Absent
+  // under node, where the tests load this file without the engine.
+  if (typeof Store !== 'undefined' && Store && typeof Store.reset === 'function') {
+    const engine = {
+      reset: Store.reset, exportJSON: Store.exportJSON, importJSON: Store.importJSON,
+    };
+    Store.reset = () => { clearCache(); engine.reset(); };
+    Store.exportJSON = () => {
+      const user = userAll();
+      if (!Object.keys(user.byLicense).length) return engine.exportJSON();
+      const out = JSON.parse(engine.exportJSON());
+      out.licenseUser = user;
+      return JSON.stringify(out, null, 2);
+    };
+    Store.importJSON = text => {
+      engine.importJSON(text); // throws on a bad file before anything applies
+      try {
+        const parsed = JSON.parse(text);
+        // Only a backup that carries the layer replaces it: a file from
+        // before the field existed must not silently wipe what is here.
+        if (parsed && parsed.licenseUser && typeof parsed.licenseUser === 'object') {
+          writeJSON(USER_KEY, sanitizeUser(parsed.licenseUser));
+        }
+      } catch { /* the engine accepted the file; the extra layer is best-effort */ }
+    };
+  }
+
+  return { enabled, TYPES, MAX_SAVED, kindOf, keyOf, lookup, saved, remove, clearCache,
+           userData, logPending, dropPending, setCategories };
 })();

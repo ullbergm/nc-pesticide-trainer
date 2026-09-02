@@ -93,6 +93,65 @@ const req = (codes, kind) => Object.fromEntries(
     RECERT.plan(['L', 'A'], 'commercial').every(r => r.rule));
 }
 
+// ---- what a course reports, in either format the record writes
+{
+  // The cycle totals bracket their numbers; the course list separates its
+  // pairs with commas (a real 026 record shows both side by side).
+  const rows = RECERT.parseCourse('A 1.0, B 1.0, H 1.0, L 1.0');
+  t('a comma-separated course credit string is read pair by pair',
+    rows.length === 4 && rows[0].code === 'A' && rows[3].code === 'L'
+    && rows.every(r => r.earned === 1));
+  t('a course half credit is not rounded away',
+    RECERT.parseCourse('A 0.5, L 3.0')[0].earned === 0.5);
+  t('a qualified course category survives parsing',
+    RECERT.parseCourse('K(PU) 2.5')[0].code === 'K(PU)');
+  t('a bracket-format course credit string still reads',
+    RECERT.parseCourse('L [2.0] A [1.0]').length === 2
+    && RECERT.parseCourse('L [2.0] A [1.0]')[0].earned === 2);
+  t('a blank course credit string is a course outside the cycle, not hours',
+    RECERT.parseCourse('').length === 0 && RECERT.parseCourse(null).length === 0);
+}
+
+// ---- when the hours landed: the course list summed by year
+{
+  const years = RECERT.creditYears([
+    { date: '5/1/2026', credits: 'L 4.0, A 0.5' },
+    { date: '3/15/2024', credits: 'L [2.0]' },
+    { date: '4/20/2024', credits: 'A 1.0' },
+    { date: 'sometime', credits: 'L 9.0' },
+    { date: '6/1/2026', credits: '' },
+  ]);
+  t('course hours are summed by calendar year, oldest first',
+    years.length === 2 && years[0].year === 2024 && years[1].year === 2026);
+  t('a year sums every course that fell in it, whatever its format',
+    years[0].hours === 3 && years[1].hours === 4.5);
+  t('a course whose date or credits cannot be read is left out',
+    years.reduce((n, y) => n + y.hours, 0) === 7.5);
+  t('no course list is no opinion, not zero years of credit',
+    RECERT.creditYears([]).length === 0 && RECERT.creditYears(null).length === 0);
+}
+
+// ---- the certification cycle as a pair of dates
+{
+  const d = (y, m, day) => new Date(y, m - 1, day);
+  const w = RECERT.cycleWindow(d(2027, 6, 30), 'commercial');
+  // The live check behind this: an 026 recertifying by 6/30/2027 whose
+  // course list blanks the credits of everything before 7/1/2022.
+  t('a commercial cycle runs the five years up to its recertification date',
+    w.years === 5 && w.start.getTime() === d(2022, 7, 1).getTime()
+    && w.end.getTime() === d(2027, 6, 30).getTime());
+  const p = RECERT.cycleWindow(d(2012, 9, 30), 'private');
+  t('a private cycle runs three years to September 30',
+    p.years === 3 && p.start.getTime() === d(2009, 10, 1).getTime());
+  const a = RECERT.cycleWindow(d(2027, 6, 30), 'aerial');
+  t('an aerial cycle runs two years',
+    a.years === 2 && a.start.getTime() === d(2025, 7, 1).getTime());
+  t('no recertification date or no known kind is no window',
+    RECERT.cycleWindow(null, 'commercial') === null
+    && RECERT.cycleWindow(new Date('nope'), 'commercial') === null
+    && RECERT.cycleWindow(d(2027, 6, 30), 'unknown') === null);
+}
+
 // ---- which rules a license type renews under
 {
   t('a private applicator license renews under the private rules',
@@ -147,6 +206,45 @@ const reset = () => { localStorage.map.clear(); };
     License.keyOf({ number: '1', typeId: '026' }) !== License.keyOf({ number: '1', typeId: '027' }));
 }
 
+// ---- the layer the user enters on top of the record
+{
+  reset();
+  const KEY = '026:87690';
+  const user = () => License.userData(KEY);
+  t('a license with nothing logged has an empty user layer',
+    user().pending.length === 0 && user().categories.length === 0);
+
+  t('a pending credit needs a category and positive hours',
+    License.logPending(KEY, { code: '', hours: 2 }) === false
+    && License.logPending(KEY, { code: 'L', hours: 0 }) === false
+    && License.logPending(KEY, { code: 'L', hours: NaN }) === false
+    && user().pending.length === 0);
+
+  t('a logged credit keeps its course, date, and hours',
+    License.logPending(KEY, { code: 'L', hours: 2, date: '2026-03-01', name: 'Turf School' }) === true
+    && user().pending[0].code === 'L' && user().pending[0].hours === 2
+    && user().pending[0].date === '2026-03-01' && user().pending[0].name === 'Turf School');
+
+  License.logPending(KEY, { code: 'A', hours: 1.5, date: '2026-04-01' });
+  License.dropPending(KEY, 0);
+  t('dropping a pending credit leaves the others',
+    user().pending.length === 1 && user().pending[0].code === 'A');
+
+  License.setCategories(KEY, ['L', 'A', 'L']);
+  t('declared categories are kept deduplicated', user().categories.join(',') === 'L,A');
+  t('the user layer is kept per license',
+    License.userData('027:1').pending.length === 0
+    && License.userData('027:1').categories.length === 0);
+
+  License.remove(KEY);
+  t('forgetting a license forgets what was logged against it',
+    user().pending.length === 0 && user().categories.length === 0);
+
+  License.logPending(KEY, { code: 'L', hours: 2 });
+  License.clearCache();
+  t('clearing the cache clears the user layer with it', user().pending.length === 0);
+}
+
 // ---- lookup: mint, search, detail, and store, against a stubbed portal
 const b64 = s => Buffer.from(s).toString('base64');
 const TOKEN = `x.${b64(JSON.stringify({ exp: Math.floor(Date.now() / 1000) + 3600 }))}.y`;
@@ -195,6 +293,33 @@ globalThis.fetch = url => {
   t('the cache is capped', License.saved().length === License.MAX_SAVED);
   t('the cap drops the least recently refreshed',
     !License.saved().some(e => e.input.number === 'n0'));
+
+  // ---- a pending credit clears itself when the record catches up
+  reset();
+  License.logPending('026:33333', { code: 'L', hours: 2, date: '2026-03-01', name: 'Turf School' });
+  License.logPending('026:33333', { code: 'A', hours: 1, date: '2026-03-01' });
+  License.logPending('026:33333', { code: 'L', hours: 2, date: '2026-05-09' });
+  globalThis.fetch = url => {
+    if (url.includes('getusertoken')) return ok({ Token: TOKEN });
+    if (url.includes('searchV2')) return ok({ Data: [{ LID: 'lid-33333', LicenseTypeId: '026' }] });
+    return ok({
+      Name: 'Test Applicator', LicenseNumber: '33333', LicenseTypeId: '026', Status: 'Active',
+      CourseCreditTotals: 'L [2.0]',
+      // Same day and category as the first pending entry, under a different
+      // course name and in the course list's own comma format: what the user
+      // typed never matches NCDA's title, so the match is date + category +
+      // at least the hours.
+      Courses: [{ CourseName: 'TURF & ORNAMENTAL RECERT', CourseDate: '3/1/2026', CourseString: 'L 2.0' }],
+    });
+  };
+  await License.lookup('33333', '026');
+  const left = License.userData('026:33333').pending;
+  t('a pending credit the record now posts is dropped',
+    left.length === 2 && !left.some(p => p.code === 'L' && p.date === '2026-03-01'));
+  t('a pending credit in another category on the same day stays',
+    left.some(p => p.code === 'A'));
+  t('a pending credit from another day stays',
+    left.some(p => p.code === 'L' && p.date === '2026-05-09'));
 
   // A record whose credits are read end to end: L and A on a commercial
   // license is ten and three, so four earned of thirteen owed.
