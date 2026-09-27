@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.5.1](https://github.com/ullbergm/nc-pesticide-trainer/compare/v2.5.0...v2.5.1) (2026-09-27)
+
+
+### Bug Fixes
+
+* **engine:** let Dependabot bumps merge on their own once CI passes ([630e7a2](https://github.com/ullbergm/nc-pesticide-trainer/commit/630e7a218bb1116e98f2b68d63f3c2de6e37bb9c))
+* sync trainer-engine v2.3.1 ([630e7a2](https://github.com/ullbergm/nc-pesticide-trainer/commit/630e7a218bb1116e98f2b68d63f3c2de6e37bb9c))
+
 ## [2.5.0](https://github.com/ullbergm/nc-pesticide-trainer/compare/v2.4.0...v2.5.0) (2026-09-02)
 
 
